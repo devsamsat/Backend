@@ -8,6 +8,8 @@ from app.interfaces.api import (
     appuser,
     dynamic_records,
     jnsdok,
+    jnsgolongan,
+    jnsguna,
     users,
 )
 from app.interfaces.api.generated_tables import generate_table_routers
@@ -28,6 +30,8 @@ app.include_router(appotor.router)
 app.include_router(approle.router)
 app.include_router(appuser.router)
 app.include_router(jnsdok.router)
+app.include_router(jnsgolongan.router)
+app.include_router(jnsguna.router)
 
 for router in generate_table_routers():
     app.include_router(router)

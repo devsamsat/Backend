@@ -1,4 +1,14 @@
-from sqlalchemy import BigInteger, Boolean, Column, DateTime, Integer, String, Text, UniqueConstraint
+from sqlalchemy import (
+    BigInteger,
+    Boolean,
+    Column,
+    DateTime,
+    Integer,
+    Numeric,
+    String,
+    Text,
+    UniqueConstraint,
+)
 from sqlalchemy.sql import func
 from app.core.database import Base
 
@@ -100,6 +110,35 @@ class JnsDok(Base):
     kddok = Column(String(10), primary_key=True)
     namadok = Column(String(30), nullable=False)
     keterangan = Column(String(200))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class JnsGolongan(Base):
+    __tablename__ = "jnsgolongan"
+
+    jnsgolid = Column(String(2), primary_key=True)
+    golongan = Column(String(30), nullable=False)
+    katid = Column(String(1))
+    jnskendid = Column(String(3))
+    viewall = Column(String(1))
+    status = Column(String(1))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class JnsGuna(Base):
+    __tablename__ = "jnsguna"
+
+    kdguna = Column(String(2), primary_key=True)
+    guna = Column(String(30), nullable=False)
+    gunaplat = Column(String(2))
+    progresif = Column(Numeric(18, 2))
+    groupbpkb = Column(String(20), nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     created_by = Column(String(50))
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
