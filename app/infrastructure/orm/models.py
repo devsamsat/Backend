@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Boolean, Text, DateTime, UniqueConstraint
+from sqlalchemy import BigInteger, Boolean, Column, DateTime, Integer, String, Text, UniqueConstraint
 from sqlalchemy.sql import func
 from app.core.database import Base
 
@@ -30,3 +30,65 @@ class DynamicRecord(Base):
         onupdate=func.now(),
         nullable=False,
     )
+
+
+class AppGroupUser(Base):
+    __tablename__ = "appgroupuser"
+
+    kdgroup = Column(String(30), primary_key=True)
+    nmgroup = Column(String(50), nullable=False)
+    ket = Column(String(100))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class AppOtor(Base):
+    __tablename__ = "appotor"
+
+    kdgroup = Column(String(30), primary_key=True)
+    roleid = Column(String(50), primary_key=True)
+    ket = Column(String(100))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class AppRole(Base):
+    __tablename__ = "approle"
+
+    roleid = Column(String(50), primary_key=True)
+    idapp = Column(BigInteger)
+    role = Column(String(254))
+    role_type = Column(String(2))
+    menuid = Column(String(50))
+    parentid = Column(String(50))
+    bantuan = Column(String(254))
+    link = Column(String(254))
+    icon = Column(String(254))
+    kdlevel = Column(Integer)
+    is_show = Column(Integer)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class AppUser(Base):
+    __tablename__ = "appuser"
+
+    userid = Column(String(50), primary_key=True)
+    idupt = Column(BigInteger)
+    kdtahap = Column(String(5), nullable=False)
+    pwd = Column(String(200))
+    idpeg = Column(BigInteger)
+    kdgroup = Column(String(30), nullable=False)
+    nik = Column(String(50))
+    nama = Column(String(100))
+    email = Column(String(50))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
