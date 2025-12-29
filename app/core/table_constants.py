@@ -6,4 +6,6 @@ CUSTOM_TABLES = {
     "approle",
     "appuser",
     "jnsdok",
+    "jnsgolongan",
+    "jnsguna",
 }
