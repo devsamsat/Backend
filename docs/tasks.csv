@@ -1,0 +1,346 @@
+endpoint,method,description,status,pic,story_point,sprint
+/api/appgroupuser,POST,Insert data ke tabel appgroupuser.,todo,backend,1,sprint-1
+/api/appgroupuser,GET,Ambil semua data dari tabel appgroupuser.,todo,backend,1,sprint-1
+/api/appgroupuser/{record_id},GET,Ambil data appgroupuser berdasarkan record_id.,todo,backend,1,sprint-1
+/api/appgroupuser/{record_id},PUT,Update data appgroupuser berdasarkan record_id.,todo,backend,1,sprint-1
+/api/appgroupuser/{record_id},DELETE,Hapus data appgroupuser berdasarkan record_id.,todo,backend,1,sprint-1
+/api/appotor,POST,Insert data ke tabel appotor.,todo,backend,1,sprint-1
+/api/appotor,GET,Ambil semua data dari tabel appotor.,todo,backend,1,sprint-1
+/api/appotor/{record_id},GET,Ambil data appotor berdasarkan record_id.,todo,backend,1,sprint-1
+/api/appotor/{record_id},PUT,Update data appotor berdasarkan record_id.,todo,backend,1,sprint-1
+/api/appotor/{record_id},DELETE,Hapus data appotor berdasarkan record_id.,todo,backend,1,sprint-1
+/api/approle,POST,Insert data ke tabel approle.,todo,backend,1,sprint-1
+/api/approle,GET,Ambil semua data dari tabel approle.,todo,backend,1,sprint-1
+/api/approle/{record_id},GET,Ambil data approle berdasarkan record_id.,todo,backend,1,sprint-1
+/api/approle/{record_id},PUT,Update data approle berdasarkan record_id.,todo,backend,1,sprint-1
+/api/approle/{record_id},DELETE,Hapus data approle berdasarkan record_id.,todo,backend,1,sprint-1
+/api/appuser,POST,Insert data ke tabel appuser.,todo,backend,1,sprint-1
+/api/appuser,GET,Ambil semua data dari tabel appuser.,todo,backend,1,sprint-1
+/api/appuser/{record_id},GET,Ambil data appuser berdasarkan record_id.,todo,backend,1,sprint-1
+/api/appuser/{record_id},PUT,Update data appuser berdasarkan record_id.,todo,backend,1,sprint-1
+/api/appuser/{record_id},DELETE,Hapus data appuser berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsdok,POST,Insert data ke tabel jnsdok.,todo,backend,1,sprint-1
+/api/jnsdok,GET,Ambil semua data dari tabel jnsdok.,todo,backend,1,sprint-1
+/api/jnsdok/{record_id},GET,Ambil data jnsdok berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsdok/{record_id},PUT,Update data jnsdok berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsdok/{record_id},DELETE,Hapus data jnsdok berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsgolongan,POST,Insert data ke tabel jnsgolongan.,todo,backend,1,sprint-1
+/api/jnsgolongan,GET,Ambil semua data dari tabel jnsgolongan.,todo,backend,1,sprint-1
+/api/jnsgolongan/{record_id},GET,Ambil data jnsgolongan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsgolongan/{record_id},PUT,Update data jnsgolongan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsgolongan/{record_id},DELETE,Hapus data jnsgolongan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsguna,POST,Insert data ke tabel jnsguna.,todo,backend,1,sprint-1
+/api/jnsguna,GET,Ambil semua data dari tabel jnsguna.,todo,backend,1,sprint-1
+/api/jnsguna/{record_id},GET,Ambil data jnsguna berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsguna/{record_id},PUT,Update data jnsguna berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsguna/{record_id},DELETE,Hapus data jnsguna berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnshist,POST,Insert data ke tabel jnshist.,todo,backend,1,sprint-1
+/api/jnshist,GET,Ambil semua data dari tabel jnshist.,todo,backend,1,sprint-1
+/api/jnshist/{record_id},GET,Ambil data jnshist berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnshist/{record_id},PUT,Update data jnshist berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnshist/{record_id},DELETE,Hapus data jnshist berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsjr,POST,Insert data ke tabel jnsjr.,todo,backend,1,sprint-1
+/api/jnsjr,GET,Ambil semua data dari tabel jnsjr.,todo,backend,1,sprint-1
+/api/jnsjr/{record_id},GET,Ambil data jnsjr berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsjr/{record_id},PUT,Update data jnsjr berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsjr/{record_id},DELETE,Hapus data jnsjr berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnskatkendaraan,POST,Insert data ke tabel jnskatkendaraan.,todo,backend,1,sprint-1
+/api/jnskatkendaraan,GET,Ambil semua data dari tabel jnskatkendaraan.,todo,backend,1,sprint-1
+/api/jnskatkendaraan/{record_id},GET,Ambil data jnskatkendaraan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnskatkendaraan/{record_id},PUT,Update data jnskatkendaraan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnskatkendaraan/{record_id},DELETE,Hapus data jnskatkendaraan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnskendaraan,POST,Insert data ke tabel jnskendaraan.,todo,backend,1,sprint-1
+/api/jnskendaraan,GET,Ambil semua data dari tabel jnskendaraan.,todo,backend,1,sprint-1
+/api/jnskendaraan/{record_id},GET,Ambil data jnskendaraan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnskendaraan/{record_id},PUT,Update data jnskendaraan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnskendaraan/{record_id},DELETE,Hapus data jnskendaraan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsmilik,POST,Insert data ke tabel jnsmilik.,todo,backend,1,sprint-1
+/api/jnsmilik,GET,Ambil semua data dari tabel jnsmilik.,todo,backend,1,sprint-1
+/api/jnsmilik/{record_id},GET,Ambil data jnsmilik berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsmilik/{record_id},PUT,Update data jnsmilik berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsmilik/{record_id},DELETE,Hapus data jnsmilik berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnspajak,POST,Insert data ke tabel jnspajak.,todo,backend,1,sprint-1
+/api/jnspajak,GET,Ambil semua data dari tabel jnspajak.,todo,backend,1,sprint-1
+/api/jnspajak/{record_id},GET,Ambil data jnspajak berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnspajak/{record_id},PUT,Update data jnspajak berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnspajak/{record_id},DELETE,Hapus data jnspajak berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsplat,POST,Insert data ke tabel jnsplat.,todo,backend,1,sprint-1
+/api/jnsplat,GET,Ambil semua data dari tabel jnsplat.,todo,backend,1,sprint-1
+/api/jnsplat/{record_id},GET,Ambil data jnsplat berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsplat/{record_id},PUT,Update data jnsplat berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsplat/{record_id},DELETE,Hapus data jnsplat berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsprogresif,POST,Insert data ke tabel jnsprogresif.,todo,backend,1,sprint-1
+/api/jnsprogresif,GET,Ambil semua data dari tabel jnsprogresif.,todo,backend,1,sprint-1
+/api/jnsprogresif/{record_id},GET,Ambil data jnsprogresif berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsprogresif/{record_id},PUT,Update data jnsprogresif berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsprogresif/{record_id},DELETE,Hapus data jnsprogresif berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsranmor,POST,Insert data ke tabel jnsranmor.,todo,backend,1,sprint-1
+/api/jnsranmor,GET,Ambil semua data dari tabel jnsranmor.,todo,backend,1,sprint-1
+/api/jnsranmor/{record_id},GET,Ambil data jnsranmor berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsranmor/{record_id},PUT,Update data jnsranmor berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsranmor/{record_id},DELETE,Hapus data jnsranmor berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsstrurek,POST,Insert data ke tabel jnsstrurek.,todo,backend,1,sprint-1
+/api/jnsstrurek,GET,Ambil semua data dari tabel jnsstrurek.,todo,backend,1,sprint-1
+/api/jnsstrurek/{record_id},GET,Ambil data jnsstrurek berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsstrurek/{record_id},PUT,Update data jnsstrurek berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsstrurek/{record_id},DELETE,Hapus data jnsstrurek berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnstarif,POST,Insert data ke tabel jnstarif.,todo,backend,1,sprint-1
+/api/jnstarif,GET,Ambil semua data dari tabel jnstarif.,todo,backend,1,sprint-1
+/api/jnstarif/{record_id},GET,Ambil data jnstarif berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnstarif/{record_id},PUT,Update data jnstarif berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnstarif/{record_id},DELETE,Hapus data jnstarif berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsumum,POST,Insert data ke tabel jnsumum.,todo,backend,1,sprint-1
+/api/jnsumum,GET,Ambil semua data dari tabel jnsumum.,todo,backend,1,sprint-1
+/api/jnsumum/{record_id},GET,Ambil data jnsumum berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsumum/{record_id},PUT,Update data jnsumum berdasarkan record_id.,todo,backend,1,sprint-1
+/api/jnsumum/{record_id},DELETE,Hapus data jnsumum berdasarkan record_id.,todo,backend,1,sprint-1
+/api/mapjnspendapatan,POST,Insert data ke tabel mapjnspendapatan.,todo,backend,1,sprint-1
+/api/mapjnspendapatan,GET,Ambil semua data dari tabel mapjnspendapatan.,todo,backend,1,sprint-1
+/api/mapjnspendapatan/{record_id},GET,Ambil data mapjnspendapatan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/mapjnspendapatan/{record_id},PUT,Update data mapjnspendapatan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/mapjnspendapatan/{record_id},DELETE,Hapus data mapjnspendapatan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterab,POST,Insert data ke tabel masterab.,todo,backend,1,sprint-1
+/api/masterab,GET,Ambil semua data dari tabel masterab.,todo,backend,1,sprint-1
+/api/masterab/{record_id},GET,Ambil data masterab berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterab/{record_id},PUT,Update data masterab berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterab/{record_id},DELETE,Hapus data masterab berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterabdet,POST,Insert data ke tabel masterabdet.,todo,backend,1,sprint-1
+/api/masterabdet,GET,Ambil semua data dari tabel masterabdet.,todo,backend,1,sprint-1
+/api/masterabdet/{record_id},GET,Ambil data masterabdet berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterabdet/{record_id},PUT,Update data masterabdet berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterabdet/{record_id},DELETE,Hapus data masterabdet berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterbadan,POST,Insert data ke tabel masterbadan.,todo,backend,1,sprint-1
+/api/masterbadan,GET,Ambil semua data dari tabel masterbadan.,todo,backend,1,sprint-1
+/api/masterbadan/{record_id},GET,Ambil data masterbadan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterbadan/{record_id},PUT,Update data masterbadan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterbadan/{record_id},DELETE,Hapus data masterbadan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterbank,POST,Insert data ke tabel masterbank.,todo,backend,1,sprint-1
+/api/masterbank,GET,Ambil semua data dari tabel masterbank.,todo,backend,1,sprint-1
+/api/masterbank/{record_id},GET,Ambil data masterbank berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterbank/{record_id},PUT,Update data masterbank berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterbank/{record_id},DELETE,Hapus data masterbank berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterbbm,POST,Insert data ke tabel masterbbm.,todo,backend,1,sprint-1
+/api/masterbbm,GET,Ambil semua data dari tabel masterbbm.,todo,backend,1,sprint-1
+/api/masterbbm/{record_id},GET,Ambil data masterbbm berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterbbm/{record_id},PUT,Update data masterbbm berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterbbm/{record_id},DELETE,Hapus data masterbbm berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterbendahara,POST,Insert data ke tabel masterbendahara.,todo,backend,1,sprint-1
+/api/masterbendahara,GET,Ambil semua data dari tabel masterbendahara.,todo,backend,1,sprint-1
+/api/masterbendahara/{record_id},GET,Ambil data masterbendahara berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterbendahara/{record_id},PUT,Update data masterbendahara berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterbendahara/{record_id},DELETE,Hapus data masterbendahara berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterflow,POST,Insert data ke tabel masterflow.,todo,backend,1,sprint-1
+/api/masterflow,GET,Ambil semua data dari tabel masterflow.,todo,backend,1,sprint-1
+/api/masterflow/{record_id},GET,Ambil data masterflow berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterflow/{record_id},PUT,Update data masterflow berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterflow/{record_id},DELETE,Hapus data masterflow berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterhapusdenda,POST,Insert data ke tabel masterhapusdenda.,todo,backend,1,sprint-1
+/api/masterhapusdenda,GET,Ambil semua data dari tabel masterhapusdenda.,todo,backend,1,sprint-1
+/api/masterhapusdenda/{record_id},GET,Ambil data masterhapusdenda berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterhapusdenda/{record_id},PUT,Update data masterhapusdenda berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterhapusdenda/{record_id},DELETE,Hapus data masterhapusdenda berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterhistory,POST,Insert data ke tabel masterhistory.,todo,backend,1,sprint-1
+/api/masterhistory,GET,Ambil semua data dari tabel masterhistory.,todo,backend,1,sprint-1
+/api/masterhistory/{record_id},GET,Ambil data masterhistory berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterhistory/{record_id},PUT,Update data masterhistory berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterhistory/{record_id},DELETE,Hapus data masterhistory berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterjabttd,POST,Insert data ke tabel masterjabttd.,todo,backend,1,sprint-1
+/api/masterjabttd,GET,Ambil semua data dari tabel masterjabttd.,todo,backend,1,sprint-1
+/api/masterjabttd/{record_id},GET,Ambil data masterjabttd berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterjabttd/{record_id},PUT,Update data masterjabttd berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterjabttd/{record_id},DELETE,Hapus data masterjabttd berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterjnspendapatan,POST,Insert data ke tabel masterjnspendapatan.,todo,backend,1,sprint-1
+/api/masterjnspendapatan,GET,Ambil semua data dari tabel masterjnspendapatan.,todo,backend,1,sprint-1
+/api/masterjnspendapatan/{record_id},GET,Ambil data masterjnspendapatan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterjnspendapatan/{record_id},PUT,Update data masterjnspendapatan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterjnspendapatan/{record_id},DELETE,Hapus data masterjnspendapatan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkabkota,POST,Insert data ke tabel masterkabkota.,todo,backend,1,sprint-1
+/api/masterkabkota,GET,Ambil semua data dari tabel masterkabkota.,todo,backend,1,sprint-1
+/api/masterkabkota/{record_id},GET,Ambil data masterkabkota berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkabkota/{record_id},PUT,Update data masterkabkota berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkabkota/{record_id},DELETE,Hapus data masterkabkota berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkabkotaall,POST,Insert data ke tabel masterkabkotaall.,todo,backend,1,sprint-1
+/api/masterkabkotaall,GET,Ambil semua data dari tabel masterkabkotaall.,todo,backend,1,sprint-1
+/api/masterkabkotaall/{record_id},GET,Ambil data masterkabkotaall berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkabkotaall/{record_id},PUT,Update data masterkabkotaall berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkabkotaall/{record_id},DELETE,Hapus data masterkabkotaall berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkaupt,POST,Insert data ke tabel masterkaupt.,todo,backend,1,sprint-1
+/api/masterkaupt,GET,Ambil semua data dari tabel masterkaupt.,todo,backend,1,sprint-1
+/api/masterkaupt/{record_id},GET,Ambil data masterkaupt berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkaupt/{record_id},PUT,Update data masterkaupt berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkaupt/{record_id},DELETE,Hapus data masterkaupt berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkb,POST,Insert data ke tabel masterkb.,todo,backend,1,sprint-1
+/api/masterkb,GET,Ambil semua data dari tabel masterkb.,todo,backend,1,sprint-1
+/api/masterkb/{record_id},GET,Ambil data masterkb berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkb/{record_id},PUT,Update data masterkb berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkb/{record_id},DELETE,Hapus data masterkb berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkbdet,POST,Insert data ke tabel masterkbdet.,todo,backend,1,sprint-1
+/api/masterkbdet,GET,Ambil semua data dari tabel masterkbdet.,todo,backend,1,sprint-1
+/api/masterkbdet/{record_id},GET,Ambil data masterkbdet berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkbdet/{record_id},PUT,Update data masterkbdet berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkbdet/{record_id},DELETE,Hapus data masterkbdet berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkecamatan,POST,Insert data ke tabel masterkecamatan.,todo,backend,1,sprint-1
+/api/masterkecamatan,GET,Ambil semua data dari tabel masterkecamatan.,todo,backend,1,sprint-1
+/api/masterkecamatan/{record_id},GET,Ambil data masterkecamatan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkecamatan/{record_id},PUT,Update data masterkecamatan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkecamatan/{record_id},DELETE,Hapus data masterkecamatan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkelurahan,POST,Insert data ke tabel masterkelurahan.,todo,backend,1,sprint-1
+/api/masterkelurahan,GET,Ambil semua data dari tabel masterkelurahan.,todo,backend,1,sprint-1
+/api/masterkelurahan/{record_id},GET,Ambil data masterkelurahan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkelurahan/{record_id},PUT,Update data masterkelurahan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkelurahan/{record_id},DELETE,Hapus data masterkelurahan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkiosk,POST,Insert data ke tabel masterkiosk.,todo,backend,1,sprint-1
+/api/masterkiosk,GET,Ambil semua data dari tabel masterkiosk.,todo,backend,1,sprint-1
+/api/masterkiosk/{record_id},GET,Ambil data masterkiosk berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkiosk/{record_id},PUT,Update data masterkiosk berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterkiosk/{record_id},DELETE,Hapus data masterkiosk berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterktp,POST,Insert data ke tabel masterktp.,todo,backend,1,sprint-1
+/api/masterktp,GET,Ambil semua data dari tabel masterktp.,todo,backend,1,sprint-1
+/api/masterktp/{record_id},GET,Ambil data masterktp berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterktp/{record_id},PUT,Update data masterktp berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterktp/{record_id},DELETE,Hapus data masterktp berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterlibur,POST,Insert data ke tabel masterlibur.,todo,backend,1,sprint-1
+/api/masterlibur,GET,Ambil semua data dari tabel masterlibur.,todo,backend,1,sprint-1
+/api/masterlibur/{record_id},GET,Ambil data masterlibur berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterlibur/{record_id},PUT,Update data masterlibur berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterlibur/{record_id},DELETE,Hapus data masterlibur berdasarkan record_id.,todo,backend,1,sprint-1
+/api/mastermerk,POST,Insert data ke tabel mastermerk.,todo,backend,1,sprint-1
+/api/mastermerk,GET,Ambil semua data dari tabel mastermerk.,todo,backend,1,sprint-1
+/api/mastermerk/{record_id},GET,Ambil data mastermerk berdasarkan record_id.,todo,backend,1,sprint-1
+/api/mastermerk/{record_id},PUT,Update data mastermerk berdasarkan record_id.,todo,backend,1,sprint-1
+/api/mastermerk/{record_id},DELETE,Hapus data mastermerk berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masternpwpd,POST,Insert data ke tabel masternpwpd.,todo,backend,1,sprint-1
+/api/masternpwpd,GET,Ambil semua data dari tabel masternpwpd.,todo,backend,1,sprint-1
+/api/masternpwpd/{record_id},GET,Ambil data masternpwpd berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masternpwpd/{record_id},PUT,Update data masternpwpd berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masternpwpd/{record_id},DELETE,Hapus data masternpwpd berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterpegawai,POST,Insert data ke tabel masterpegawai.,todo,backend,1,sprint-1
+/api/masterpegawai,GET,Ambil semua data dari tabel masterpegawai.,todo,backend,1,sprint-1
+/api/masterpegawai/{record_id},GET,Ambil data masterpegawai berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterpegawai/{record_id},PUT,Update data masterpegawai berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterpegawai/{record_id},DELETE,Hapus data masterpegawai berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterprovinsi,POST,Insert data ke tabel masterprovinsi.,todo,backend,1,sprint-1
+/api/masterprovinsi,GET,Ambil semua data dari tabel masterprovinsi.,todo,backend,1,sprint-1
+/api/masterprovinsi/{record_id},GET,Ambil data masterprovinsi berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterprovinsi/{record_id},PUT,Update data masterprovinsi berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterprovinsi/{record_id},DELETE,Hapus data masterprovinsi berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterrekd,POST,Insert data ke tabel masterrekd.,todo,backend,1,sprint-1
+/api/masterrekd,GET,Ambil semua data dari tabel masterrekd.,todo,backend,1,sprint-1
+/api/masterrekd/{record_id},GET,Ambil data masterrekd berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterrekd/{record_id},PUT,Update data masterrekd berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterrekd/{record_id},DELETE,Hapus data masterrekd berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterreknrc,POST,Insert data ke tabel masterreknrc.,todo,backend,1,sprint-1
+/api/masterreknrc,GET,Ambil semua data dari tabel masterreknrc.,todo,backend,1,sprint-1
+/api/masterreknrc/{record_id},GET,Ambil data masterreknrc berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterreknrc/{record_id},PUT,Update data masterreknrc berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterreknrc/{record_id},DELETE,Hapus data masterreknrc berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterrt,POST,Insert data ke tabel masterrt.,todo,backend,1,sprint-1
+/api/masterrt,GET,Ambil semua data dari tabel masterrt.,todo,backend,1,sprint-1
+/api/masterrt/{record_id},GET,Ambil data masterrt berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterrt/{record_id},PUT,Update data masterrt berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterrt/{record_id},DELETE,Hapus data masterrt berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterrw,POST,Insert data ke tabel masterrw.,todo,backend,1,sprint-1
+/api/masterrw,GET,Ambil semua data dari tabel masterrw.,todo,backend,1,sprint-1
+/api/masterrw/{record_id},GET,Ambil data masterrw berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterrw/{record_id},PUT,Update data masterrw berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterrw/{record_id},DELETE,Hapus data masterrw berdasarkan record_id.,todo,backend,1,sprint-1
+/api/mastertarif,POST,Insert data ke tabel mastertarif.,todo,backend,1,sprint-1
+/api/mastertarif,GET,Ambil semua data dari tabel mastertarif.,todo,backend,1,sprint-1
+/api/mastertarif/{record_id},GET,Ambil data mastertarif berdasarkan record_id.,todo,backend,1,sprint-1
+/api/mastertarif/{record_id},PUT,Update data mastertarif berdasarkan record_id.,todo,backend,1,sprint-1
+/api/mastertarif/{record_id},DELETE,Hapus data mastertarif berdasarkan record_id.,todo,backend,1,sprint-1
+/api/mastertarifnjop,POST,Insert data ke tabel mastertarifnjop.,todo,backend,1,sprint-1
+/api/mastertarifnjop,GET,Ambil semua data dari tabel mastertarifnjop.,todo,backend,1,sprint-1
+/api/mastertarifnjop/{record_id},GET,Ambil data mastertarifnjop berdasarkan record_id.,todo,backend,1,sprint-1
+/api/mastertarifnjop/{record_id},PUT,Update data mastertarifnjop berdasarkan record_id.,todo,backend,1,sprint-1
+/api/mastertarifnjop/{record_id},DELETE,Hapus data mastertarifnjop berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterteks,POST,Insert data ke tabel masterteks.,todo,backend,1,sprint-1
+/api/masterteks,GET,Ambil semua data dari tabel masterteks.,todo,backend,1,sprint-1
+/api/masterteks/{record_id},GET,Ambil data masterteks berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterteks/{record_id},PUT,Update data masterteks berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterteks/{record_id},DELETE,Hapus data masterteks berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterupt,POST,Insert data ke tabel masterupt.,todo,backend,1,sprint-1
+/api/masterupt,GET,Ambil semua data dari tabel masterupt.,todo,backend,1,sprint-1
+/api/masterupt/{record_id},GET,Ambil data masterupt berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterupt/{record_id},PUT,Update data masterupt berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterupt/{record_id},DELETE,Hapus data masterupt berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masteruunjop,POST,Insert data ke tabel masteruunjop.,todo,backend,1,sprint-1
+/api/masteruunjop,GET,Ambil semua data dari tabel masteruunjop.,todo,backend,1,sprint-1
+/api/masteruunjop/{record_id},GET,Ambil data masteruunjop berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masteruunjop/{record_id},PUT,Update data masteruunjop berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masteruunjop/{record_id},DELETE,Hapus data masteruunjop berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterwp,POST,Insert data ke tabel masterwp.,todo,backend,1,sprint-1
+/api/masterwp,GET,Ambil semua data dari tabel masterwp.,todo,backend,1,sprint-1
+/api/masterwp/{record_id},GET,Ambil data masterwp berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterwp/{record_id},PUT,Update data masterwp berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterwp/{record_id},DELETE,Hapus data masterwp berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterwpdata,POST,Insert data ke tabel masterwpdata.,todo,backend,1,sprint-1
+/api/masterwpdata,GET,Ambil semua data dari tabel masterwpdata.,todo,backend,1,sprint-1
+/api/masterwpdata/{record_id},GET,Ambil data masterwpdata berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterwpdata/{record_id},PUT,Update data masterwpdata berdasarkan record_id.,todo,backend,1,sprint-1
+/api/masterwpdata/{record_id},DELETE,Hapus data masterwpdata berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transdatakohir,POST,Insert data ke tabel transdatakohir.,todo,backend,1,sprint-1
+/api/transdatakohir,GET,Ambil semua data dari tabel transdatakohir.,todo,backend,1,sprint-1
+/api/transdatakohir/{record_id},GET,Ambil data transdatakohir berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transdatakohir/{record_id},PUT,Update data transdatakohir berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transdatakohir/{record_id},DELETE,Hapus data transdatakohir berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transhistpendataan,POST,Insert data ke tabel transhistpendataan.,todo,backend,1,sprint-1
+/api/transhistpendataan,GET,Ambil semua data dari tabel transhistpendataan.,todo,backend,1,sprint-1
+/api/transhistpendataan/{record_id},GET,Ambil data transhistpendataan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transhistpendataan/{record_id},PUT,Update data transhistpendataan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transhistpendataan/{record_id},DELETE,Hapus data transhistpendataan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transhistpendataandet,POST,Insert data ke tabel transhistpendataandet.,todo,backend,1,sprint-1
+/api/transhistpendataandet,GET,Ambil semua data dari tabel transhistpendataandet.,todo,backend,1,sprint-1
+/api/transhistpendataandet/{record_id},GET,Ambil data transhistpendataandet berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transhistpendataandet/{record_id},PUT,Update data transhistpendataandet berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transhistpendataandet/{record_id},DELETE,Hapus data transhistpendataandet berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transhistpenetapan,POST,Insert data ke tabel transhistpenetapan.,todo,backend,1,sprint-1
+/api/transhistpenetapan,GET,Ambil semua data dari tabel transhistpenetapan.,todo,backend,1,sprint-1
+/api/transhistpenetapan/{record_id},GET,Ambil data transhistpenetapan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transhistpenetapan/{record_id},PUT,Update data transhistpenetapan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transhistpenetapan/{record_id},DELETE,Hapus data transhistpenetapan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transpendataan,POST,Insert data ke tabel transpendataan.,todo,backend,1,sprint-1
+/api/transpendataan,GET,Ambil semua data dari tabel transpendataan.,todo,backend,1,sprint-1
+/api/transpendataan/{record_id},GET,Ambil data transpendataan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transpendataan/{record_id},PUT,Update data transpendataan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transpendataan/{record_id},DELETE,Hapus data transpendataan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transpendataandet,POST,Insert data ke tabel transpendataandet.,todo,backend,1,sprint-1
+/api/transpendataandet,GET,Ambil semua data dari tabel transpendataandet.,todo,backend,1,sprint-1
+/api/transpendataandet/{record_id},GET,Ambil data transpendataandet berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transpendataandet/{record_id},PUT,Update data transpendataandet berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transpendataandet/{record_id},DELETE,Hapus data transpendataandet berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transpenetapan,POST,Insert data ke tabel transpenetapan.,todo,backend,1,sprint-1
+/api/transpenetapan,GET,Ambil semua data dari tabel transpenetapan.,todo,backend,1,sprint-1
+/api/transpenetapan/{record_id},GET,Ambil data transpenetapan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transpenetapan/{record_id},PUT,Update data transpenetapan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transpenetapan/{record_id},DELETE,Hapus data transpenetapan berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transsts,POST,Insert data ke tabel transsts.,todo,backend,1,sprint-1
+/api/transsts,GET,Ambil semua data dari tabel transsts.,todo,backend,1,sprint-1
+/api/transsts/{record_id},GET,Ambil data transsts berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transsts/{record_id},PUT,Update data transsts berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transsts/{record_id},DELETE,Hapus data transsts berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transstsdet,POST,Insert data ke tabel transstsdet.,todo,backend,1,sprint-1
+/api/transstsdet,GET,Ambil semua data dari tabel transstsdet.,todo,backend,1,sprint-1
+/api/transstsdet/{record_id},GET,Ambil data transstsdet berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transstsdet/{record_id},PUT,Update data transstsdet berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transstsdet/{record_id},DELETE,Hapus data transstsdet berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transwpdata,POST,Insert data ke tabel transwpdata.,todo,backend,1,sprint-1
+/api/transwpdata,GET,Ambil semua data dari tabel transwpdata.,todo,backend,1,sprint-1
+/api/transwpdata/{record_id},GET,Ambil data transwpdata berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transwpdata/{record_id},PUT,Update data transwpdata berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transwpdata/{record_id},DELETE,Hapus data transwpdata berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transwpdataantri,POST,Insert data ke tabel transwpdataantri.,todo,backend,1,sprint-1
+/api/transwpdataantri,GET,Ambil semua data dari tabel transwpdataantri.,todo,backend,1,sprint-1
+/api/transwpdataantri/{record_id},GET,Ambil data transwpdataantri berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transwpdataantri/{record_id},PUT,Update data transwpdataantri berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transwpdataantri/{record_id},DELETE,Hapus data transwpdataantri berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transwpdatafile,POST,Insert data ke tabel transwpdatafile.,todo,backend,1,sprint-1
+/api/transwpdatafile,GET,Ambil semua data dari tabel transwpdatafile.,todo,backend,1,sprint-1
+/api/transwpdatafile/{record_id},GET,Ambil data transwpdatafile berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transwpdatafile/{record_id},PUT,Update data transwpdatafile berdasarkan record_id.,todo,backend,1,sprint-1
+/api/transwpdatafile/{record_id},DELETE,Hapus data transwpdatafile berdasarkan record_id.,todo,backend,1,sprint-1
+/api/ref_flag,POST,Insert data ke tabel ref_flag.,todo,backend,1,sprint-1
+/api/ref_flag,GET,Ambil semua data dari tabel ref_flag.,todo,backend,1,sprint-1
+/api/ref_flag/{record_id},GET,Ambil data ref_flag berdasarkan record_id.,todo,backend,1,sprint-1
+/api/ref_flag/{record_id},PUT,Update data ref_flag berdasarkan record_id.,todo,backend,1,sprint-1
+/api/ref_flag/{record_id},DELETE,Hapus data ref_flag berdasarkan record_id.,todo,backend,1,sprint-1
