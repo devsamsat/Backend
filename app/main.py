@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.core.database import Base, engine
-from app.interfaces.api import users
+from app.interfaces.api import users, dynamic_records
 
 Base.metadata.create_all(bind=engine)
 
@@ -11,3 +11,4 @@ app = FastAPI(
 )
 
 app.include_router(users.router)
+app.include_router(dynamic_records.router)

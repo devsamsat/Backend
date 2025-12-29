@@ -1,5 +1,473 @@
 # Kamus Data V@LIDSAMSAT
 
+## ERD
+
+```mermaid
+erDiagram
+    APPGROUPUSER {
+        varchar kdgroup PK
+        varchar nmgroup
+        varchar ket
+    }
+    APPOTOR {
+        varchar kdgroup FK
+        varchar roleid FK
+        varchar ket
+    }
+    APPROLE {
+        varchar roleid PK
+        bigint idapp
+    }
+    APPUSER {
+        varchar userid PK
+        bigint idupt FK
+        varchar kdgroup FK
+    }
+    JNSDOK {
+        varchar kddok PK
+    }
+    JNSGOLONGAN {
+        char jnsgolid PK
+        char katid FK
+        char jnskendid FK
+    }
+    JNSGUNA {
+        varchar kdguna PK
+    }
+    JNSHIST {
+        char kdhist PK
+        char kdflow FK
+    }
+    JNSJR {
+        char jnsjrid PK
+    }
+    JNSKATKENDARAAN {
+        char katid PK
+    }
+    JNSKENDARAAN {
+        char jnskendid PK
+        char katid FK
+        char jnsjrid FK
+    }
+    JNSMILIK {
+        varchar kdmilik PK
+    }
+    JNSPAJAK {
+        varchar kdjnspjk PK
+    }
+    JNSPLAT {
+        varchar kdplat PK
+    }
+    JNSPROGRESIF {
+        int kdprogresif PK
+    }
+    JNSRANMOR {
+        char kdranmor PK
+    }
+    JNSSTRUREK {
+        char mtglevel PK
+    }
+    JNSTARIF {
+        char kdjnstarif PK
+        char jnskendid FK
+    }
+    JNSUMUM {
+        char kdumum PK
+    }
+    MAPJNSPENDAPATAN {
+        int idmapjnsd PK
+    }
+    MASTERAB {
+        bigint idab PK
+        bigint idktp FK
+        bigint idkabkokta FK
+        bigint idkecamatan FK
+        bigint idkelurahan FK
+        int idrw FK
+        int idrt FK
+        char jnskendid FK
+        int idmerk FK
+        varchar kdmilik FK
+        varchar kdguna FK
+        varchar kdplat FK
+    }
+    MASTERABDET {
+        bigint idabdet PK
+        bigint idab FK
+        int idjnsd FK
+    }
+    MASTERBADAN {
+        bigint idbadan PK
+        bigint idktp FK
+        bigint idprovinsi FK
+        bigint idkabkokta FK
+    }
+    MASTERBANK {
+        int idbank PK
+    }
+    MASTERBBM {
+        varchar kodebbm PK
+    }
+    MASTERBENDAHARA {
+        bigint idbend PK
+        bigint idpegawai FK
+        int idbank FK
+        int idreknrc FK
+    }
+    MASTERFLOW {
+        varchar kdflow PK
+    }
+    MASTERHAPUSDENDA {
+        int idhapusdenda PK
+    }
+    MASTERHISTORY {
+        bigint idhistory PK
+        bigint idwp FK
+        bigint idktp FK
+        char jnskendid FK
+        int idmerk FK
+        varchar kdmilik FK
+        varchar kdguna FK
+        varchar kdplat FK
+    }
+    MASTERJABTTD {
+        bigint idjabttd PK
+        varchar kddok FK
+    }
+    MASTERJNSPENDAPATAN {
+        int idjnsd PK
+        int parentid FK
+    }
+    MASTERKABKOTA {
+        bigint idkabkota PK
+        bigint idprovinsi FK
+    }
+    MASTERKABKOTAALL {
+        bigint idkabkotaall PK
+        bigint idprovinsi FK
+    }
+    MASTERKAUPT {
+        bigint idkaupt PK
+        bigint idpegawai FK
+        bigint idupt FK
+    }
+    MASTERKB {
+        bigint idkb PK
+        bigint idktp FK
+        bigint idkabkokta FK
+        bigint idkecamatan FK
+        bigint idkelurahan FK
+        int idrw FK
+        int idrt FK
+        char jnskendid FK
+        int idmerk FK
+        varchar kdmilik FK
+        varchar kdguna FK
+        varchar kdplat FK
+    }
+    MASTERKBDET {
+        bigint idkbdet PK
+        bigint idkb FK
+        int idjnsd FK
+    }
+    MASTERKECAMATAN {
+        bigint idkecamatan PK
+        bigint idkabkota FK
+    }
+    MASTERKELURAHAN {
+        bigint idkelurahan PK
+        bigint idkecamatan FK
+    }
+    MASTERKIOSK {
+        int idkios PK
+        int idparent FK
+    }
+    MASTERKTP {
+        bigint idktp PK
+        bigint idkabkokta FK
+        bigint idkecamatan FK
+        bigint idkelurahan FK
+    }
+    MASTERLIBUR {
+        int idlibur PK
+        bigint idkabkota FK
+    }
+    MASTERMERK {
+        int idmerk PK
+    }
+    MASTERNPWPD {
+        bigint idnpwpd PK
+        bigint idbadan FK
+        bigint idktp FK
+    }
+    MASTERPEGAWAI {
+        bigint idpegawai PK
+        bigint idktp FK
+        bigint idupt FK
+    }
+    MASTERPROVINSI {
+        bigint idprovinsi PK
+    }
+    MASTERREKD {
+        int idrekd PK
+        varchar kdjnspjk FK
+    }
+    MASTERREKNRC {
+        int idreknrc PK
+    }
+    MASTERRT {
+        int idrt PK
+        int idrw FK
+    }
+    MASTERRW {
+        int idrw PK
+        bigint idkelurahan FK
+    }
+    MASTERTARIF {
+        bigint idtarif PK
+        varchar kdjnspjk FK
+        char jnskendid FK
+        varchar kdflow FK
+        varchar kdplat FK
+    }
+    MASTERTARIFNJOP {
+        bigint idtarifnjop PK
+        bigint iduunjop FK
+        int idrekd FK
+        char kdjnstarif FK
+        int idmerk FK
+    }
+    MASTERTEKS {
+        int idteks PK
+    }
+    MASTERUPT {
+        bigint idupt PK
+        int idbank FK
+        bigint idkabkota FK
+    }
+    MASTERUUNJOP {
+        bigint iduunjop PK
+    }
+    MASTERWP {
+        bigint idwp PK
+        bigint idktp FK
+        bigint idkabkokta FK
+        bigint idkecamatan FK
+        bigint idkelurahan FK
+        int idrw FK
+        int idrt FK
+        char jnskendid FK
+        int idmerk FK
+        varchar kdmilik FK
+        varchar kdguna FK
+        varchar kdplat FK
+    }
+    MASTERWPDATA {
+        bigint idwpdata PK
+        int idjnsd FK
+        bigint idwp FK
+    }
+    TRANSDATAKOHIR {
+        bigint idkohir PK
+        bigint idwp FK
+        bigint idupt FK
+    }
+    TRANSHISTPENDATAAN {
+        bigint idhistpendataan PK
+        bigint idwpdata FK
+    }
+    TRANSHISTPENDATAANDET {
+        bigint idhistpendataandet PK
+        bigint idhistpendataan FK
+        bigint idpenetapan FK
+    }
+    TRANSHISTPENETAPAN {
+        bigint idhistpenetapan PK
+        bigint idkohir FK
+        bigint idwpdata FK
+    }
+    TRANSPENDATAAN {
+        bigint idpendataan PK
+        bigint idwpdata FK
+    }
+    TRANSPENDATAANDET {
+        bigint idpendataandet PK
+        bigint idpendataan FK
+        bigint idpenetapan FK
+    }
+    TRANSPENETAPAN {
+        bigint idpenetapan PK
+        bigint idkohir FK
+        bigint idwpdata FK
+    }
+    TRANSSTS {
+        bigint idsts PK
+        bigint idupt FK
+        bigint idbend FK
+    }
+    TRANSSTSDET {
+        bigint idstsdet PK
+        bigint idsts FK
+        int idrekd FK
+    }
+    TRANSWPDATA {
+        bigint idtwpdata PK
+        bigint idnpwpd FK
+    }
+    TRANSWPDATAANTRI {
+        int idantri PK
+        bigint idtwpdata FK
+        bigint idktp FK
+    }
+    TRANSWPDATAFILE {
+        bigint idfile PK
+        bigint idtwpdata FK
+    }
+    REF_FLAG {
+        char flag_code PK
+    }
+
+    APPGROUPUSER ||--o{ APPOTOR : has
+    APPROLE ||--o{ APPOTOR : has
+    APPGROUPUSER ||--o{ APPUSER : has
+    JNSKATKENDARAAN ||--o{ JNSKENDARAAN : contains
+    JNSJR ||--o{ JNSKENDARAAN : classifies
+    MASTERPROVINSI ||--o{ MASTERKABKOTA : contains
+    MASTERPROVINSI ||--o{ MASTERKABKOTAALL : contains
+    MASTERKABKOTA ||--o{ MASTERKECAMATAN : contains
+    MASTERKECAMATAN ||--o{ MASTERKELURAHAN : contains
+    MASTERKELURAHAN ||--o{ MASTERRW : contains
+    MASTERRW ||--o{ MASTERRT : contains
+    MASTERKABKOTA ||--o{ MASTERKTP : contains
+    MASTERKTP ||--o{ MASTERBADAN : owns
+    MASTERKTP ||--o{ MASTERAB : owns
+    MASTERKTP ||--o{ MASTERKB : owns
+    MASTERKTP ||--o{ MASTERWP : owns
+    MASTERKTP ||--o{ MASTERHISTORY : owns
+    MASTERKABKOTA ||--o{ MASTERAB : located
+    MASTERKECAMATAN ||--o{ MASTERAB : located
+    MASTERKELURAHAN ||--o{ MASTERAB : located
+    MASTERRW ||--o{ MASTERAB : located
+    MASTERRT ||--o{ MASTERAB : located
+    MASTERKABKOTA ||--o{ MASTERKB : located
+    MASTERKECAMATAN ||--o{ MASTERKB : located
+    MASTERKELURAHAN ||--o{ MASTERKB : located
+    MASTERRW ||--o{ MASTERKB : located
+    MASTERRT ||--o{ MASTERKB : located
+    MASTERKABKOTA ||--o{ MASTERWP : located
+    MASTERKECAMATAN ||--o{ MASTERWP : located
+    MASTERKELURAHAN ||--o{ MASTERWP : located
+    MASTERRW ||--o{ MASTERWP : located
+    MASTERRT ||--o{ MASTERWP : located
+    JNSKENDARAAN ||--o{ MASTERAB : vehicle
+    JNSKENDARAAN ||--o{ MASTERKB : vehicle
+    JNSKENDARAAN ||--o{ MASTERWP : vehicle
+    JNSKENDARAAN ||--o{ MASTERHISTORY : vehicle
+    MASTERMERK ||--o{ MASTERAB : brand
+    MASTERMERK ||--o{ MASTERKB : brand
+    MASTERMERK ||--o{ MASTERWP : brand
+    MASTERMERK ||--o{ MASTERHISTORY : brand
+    JNSMILIK ||--o{ MASTERAB : ownership
+    JNSMILIK ||--o{ MASTERKB : ownership
+    JNSMILIK ||--o{ MASTERWP : ownership
+    JNSMILIK ||--o{ MASTERHISTORY : ownership
+    JNSGUNA ||--o{ MASTERAB : usage
+    JNSGUNA ||--o{ MASTERKB : usage
+    JNSGUNA ||--o{ MASTERWP : usage
+    JNSGUNA ||--o{ MASTERHISTORY : usage
+    JNSPLAT ||--o{ MASTERAB : plate
+    JNSPLAT ||--o{ MASTERKB : plate
+    JNSPLAT ||--o{ MASTERWP : plate
+    JNSPLAT ||--o{ MASTERHISTORY : plate
+    JNSDOK ||--o{ MASTERJABTTD : document
+    MASTERBANK ||--o{ MASTERBENDAHARA : bank
+    MASTERREKNRC ||--o{ MASTERBENDAHARA : account
+    MASTERPEGAWAI ||--o{ MASTERBENDAHARA : employee
+    MASTERPEGAWAI ||--o{ MASTERKAUPT : officer
+    MASTERUPT ||--o{ MASTERKAUPT : office
+    MASTERUPT ||--o{ MASTERPEGAWAI : office
+    MASTERUPT ||--o{ TRANSDATAKOHIR : office
+    MASTERUPT ||--o{ TRANSSTS : office
+    MASTERBANK ||--o{ MASTERUPT : bank
+    MASTERKABKOTA ||--o{ MASTERUPT : region
+    MASTERJNSPENDAPATAN ||--o{ MASTERABDET : income
+    MASTERJNSPENDAPATAN ||--o{ MASTERKBDET : income
+    MASTERJNSPENDAPATAN ||--o{ MASTERWPDATA : income
+    MASTERJNSPENDAPATAN ||--o{ MASTERJNSPENDAPATAN : parent
+    MASTERWPDATA ||--o{ TRANSPENDATAAN : data
+    MASTERWPDATA ||--o{ TRANSHISTPENDATAAN : history
+    MASTERWPDATA ||--o{ TRANSHISTPENETAPAN : history
+    MASTERWPDATA ||--o{ TRANSPENETAPAN : data
+    MASTERWPDATA ||--o{ TRANSPENDATAAN : data
+    TRANSDATAKOHIR ||--o{ TRANSPENETAPAN : kohir
+    TRANSDATAKOHIR ||--o{ TRANSHISTPENETAPAN : kohir
+    TRANSPENETAPAN ||--o{ TRANSPENDATAANDET : detail
+    TRANSPENETAPAN ||--o{ TRANSHISTPENDATAANDET : detail
+    TRANSHISTPENDATAAN ||--o{ TRANSHISTPENDATAANDET : detail
+    TRANSPENDATAAN ||--o{ TRANSPENDATAANDET : detail
+    MASTERWP ||--o{ MASTERHISTORY : history
+    MASTERWP ||--o{ MASTERWPDATA : data
+    MASTERWP ||--o{ TRANSDATAKOHIR : kohir
+    MASTERBADAN ||--o{ MASTERNPWPD : registration
+    MASTERKTP ||--o{ TRANSWPDATAANTRI : queue
+    MASTERNPWPD ||--o{ TRANSWPDATA : registration
+    TRANSWPDATA ||--o{ TRANSWPDATAANTRI : queue
+    TRANSWPDATA ||--o{ TRANSWPDATAFILE : file
+    MASTERREKD ||--o{ TRANSSTSDET : revenue
+    JNSPAJAK ||--o{ MASTERREKD : tax
+    JNSPAJAK ||--o{ MASTERTARIF : tax
+    MASTERFLOW ||--o{ MASTERTARIF : flow
+    JNSKENDARAAN ||--o{ MASTERTARIF : vehicle
+    JNSPLAT ||--o{ MASTERTARIF : plate
+    MASTERUUNJOP ||--o{ MASTERTARIFNJOP : rule
+    MASTERREKD ||--o{ MASTERTARIFNJOP : revenue
+    JNSTARIF ||--o{ MASTERTARIFNJOP : tariff
+    MASTERMERK ||--o{ MASTERTARIFNJOP : brand
+    REF_FLAG ||--o{ JNSGOLONGAN : flag
+    REF_FLAG ||--o{ JNSHIST : flag
+    REF_FLAG ||--o{ JNSKATKENDARAAN : flag
+    REF_FLAG ||--o{ JNSMILIK : flag
+    REF_FLAG ||--o{ JNSRANMOR : flag
+    REF_FLAG ||--o{ JNSTARIF : flag
+    REF_FLAG ||--o{ JNSUMUM : flag
+    REF_FLAG ||--o{ MASTERBANK : flag
+    REF_FLAG ||--o{ MASTERBENDAHARA : flag
+    REF_FLAG ||--o{ MASTERFLOW : flag
+    REF_FLAG ||--o{ MASTERHAPUSDENDA : flag
+    REF_FLAG ||--o{ MASTERHISTORY : flag
+    REF_FLAG ||--o{ MASTERJABTTD : flag
+    REF_FLAG ||--o{ MASTERJNSPENDAPATAN : flag
+    REF_FLAG ||--o{ MASTERKABKOTA : flag
+    REF_FLAG ||--o{ MASTERKABKOTAALL : flag
+    REF_FLAG ||--o{ MASTERKECAMATAN : flag
+    REF_FLAG ||--o{ MASTERKELURAHAN : flag
+    REF_FLAG ||--o{ MASTERKIOSK : flag
+    REF_FLAG ||--o{ MASTERKTP : flag
+    REF_FLAG ||--o{ MASTERMERK : flag
+    REF_FLAG ||--o{ MASTERNPWPD : flag
+    REF_FLAG ||--o{ MASTERPEGAWAI : flag
+    REF_FLAG ||--o{ MASTERPROVINSI : flag
+    REF_FLAG ||--o{ MASTERREKD : flag
+    REF_FLAG ||--o{ MASTERRT : flag
+    REF_FLAG ||--o{ MASTERRW : flag
+    REF_FLAG ||--o{ MASTERTARIFNJOP : flag
+    REF_FLAG ||--o{ MASTERTEKS : flag
+    REF_FLAG ||--o{ MASTERUPT : flag
+    REF_FLAG ||--o{ MASTERUUNJOP : flag
+    REF_FLAG ||--o{ MASTERWP : flag
+    REF_FLAG ||--o{ MASTERAB : flag
+    REF_FLAG ||--o{ MASTERKB : flag
+    REF_FLAG ||--o{ TRANSDATAKOHIR : flag
+    REF_FLAG ||--o{ TRANSHISTPENDATAAN : flag
+    REF_FLAG ||--o{ TRANSHISTPENDATAANDET : flag
+    REF_FLAG ||--o{ TRANSHISTPENETAPAN : flag
+    REF_FLAG ||--o{ TRANSPENDATAAN : flag
+    REF_FLAG ||--o{ TRANSPENDATAANDET : flag
+    REF_FLAG ||--o{ TRANSPENETAPAN : flag
+    REF_FLAG ||--o{ TRANSSTS : flag
+    REF_FLAG ||--o{ TRANSWPDATAANTRI : flag
+```
+
 Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 
 ## Tabel `appgroupuser`
@@ -1359,3 +1827,10 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
 | updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
+
+## Tabel `ref_flag`
+
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| flag_code | character(1) | NOT NULL |  | Kode flag. |
+| description | character varying(50) | NOT NULL |  | Deskripsi status. |
