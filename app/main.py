@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from core.database import Base, engine
-from interfaces.api import users
+from app.core.database import Base, engine
+from app.interfaces.api import users
 
 Base.metadata.create_all(bind=engine)
 

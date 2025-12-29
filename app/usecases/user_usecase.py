@@ -1,6 +1,6 @@
 from typing import List
-from domain.entities.user import User
-from domain.repositories.user_repository import UserRepository
+from app.domain.entities.user import User
+from app.domain.repositories.user_repository import UserRepository
 from passlib.context import CryptContext
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
