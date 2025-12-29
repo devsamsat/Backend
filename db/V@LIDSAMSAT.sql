@@ -33,9 +33,9 @@ CREATE TABLE public.appgroupuser (
     kdgroup character varying(30) NOT NULL,
     nmgroup character varying(50) NOT NULL,
     ket character varying(100),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -51,9 +51,9 @@ CREATE TABLE public.appotor (
     kdgroup character varying(30) NOT NULL,
     roleid character varying(50) NOT NULL,
     ket character varying(100),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -69,17 +69,17 @@ CREATE TABLE public.approle (
     roleid character varying(50) NOT NULL,
     idapp bigint,
     role character varying(254),
-    type character(2),
+    role_type character(2),
     menuid character varying(50),
     parentid character varying(50),
     bantuan character varying(254),
     link character varying(254),
     icon character varying(254),
     kdlevel integer,
-    show integer,
-    created_at date DEFAULT CURRENT_DATE,
+    is_show integer,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -101,9 +101,9 @@ CREATE TABLE public.appuser (
     nik character varying(50),
     nama character varying(100),
     email character varying(50),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -119,9 +119,9 @@ CREATE TABLE public.jnsdok (
     kddok character varying(10) NOT NULL,
     namadok character varying(30) NOT NULL,
     keterangan character varying(200),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -140,9 +140,9 @@ CREATE TABLE public.jnsgolongan (
     jnskendid character(3),
     viewall character(1),
     status character(1),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -160,9 +160,9 @@ CREATE TABLE public.jnsguna (
     gunaplat character varying(2),
     progresif numeric(18,2),
     groupbpkb character varying(20) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -179,9 +179,9 @@ CREATE TABLE public.jnshist (
     nmhist character varying(50) NOT NULL,
     kdflow character(2),
     status character(1),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -200,9 +200,9 @@ CREATE TABLE public.jnsjr (
     pu character varying(2) NOT NULL,
     roda integer NOT NULL,
     keterangan character varying(200),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -219,9 +219,9 @@ CREATE TABLE public.jnskatkendaraan (
     kendaraan character varying(30) NOT NULL,
     jenisbpkb character varying(20) NOT NULL,
     status character(1),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -240,9 +240,9 @@ CREATE TABLE public.jnskendaraan (
     jnsjrid character(2),
     golpjr integer,
     golujr integer,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -259,9 +259,9 @@ CREATE TABLE public.jnsmilik (
     milik character varying(30) NOT NULL,
     bpkpid character varying(2) NOT NULL,
     status character(1),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -277,9 +277,9 @@ CREATE TABLE public.jnspajak (
     kdjnspjk character varying(2) NOT NULL,
     nmjnspjk character varying(50) NOT NULL,
     keterangan character varying(200),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -320,9 +320,9 @@ CREATE TABLE public.jnsplat (
     minnumpkb numeric(18,4) NOT NULL,
     minnumbbn1 numeric(18,4) NOT NULL,
     minnumbbn2 numeric(18,4) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -338,9 +338,9 @@ CREATE TABLE public.jnsprogresif (
     kdprogresif integer NOT NULL,
     progresifr2 numeric(18,2) NOT NULL,
     progresifr4 numeric(18,2) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -357,9 +357,9 @@ CREATE TABLE public.jnsranmor (
     nmranmor character varying(30) NOT NULL,
     snid character(1) NOT NULL,
     status character(1),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -375,9 +375,9 @@ CREATE TABLE public.jnsstrurek (
     mtglevel character(2) NOT NULL,
     nmlevel character varying(50) NOT NULL,
     keterangan character varying(100) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -396,9 +396,9 @@ CREATE TABLE public.jnstarif (
     jnskendid character(3),
     idrekd integer,
     status character(1),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -415,9 +415,9 @@ CREATE TABLE public.jnsumum (
     nmumum character varying(30) NOT NULL,
     keterangan character varying(100) NOT NULL,
     status character(1),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -438,9 +438,9 @@ CREATE TABLE public.mapjnspendapatan (
     idrekopsenbbnkb integer,
     idrekpnbp integer,
     keterangan character varying(200),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -501,9 +501,9 @@ CREATE TABLE public.masterab (
     kendke integer,
     warna character varying(50),
     kdplat character varying(2) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -534,9 +534,9 @@ CREATE TABLE public.masterabdet (
     idabdet bigint NOT NULL,
     idab bigint NOT NULL,
     idjnsd integer NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -574,9 +574,9 @@ CREATE TABLE public.masterbadan (
     idprovinsi bigint,
     idkabkokta bigint,
     ket character varying(512),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -611,9 +611,9 @@ CREATE TABLE public.masterbank (
     cabangbank character varying(50),
     alamatbank character varying(100),
     status character(1),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -644,9 +644,9 @@ CREATE TABLE public.masterbbm (
     kodebbm character varying(10) NOT NULL,
     namabbm character varying(50) NOT NULL,
     keterangan character varying(100),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -673,9 +673,9 @@ CREATE TABLE public.masterbendahara (
     idreknrc integer,
     telepon character varying(30),
     ket character varying(200),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -719,9 +719,9 @@ CREATE TABLE public.masterflow (
     bataslayanan integer,
     satuan character varying(50),
     status character(1),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -743,9 +743,9 @@ CREATE TABLE public.masterhapusdenda (
     satuan character varying(30),
     ket character varying(256),
     status character(1),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -844,9 +844,9 @@ CREATE TABLE public.masterhistory (
     status character(1),
     statint character(1),
     histid character varying(3) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -880,9 +880,9 @@ CREATE TABLE public.masterjabttd (
     jabatan character varying(50),
     ket character varying(256),
     status character(1),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -918,9 +918,9 @@ CREATE TABLE public.masterjnspendapatan (
     status character(1),
     selfassessment character(1),
     katid character(1),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -956,9 +956,9 @@ CREATE TABLE public.masterkabkota (
     ibukota character varying(50) NOT NULL,
     status character(1) NOT NULL,
     bpkbid character varying(4) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -991,9 +991,9 @@ CREATE TABLE public.masterkabkotaall (
     kdkabkota character(8),
     nmkabkota character varying(100) NOT NULL,
     status character(1) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1024,9 +1024,9 @@ CREATE TABLE public.masterkaupt (
     idkaupt bigint NOT NULL,
     idpegawai bigint,
     idupt bigint NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1087,9 +1087,9 @@ CREATE TABLE public.masterkb (
     kendke integer,
     warna character varying(50),
     kdplat character varying(2) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1120,9 +1120,9 @@ CREATE TABLE public.masterkbdet (
     idkbdet bigint NOT NULL,
     idkb bigint NOT NULL,
     idjnsd integer NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1158,9 +1158,9 @@ CREATE TABLE public.masterkecamatan (
     telepon character varying(30) NOT NULL,
     fax character varying(30),
     status character(1) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1196,9 +1196,9 @@ CREATE TABLE public.masterkelurahan (
     telepon character varying(30) NOT NULL,
     kodepos character varying(30),
     status character(1) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1232,9 +1232,9 @@ CREATE TABLE public.masterkiosk (
     datakiosk character varying(200) NOT NULL,
     level character(1) NOT NULL,
     status character(1) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1295,9 +1295,9 @@ CREATE TABLE public.masterktp (
     statint character(1),
     tglint date,
     ket character varying(512),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1331,9 +1331,9 @@ CREATE TABLE public.masterlibur (
     tanggal date DEFAULT CURRENT_DATE,
     namalibur character varying(150),
     keterangan character(3),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1366,9 +1366,9 @@ CREATE TABLE public.mastermerk (
     nmmerk character varying(100) NOT NULL,
     keterangan character varying(200),
     status character(1),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1407,9 +1407,9 @@ CREATE TABLE public.masternpwpd (
     alamat character varying(100),
     status character(1),
     ket character varying(512),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1449,9 +1449,9 @@ CREATE TABLE public.masterpegawai (
     golongan character varying(20),
     uid character varying(15),
     telepon character varying(30),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1483,9 +1483,9 @@ CREATE TABLE public.masterprovinsi (
     kdprovinsi character varying(10) NOT NULL,
     nmprovinsi character varying(100) NOT NULL,
     status character(1) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1519,11 +1519,11 @@ CREATE TABLE public.masterrekd (
     kdrek character varying(30) NOT NULL,
     nmrek character varying(200),
     kdjnspjk character varying(2),
-    type character(1),
+    rek_type character(1),
     status character(1),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1555,10 +1555,10 @@ CREATE TABLE public.masterreknrc (
     mtglevel character(2),
     kdrek character varying(30) NOT NULL,
     nmrek character varying(500),
-    type character(1),
-    created_at date DEFAULT CURRENT_DATE,
+    rek_type character(1),
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1590,9 +1590,9 @@ CREATE TABLE public.masterrt (
     idrw integer NOT NULL,
     kdrt character(10),
     status character(1) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1625,9 +1625,9 @@ CREATE TABLE public.masterrw (
     kdrw character(10),
     alamat character varying(100) NOT NULL,
     status character(1) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1666,9 +1666,9 @@ CREATE TABLE public.mastertarif (
     kdplat character varying(2),
     statumum character(1),
     tarif numeric(18,2),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1706,11 +1706,11 @@ CREATE TABLE public.mastertarifnjop (
     silinder character varying(50),
     tahun character(4),
     kodebbm character varying(10),
-    njop money,
+    njop numeric(18,2),
     status character(1),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1741,9 +1741,9 @@ CREATE TABLE public.masterteks (
     idteks integer NOT NULL,
     datateks character varying(1024) NOT NULL,
     status character(1) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1776,7 +1776,7 @@ CREATE TABLE public.masterupt (
     kdupt character varying(50) NOT NULL,
     nmupt character varying(500) NOT NULL,
     kdlevel character(1),
-    type character(5) NOT NULL,
+    upt_type character(5) NOT NULL,
     akroupt character varying(200),
     alamat character varying(200),
     telepon character varying(200),
@@ -1787,9 +1787,9 @@ CREATE TABLE public.masterupt (
     bendahara bigint,
     norekb character varying(20),
     status character(1),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1823,9 +1823,9 @@ CREATE TABLE public.masteruunjop (
     tahun character(4),
     status character(1),
     keterangan character varying(200),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1922,9 +1922,9 @@ CREATE TABLE public.masterwp (
     putih character varying(1),
     status character(1),
     statint character(1),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -1956,13 +1956,9 @@ CREATE TABLE public.masterwpdata (
     idjnsd integer NOT NULL,
     tglpendataan date DEFAULT CURRENT_DATE,
     idwp bigint NOT NULL,
-    createdate date DEFAULT CURRENT_DATE,
-    createby character varying(50),
-    updatedate date DEFAULT CURRENT_DATE,
-    updateby character varying(50),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -2007,9 +2003,9 @@ CREATE TABLE public.transdatakohir (
     ntpd character varying(50),
     tglntpd date,
     idbank character varying(3),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -2051,9 +2047,9 @@ CREATE TABLE public.transhistpendataan (
     kdflow character varying(10),
     histid character varying(3) NOT NULL,
     status character(1) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -2092,9 +2088,9 @@ CREATE TABLE public.transhistpendataandet (
     tarifpajak numeric(18,2) NOT NULL,
     histid character varying(3) NOT NULL,
     status character(1) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -2149,9 +2145,9 @@ CREATE TABLE public.transhistpenetapan (
     opskota numeric(18,2),
     dendaopsprov numeric(18,2),
     dendaopskota numeric(18,2),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -2191,9 +2187,9 @@ CREATE TABLE public.transpendataan (
     idupt bigint NOT NULL,
     kdflow character varying(10),
     status character(1) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -2231,9 +2227,9 @@ CREATE TABLE public.transpendataandet (
     usahaid integer NOT NULL,
     tarifpajak numeric(18,2) NOT NULL,
     status character(1) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -2287,9 +2283,9 @@ CREATE TABLE public.transpenetapan (
     opskota numeric(18,2),
     dendaopsprov numeric(18,2),
     dendaopskota numeric(18,2),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -2328,9 +2324,9 @@ CREATE TABLE public.transsts (
     ntpd character varying(50),
     tglntpd date,
     statsts integer,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -2363,9 +2359,9 @@ CREATE TABLE public.transstsdet (
     idrekd integer NOT NULL,
     nilaists numeric(18,2) NOT NULL,
     jenis character(1) NOT NULL,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -2397,9 +2393,9 @@ CREATE TABLE public.transwpdata (
     idnpwpd bigint NOT NULL,
     kdflow character varying(10),
     tgldaftar date DEFAULT CURRENT_DATE,
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -2434,9 +2430,9 @@ CREATE TABLE public.transwpdataantri (
     statantri character(1),
     ket character varying(100),
     tglantri character varying(30),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -2471,9 +2467,9 @@ CREATE TABLE public.transwpdatafile (
     extension character varying(50),
     size bigint,
     url character varying(200),
-    created_at date DEFAULT CURRENT_DATE,
+    created_at timestamptz NOT NULL DEFAULT now(),
     created_by character varying(50),
-    updated_at date DEFAULT CURRENT_DATE,
+    updated_at timestamptz NOT NULL DEFAULT now(),
     updated_by character varying(50)
 );
 
@@ -2493,6 +2489,1353 @@ ALTER TABLE public.transwpdatafile ALTER COLUMN idfile ADD GENERATED ALWAYS AS I
     NO MAXVALUE
     CACHE 1
 );
+
+--
+-- Constraints, indexes, and audit triggers
+--
+
+CREATE TABLE public.ref_flag (
+    flag_code character(1) NOT NULL,
+    description character varying(50) NOT NULL
+);
+
+ALTER TABLE public.ref_flag OWNER TO postgres;
+
+ALTER TABLE public.ref_flag
+    ADD CONSTRAINT ref_flag_pkey PRIMARY KEY (flag_code);
+
+INSERT INTO public.ref_flag (flag_code, description)
+VALUES
+    ('0', 'Tidak/Nonaktif'),
+    ('1', 'Ya/Aktif');
+
+CREATE OR REPLACE FUNCTION public.set_updated_at()
+RETURNS trigger
+LANGUAGE plpgsql
+AS $$
+BEGIN
+    NEW.updated_at = now();
+    RETURN NEW;
+END;
+$$;
+
+ALTER TABLE public.appgroupuser
+    ADD CONSTRAINT appgroupuser_pkey PRIMARY KEY (kdgroup);
+
+ALTER TABLE public.appotor
+    ADD CONSTRAINT appotor_pkey PRIMARY KEY (kdgroup, roleid);
+
+ALTER TABLE public.approle
+    ADD CONSTRAINT approle_pkey PRIMARY KEY (roleid);
+
+ALTER TABLE public.appuser
+    ADD CONSTRAINT appuser_pkey PRIMARY KEY (userid);
+
+ALTER TABLE public.jnsdok
+    ADD CONSTRAINT jnsdok_pkey PRIMARY KEY (kddok);
+
+ALTER TABLE public.jnsgolongan
+    ADD CONSTRAINT jnsgolongan_pkey PRIMARY KEY (jnsgolid);
+
+ALTER TABLE public.jnsguna
+    ADD CONSTRAINT jnsguna_pkey PRIMARY KEY (kdguna);
+
+ALTER TABLE public.jnshist
+    ADD CONSTRAINT jnshist_pkey PRIMARY KEY (kdhist);
+
+ALTER TABLE public.jnsjr
+    ADD CONSTRAINT jnsjr_pkey PRIMARY KEY (jnsjrid);
+
+ALTER TABLE public.jnskatkendaraan
+    ADD CONSTRAINT jnskatkendaraan_pkey PRIMARY KEY (katid);
+
+ALTER TABLE public.jnskendaraan
+    ADD CONSTRAINT jnskendaraan_pkey PRIMARY KEY (jnskendid);
+
+ALTER TABLE public.jnsmilik
+    ADD CONSTRAINT jnsmilik_pkey PRIMARY KEY (kdmilik);
+
+ALTER TABLE public.jnspajak
+    ADD CONSTRAINT jnspajak_pkey PRIMARY KEY (kdjnspjk);
+
+ALTER TABLE public.jnsplat
+    ADD CONSTRAINT jnsplat_pkey PRIMARY KEY (kdplat);
+
+ALTER TABLE public.jnsprogresif
+    ADD CONSTRAINT jnsprogresif_pkey PRIMARY KEY (kdprogresif);
+
+ALTER TABLE public.jnsranmor
+    ADD CONSTRAINT jnsranmor_pkey PRIMARY KEY (kdranmor);
+
+ALTER TABLE public.jnsstrurek
+    ADD CONSTRAINT jnsstrurek_pkey PRIMARY KEY (mtglevel);
+
+ALTER TABLE public.jnstarif
+    ADD CONSTRAINT jnstarif_pkey PRIMARY KEY (kdjnstarif);
+
+ALTER TABLE public.jnsumum
+    ADD CONSTRAINT jnsumum_pkey PRIMARY KEY (kdumum);
+
+ALTER TABLE public.mapjnspendapatan
+    ADD CONSTRAINT mapjnspendapatan_pkey PRIMARY KEY (idmapjnsd);
+
+ALTER TABLE public.masterab
+    ADD CONSTRAINT masterab_pkey PRIMARY KEY (idab);
+
+ALTER TABLE public.masterabdet
+    ADD CONSTRAINT masterabdet_pkey PRIMARY KEY (idabdet);
+
+ALTER TABLE public.masterbadan
+    ADD CONSTRAINT masterbadan_pkey PRIMARY KEY (idbadan);
+
+ALTER TABLE public.masterbank
+    ADD CONSTRAINT masterbank_pkey PRIMARY KEY (idbank);
+
+ALTER TABLE public.masterbbm
+    ADD CONSTRAINT masterbbm_pkey PRIMARY KEY (kodebbm);
+
+ALTER TABLE public.masterbendahara
+    ADD CONSTRAINT masterbendahara_pkey PRIMARY KEY (idbend);
+
+ALTER TABLE public.masterflow
+    ADD CONSTRAINT masterflow_pkey PRIMARY KEY (kdflow);
+
+ALTER TABLE public.masterhapusdenda
+    ADD CONSTRAINT masterhapusdenda_pkey PRIMARY KEY (idhapusdenda);
+
+ALTER TABLE public.masterhistory
+    ADD CONSTRAINT masterhistory_pkey PRIMARY KEY (idhistory);
+
+ALTER TABLE public.masterjabttd
+    ADD CONSTRAINT masterjabttd_pkey PRIMARY KEY (idjabttd);
+
+ALTER TABLE public.masterjnspendapatan
+    ADD CONSTRAINT masterjnspendapatan_pkey PRIMARY KEY (idjnsd);
+
+ALTER TABLE public.masterkabkota
+    ADD CONSTRAINT masterkabkota_pkey PRIMARY KEY (idkabkota);
+
+ALTER TABLE public.masterkabkotaall
+    ADD CONSTRAINT masterkabkotaall_pkey PRIMARY KEY (idkabkotaall);
+
+ALTER TABLE public.masterkaupt
+    ADD CONSTRAINT masterkaupt_pkey PRIMARY KEY (idkaupt);
+
+ALTER TABLE public.masterkb
+    ADD CONSTRAINT masterkb_pkey PRIMARY KEY (idkb);
+
+ALTER TABLE public.masterkbdet
+    ADD CONSTRAINT masterkbdet_pkey PRIMARY KEY (idkbdet);
+
+ALTER TABLE public.masterkecamatan
+    ADD CONSTRAINT masterkecamatan_pkey PRIMARY KEY (idkecamatan);
+
+ALTER TABLE public.masterkelurahan
+    ADD CONSTRAINT masterkelurahan_pkey PRIMARY KEY (idkelurahan);
+
+ALTER TABLE public.masterkiosk
+    ADD CONSTRAINT masterkiosk_pkey PRIMARY KEY (idkios);
+
+ALTER TABLE public.masterktp
+    ADD CONSTRAINT masterktp_pkey PRIMARY KEY (idktp);
+
+ALTER TABLE public.masterlibur
+    ADD CONSTRAINT masterlibur_pkey PRIMARY KEY (idlibur);
+
+ALTER TABLE public.mastermerk
+    ADD CONSTRAINT mastermerk_pkey PRIMARY KEY (idmerk);
+
+ALTER TABLE public.masternpwpd
+    ADD CONSTRAINT masternpwpd_pkey PRIMARY KEY (idnpwpd);
+
+ALTER TABLE public.masterpegawai
+    ADD CONSTRAINT masterpegawai_pkey PRIMARY KEY (idpegawai);
+
+ALTER TABLE public.masterprovinsi
+    ADD CONSTRAINT masterprovinsi_pkey PRIMARY KEY (idprovinsi);
+
+ALTER TABLE public.masterrekd
+    ADD CONSTRAINT masterrekd_pkey PRIMARY KEY (idrekd);
+
+ALTER TABLE public.masterreknrc
+    ADD CONSTRAINT masterreknrc_pkey PRIMARY KEY (idreknrc);
+
+ALTER TABLE public.masterrt
+    ADD CONSTRAINT masterrt_pkey PRIMARY KEY (idrt);
+
+ALTER TABLE public.masterrw
+    ADD CONSTRAINT masterrw_pkey PRIMARY KEY (idrw);
+
+ALTER TABLE public.mastertarif
+    ADD CONSTRAINT mastertarif_pkey PRIMARY KEY (idtarif);
+
+ALTER TABLE public.mastertarifnjop
+    ADD CONSTRAINT mastertarifnjop_pkey PRIMARY KEY (idtarifnjop);
+
+ALTER TABLE public.masterteks
+    ADD CONSTRAINT masterteks_pkey PRIMARY KEY (idteks);
+
+ALTER TABLE public.masterupt
+    ADD CONSTRAINT masterupt_pkey PRIMARY KEY (idupt);
+
+ALTER TABLE public.masteruunjop
+    ADD CONSTRAINT masteruunjop_pkey PRIMARY KEY (iduunjop);
+
+ALTER TABLE public.masterwp
+    ADD CONSTRAINT masterwp_pkey PRIMARY KEY (idwp);
+
+ALTER TABLE public.masterwpdata
+    ADD CONSTRAINT masterwpdata_pkey PRIMARY KEY (idwpdata);
+
+ALTER TABLE public.transdatakohir
+    ADD CONSTRAINT transdatakohir_pkey PRIMARY KEY (idkohir);
+
+ALTER TABLE public.transhistpendataan
+    ADD CONSTRAINT transhistpendataan_pkey PRIMARY KEY (idhistpendataan);
+
+ALTER TABLE public.transhistpendataandet
+    ADD CONSTRAINT transhistpendataandet_pkey PRIMARY KEY (idhistpendataandet);
+
+ALTER TABLE public.transhistpenetapan
+    ADD CONSTRAINT transhistpenetapan_pkey PRIMARY KEY (idhistpenetapan);
+
+ALTER TABLE public.transpendataan
+    ADD CONSTRAINT transpendataan_pkey PRIMARY KEY (idpendataan);
+
+ALTER TABLE public.transpendataandet
+    ADD CONSTRAINT transpendataandet_pkey PRIMARY KEY (idpendataandet);
+
+ALTER TABLE public.transpenetapan
+    ADD CONSTRAINT transpenetapan_pkey PRIMARY KEY (idpenetapan);
+
+ALTER TABLE public.transsts
+    ADD CONSTRAINT transsts_pkey PRIMARY KEY (idsts);
+
+ALTER TABLE public.transstsdet
+    ADD CONSTRAINT transstsdet_pkey PRIMARY KEY (idstsdet);
+
+ALTER TABLE public.transwpdata
+    ADD CONSTRAINT transwpdata_pkey PRIMARY KEY (idtwpdata);
+
+ALTER TABLE public.transwpdataantri
+    ADD CONSTRAINT transwpdataantri_pkey PRIMARY KEY (idantri);
+
+ALTER TABLE public.transwpdatafile
+    ADD CONSTRAINT transwpdatafile_pkey PRIMARY KEY (idfile);
+
+ALTER TABLE public.masterbank
+    ADD CONSTRAINT masterbank_kodebank_key UNIQUE (kodebank);
+
+ALTER TABLE public.masterrekd
+    ADD CONSTRAINT masterrekd_kdrek_key UNIQUE (kdrek);
+
+ALTER TABLE public.masterupt
+    ADD CONSTRAINT masterupt_norekb_key UNIQUE (norekb);
+
+ALTER TABLE public.masternpwpd
+    ADD CONSTRAINT masternpwpd_npwpd_key UNIQUE (npwpd);
+
+ALTER TABLE public.jnsgolongan
+    ADD CONSTRAINT jnsgolongan_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.jnshist
+    ADD CONSTRAINT jnshist_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.jnskatkendaraan
+    ADD CONSTRAINT jnskatkendaraan_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.jnsmilik
+    ADD CONSTRAINT jnsmilik_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.jnsranmor
+    ADD CONSTRAINT jnsranmor_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.jnstarif
+    ADD CONSTRAINT jnstarif_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.jnsumum
+    ADD CONSTRAINT jnsumum_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterbank
+    ADD CONSTRAINT masterbank_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterbendahara
+    ADD CONSTRAINT masterbendahara_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterflow
+    ADD CONSTRAINT masterflow_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterhapusdenda
+    ADD CONSTRAINT masterhapusdenda_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterhistory
+    ADD CONSTRAINT masterhistory_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterhistory
+    ADD CONSTRAINT masterhistory_statint_check CHECK (statint IN ('0', '1'));
+
+ALTER TABLE public.masterhistory
+    ADD CONSTRAINT masterhistory_insidentil_check CHECK (insidentil IN ('0', '1'));
+
+ALTER TABLE public.masterjabttd
+    ADD CONSTRAINT masterjabttd_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterjnspendapatan
+    ADD CONSTRAINT masterjnspendapatan_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterjnspendapatan
+    ADD CONSTRAINT masterjnspendapatan_selfassessment_check CHECK (selfassessment IN ('0', '1'));
+
+ALTER TABLE public.masterkabkota
+    ADD CONSTRAINT masterkabkota_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterkabkotaall
+    ADD CONSTRAINT masterkabkotaall_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterkecamatan
+    ADD CONSTRAINT masterkecamatan_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterkelurahan
+    ADD CONSTRAINT masterkelurahan_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterkiosk
+    ADD CONSTRAINT masterkiosk_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterktp
+    ADD CONSTRAINT masterktp_statint_check CHECK (statint IN ('0', '1'));
+
+ALTER TABLE public.mastermerk
+    ADD CONSTRAINT mastermerk_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masternpwpd
+    ADD CONSTRAINT masternpwpd_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masternpwpd
+    ADD CONSTRAINT masternpwpd_statnpwpd_check CHECK (statnpwpd IN ('0', '1'));
+
+ALTER TABLE public.masterpegawai
+    ADD CONSTRAINT masterpegawai_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterprovinsi
+    ADD CONSTRAINT masterprovinsi_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterrekd
+    ADD CONSTRAINT masterrekd_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterrt
+    ADD CONSTRAINT masterrt_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterrw
+    ADD CONSTRAINT masterrw_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.mastertarifnjop
+    ADD CONSTRAINT mastertarifnjop_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterteks
+    ADD CONSTRAINT masterteks_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterupt
+    ADD CONSTRAINT masterupt_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masteruunjop
+    ADD CONSTRAINT masteruunjop_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterwp
+    ADD CONSTRAINT masterwp_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.masterwp
+    ADD CONSTRAINT masterwp_statint_check CHECK (statint IN ('0', '1'));
+
+ALTER TABLE public.masterwp
+    ADD CONSTRAINT masterwp_insidentil_check CHECK (insidentil IN ('0', '1'));
+
+ALTER TABLE public.masterab
+    ADD CONSTRAINT masterab_insidentil_check CHECK (insidentil IN ('0', '1'));
+
+ALTER TABLE public.masterkb
+    ADD CONSTRAINT masterkb_insidentil_check CHECK (insidentil IN ('0', '1'));
+
+ALTER TABLE public.transdatakohir
+    ADD CONSTRAINT transdatakohir_validjr_check CHECK (validjr IN ('0', '1'));
+
+ALTER TABLE public.transdatakohir
+    ADD CONSTRAINT transdatakohir_validpol_check CHECK (validpol IN ('0', '1'));
+
+ALTER TABLE public.transhistpendataan
+    ADD CONSTRAINT transhistpendataan_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.transhistpendataandet
+    ADD CONSTRAINT transhistpendataandet_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.transhistpenetapan
+    ADD CONSTRAINT transhistpenetapan_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.transhistpenetapan
+    ADD CONSTRAINT transhistpenetapan_statbayar_check CHECK (statbayar IN ('0', '1'));
+
+ALTER TABLE public.transpendataan
+    ADD CONSTRAINT transpendataan_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.transpendataandet
+    ADD CONSTRAINT transpendataandet_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.transpenetapan
+    ADD CONSTRAINT transpenetapan_status_check CHECK (status IN ('0', '1'));
+
+ALTER TABLE public.transpenetapan
+    ADD CONSTRAINT transpenetapan_statbayar_check CHECK (statbayar IN ('0', '1'));
+
+ALTER TABLE public.transsts
+    ADD CONSTRAINT transsts_statbayar_check CHECK (statbayar IN ('0', '1'));
+
+ALTER TABLE public.transwpdataantri
+    ADD CONSTRAINT transwpdataantri_statantri_check CHECK (statantri IN ('0', '1'));
+
+ALTER TABLE public.jnsgolongan
+    ADD CONSTRAINT jnsgolongan_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.jnshist
+    ADD CONSTRAINT jnshist_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.jnskatkendaraan
+    ADD CONSTRAINT jnskatkendaraan_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.jnsmilik
+    ADD CONSTRAINT jnsmilik_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.jnsranmor
+    ADD CONSTRAINT jnsranmor_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.jnstarif
+    ADD CONSTRAINT jnstarif_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.jnsumum
+    ADD CONSTRAINT jnsumum_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterbank
+    ADD CONSTRAINT masterbank_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterbendahara
+    ADD CONSTRAINT masterbendahara_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterflow
+    ADD CONSTRAINT masterflow_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterhapusdenda
+    ADD CONSTRAINT masterhapusdenda_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterhistory
+    ADD CONSTRAINT masterhistory_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterhistory
+    ADD CONSTRAINT masterhistory_statint_fkey FOREIGN KEY (statint)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterhistory
+    ADD CONSTRAINT masterhistory_insidentil_fkey FOREIGN KEY (insidentil)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterjabttd
+    ADD CONSTRAINT masterjabttd_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterjnspendapatan
+    ADD CONSTRAINT masterjnspendapatan_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterjnspendapatan
+    ADD CONSTRAINT masterjnspendapatan_selfassessment_fkey FOREIGN KEY (selfassessment)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterkabkota
+    ADD CONSTRAINT masterkabkota_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterkabkotaall
+    ADD CONSTRAINT masterkabkotaall_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterkecamatan
+    ADD CONSTRAINT masterkecamatan_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterkelurahan
+    ADD CONSTRAINT masterkelurahan_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterkiosk
+    ADD CONSTRAINT masterkiosk_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterktp
+    ADD CONSTRAINT masterktp_statint_fkey FOREIGN KEY (statint)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.mastermerk
+    ADD CONSTRAINT mastermerk_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masternpwpd
+    ADD CONSTRAINT masternpwpd_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masternpwpd
+    ADD CONSTRAINT masternpwpd_statnpwpd_fkey FOREIGN KEY (statnpwpd)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterpegawai
+    ADD CONSTRAINT masterpegawai_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterprovinsi
+    ADD CONSTRAINT masterprovinsi_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterrekd
+    ADD CONSTRAINT masterrekd_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterrt
+    ADD CONSTRAINT masterrt_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterrw
+    ADD CONSTRAINT masterrw_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.mastertarifnjop
+    ADD CONSTRAINT mastertarifnjop_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterteks
+    ADD CONSTRAINT masterteks_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterupt
+    ADD CONSTRAINT masterupt_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masteruunjop
+    ADD CONSTRAINT masteruunjop_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterwp
+    ADD CONSTRAINT masterwp_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterwp
+    ADD CONSTRAINT masterwp_statint_fkey FOREIGN KEY (statint)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterwp
+    ADD CONSTRAINT masterwp_insidentil_fkey FOREIGN KEY (insidentil)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterab
+    ADD CONSTRAINT masterab_insidentil_fkey FOREIGN KEY (insidentil)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.masterkb
+    ADD CONSTRAINT masterkb_insidentil_fkey FOREIGN KEY (insidentil)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.transdatakohir
+    ADD CONSTRAINT transdatakohir_validjr_fkey FOREIGN KEY (validjr)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.transdatakohir
+    ADD CONSTRAINT transdatakohir_validpol_fkey FOREIGN KEY (validpol)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.transhistpendataan
+    ADD CONSTRAINT transhistpendataan_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.transhistpendataandet
+    ADD CONSTRAINT transhistpendataandet_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.transhistpenetapan
+    ADD CONSTRAINT transhistpenetapan_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.transhistpenetapan
+    ADD CONSTRAINT transhistpenetapan_statbayar_fkey FOREIGN KEY (statbayar)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.transpendataan
+    ADD CONSTRAINT transpendataan_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.transpendataandet
+    ADD CONSTRAINT transpendataandet_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.transpenetapan
+    ADD CONSTRAINT transpenetapan_status_fkey FOREIGN KEY (status)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.transpenetapan
+    ADD CONSTRAINT transpenetapan_statbayar_fkey FOREIGN KEY (statbayar)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.transsts
+    ADD CONSTRAINT transsts_statbayar_fkey FOREIGN KEY (statbayar)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.transwpdataantri
+    ADD CONSTRAINT transwpdataantri_statantri_fkey FOREIGN KEY (statantri)
+        REFERENCES public.ref_flag (flag_code);
+
+ALTER TABLE public.appotor
+    ADD CONSTRAINT appotor_kdgroup_fkey FOREIGN KEY (kdgroup)
+        REFERENCES public.appgroupuser (kdgroup);
+
+ALTER TABLE public.appotor
+    ADD CONSTRAINT appotor_roleid_fkey FOREIGN KEY (roleid)
+        REFERENCES public.approle (roleid);
+
+ALTER TABLE public.appuser
+    ADD CONSTRAINT appuser_kdgroup_fkey FOREIGN KEY (kdgroup)
+        REFERENCES public.appgroupuser (kdgroup);
+
+ALTER TABLE public.masterab
+    ADD CONSTRAINT masterab_idktp_fkey FOREIGN KEY (idktp)
+        REFERENCES public.masterktp (idktp);
+
+ALTER TABLE public.masterab
+    ADD CONSTRAINT masterab_idkabkokta_fkey FOREIGN KEY (idkabkokta)
+        REFERENCES public.masterkabkota (idkabkota);
+
+ALTER TABLE public.masterab
+    ADD CONSTRAINT masterab_idkecamatan_fkey FOREIGN KEY (idkecamatan)
+        REFERENCES public.masterkecamatan (idkecamatan);
+
+ALTER TABLE public.masterab
+    ADD CONSTRAINT masterab_idkelurahan_fkey FOREIGN KEY (idkelurahan)
+        REFERENCES public.masterkelurahan (idkelurahan);
+
+ALTER TABLE public.masterab
+    ADD CONSTRAINT masterab_idrw_fkey FOREIGN KEY (idrw)
+        REFERENCES public.masterrw (idrw);
+
+ALTER TABLE public.masterab
+    ADD CONSTRAINT masterab_idrt_fkey FOREIGN KEY (idrt)
+        REFERENCES public.masterrt (idrt);
+
+ALTER TABLE public.masterab
+    ADD CONSTRAINT masterab_jnskendid_fkey FOREIGN KEY (jnskendid)
+        REFERENCES public.jnskendaraan (jnskendid);
+
+ALTER TABLE public.masterab
+    ADD CONSTRAINT masterab_idmerk_fkey FOREIGN KEY (idmerk)
+        REFERENCES public.mastermerk (idmerk);
+
+ALTER TABLE public.masterab
+    ADD CONSTRAINT masterab_kdmilik_fkey FOREIGN KEY (kdmilik)
+        REFERENCES public.jnsmilik (kdmilik);
+
+ALTER TABLE public.masterab
+    ADD CONSTRAINT masterab_kdguna_fkey FOREIGN KEY (kdguna)
+        REFERENCES public.jnsguna (kdguna);
+
+ALTER TABLE public.masterab
+    ADD CONSTRAINT masterab_kdplat_fkey FOREIGN KEY (kdplat)
+        REFERENCES public.jnsplat (kdplat);
+
+ALTER TABLE public.masterabdet
+    ADD CONSTRAINT masterabdet_idab_fkey FOREIGN KEY (idab)
+        REFERENCES public.masterab (idab);
+
+ALTER TABLE public.masterabdet
+    ADD CONSTRAINT masterabdet_idjnsd_fkey FOREIGN KEY (idjnsd)
+        REFERENCES public.masterjnspendapatan (idjnsd);
+
+ALTER TABLE public.masterbadan
+    ADD CONSTRAINT masterbadan_idktp_fkey FOREIGN KEY (idktp)
+        REFERENCES public.masterktp (idktp);
+
+ALTER TABLE public.masterbadan
+    ADD CONSTRAINT masterbadan_idprovinsi_fkey FOREIGN KEY (idprovinsi)
+        REFERENCES public.masterprovinsi (idprovinsi);
+
+ALTER TABLE public.masterbadan
+    ADD CONSTRAINT masterbadan_idkabkokta_fkey FOREIGN KEY (idkabkokta)
+        REFERENCES public.masterkabkota (idkabkota);
+
+ALTER TABLE public.masterbendahara
+    ADD CONSTRAINT masterbendahara_idpegawai_fkey FOREIGN KEY (idpegawai)
+        REFERENCES public.masterpegawai (idpegawai);
+
+ALTER TABLE public.masterbendahara
+    ADD CONSTRAINT masterbendahara_idbank_fkey FOREIGN KEY (idbank)
+        REFERENCES public.masterbank (idbank);
+
+ALTER TABLE public.masterbendahara
+    ADD CONSTRAINT masterbendahara_idreknrc_fkey FOREIGN KEY (idreknrc)
+        REFERENCES public.masterreknrc (idreknrc);
+
+ALTER TABLE public.masterhistory
+    ADD CONSTRAINT masterhistory_idwp_fkey FOREIGN KEY (idwp)
+        REFERENCES public.masterwp (idwp);
+
+ALTER TABLE public.masterhistory
+    ADD CONSTRAINT masterhistory_idktp_fkey FOREIGN KEY (idktp)
+        REFERENCES public.masterktp (idktp);
+
+ALTER TABLE public.masterhistory
+    ADD CONSTRAINT masterhistory_jnskendid_fkey FOREIGN KEY (jnskendid)
+        REFERENCES public.jnskendaraan (jnskendid);
+
+ALTER TABLE public.masterhistory
+    ADD CONSTRAINT masterhistory_idmerk_fkey FOREIGN KEY (idmerk)
+        REFERENCES public.mastermerk (idmerk);
+
+ALTER TABLE public.masterhistory
+    ADD CONSTRAINT masterhistory_kdmilik_fkey FOREIGN KEY (kdmilik)
+        REFERENCES public.jnsmilik (kdmilik);
+
+ALTER TABLE public.masterhistory
+    ADD CONSTRAINT masterhistory_kdguna_fkey FOREIGN KEY (kdguna)
+        REFERENCES public.jnsguna (kdguna);
+
+ALTER TABLE public.masterhistory
+    ADD CONSTRAINT masterhistory_kdplat_fkey FOREIGN KEY (kdplat)
+        REFERENCES public.jnsplat (kdplat);
+
+ALTER TABLE public.masterjabttd
+    ADD CONSTRAINT masterjabttd_kddok_fkey FOREIGN KEY (kddok)
+        REFERENCES public.jnsdok (kddok);
+
+ALTER TABLE public.masterjnspendapatan
+    ADD CONSTRAINT masterjnspendapatan_parentid_fkey FOREIGN KEY (parentid)
+        REFERENCES public.masterjnspendapatan (idjnsd);
+
+ALTER TABLE public.masterkabkota
+    ADD CONSTRAINT masterkabkota_idprovinsi_fkey FOREIGN KEY (idprovinsi)
+        REFERENCES public.masterprovinsi (idprovinsi);
+
+ALTER TABLE public.masterkabkotaall
+    ADD CONSTRAINT masterkabkotaall_idprovinsi_fkey FOREIGN KEY (idprovinsi)
+        REFERENCES public.masterprovinsi (idprovinsi);
+
+ALTER TABLE public.masterkaupt
+    ADD CONSTRAINT masterkaupt_idpegawai_fkey FOREIGN KEY (idpegawai)
+        REFERENCES public.masterpegawai (idpegawai);
+
+ALTER TABLE public.masterkaupt
+    ADD CONSTRAINT masterkaupt_idupt_fkey FOREIGN KEY (idupt)
+        REFERENCES public.masterupt (idupt);
+
+ALTER TABLE public.masterkb
+    ADD CONSTRAINT masterkb_idktp_fkey FOREIGN KEY (idktp)
+        REFERENCES public.masterktp (idktp);
+
+ALTER TABLE public.masterkb
+    ADD CONSTRAINT masterkb_idkabkokta_fkey FOREIGN KEY (idkabkokta)
+        REFERENCES public.masterkabkota (idkabkota);
+
+ALTER TABLE public.masterkb
+    ADD CONSTRAINT masterkb_idkecamatan_fkey FOREIGN KEY (idkecamatan)
+        REFERENCES public.masterkecamatan (idkecamatan);
+
+ALTER TABLE public.masterkb
+    ADD CONSTRAINT masterkb_idkelurahan_fkey FOREIGN KEY (idkelurahan)
+        REFERENCES public.masterkelurahan (idkelurahan);
+
+ALTER TABLE public.masterkb
+    ADD CONSTRAINT masterkb_idrw_fkey FOREIGN KEY (idrw)
+        REFERENCES public.masterrw (idrw);
+
+ALTER TABLE public.masterkb
+    ADD CONSTRAINT masterkb_idrt_fkey FOREIGN KEY (idrt)
+        REFERENCES public.masterrt (idrt);
+
+ALTER TABLE public.masterkb
+    ADD CONSTRAINT masterkb_jnskendid_fkey FOREIGN KEY (jnskendid)
+        REFERENCES public.jnskendaraan (jnskendid);
+
+ALTER TABLE public.masterkb
+    ADD CONSTRAINT masterkb_idmerk_fkey FOREIGN KEY (idmerk)
+        REFERENCES public.mastermerk (idmerk);
+
+ALTER TABLE public.masterkb
+    ADD CONSTRAINT masterkb_kdmilik_fkey FOREIGN KEY (kdmilik)
+        REFERENCES public.jnsmilik (kdmilik);
+
+ALTER TABLE public.masterkb
+    ADD CONSTRAINT masterkb_kdguna_fkey FOREIGN KEY (kdguna)
+        REFERENCES public.jnsguna (kdguna);
+
+ALTER TABLE public.masterkb
+    ADD CONSTRAINT masterkb_kdplat_fkey FOREIGN KEY (kdplat)
+        REFERENCES public.jnsplat (kdplat);
+
+ALTER TABLE public.masterkbdet
+    ADD CONSTRAINT masterkbdet_idkb_fkey FOREIGN KEY (idkb)
+        REFERENCES public.masterkb (idkb);
+
+ALTER TABLE public.masterkbdet
+    ADD CONSTRAINT masterkbdet_idjnsd_fkey FOREIGN KEY (idjnsd)
+        REFERENCES public.masterjnspendapatan (idjnsd);
+
+ALTER TABLE public.masterkecamatan
+    ADD CONSTRAINT masterkecamatan_idkabkota_fkey FOREIGN KEY (idkabkota)
+        REFERENCES public.masterkabkota (idkabkota);
+
+ALTER TABLE public.masterkelurahan
+    ADD CONSTRAINT masterkelurahan_idkecamatan_fkey FOREIGN KEY (idkecamatan)
+        REFERENCES public.masterkecamatan (idkecamatan);
+
+ALTER TABLE public.masterktp
+    ADD CONSTRAINT masterktp_idkabkokta_fkey FOREIGN KEY (idkabkokta)
+        REFERENCES public.masterkabkota (idkabkota);
+
+ALTER TABLE public.masterktp
+    ADD CONSTRAINT masterktp_idkecamatan_fkey FOREIGN KEY (idkecamatan)
+        REFERENCES public.masterkecamatan (idkecamatan);
+
+ALTER TABLE public.masterktp
+    ADD CONSTRAINT masterktp_idkelurahan_fkey FOREIGN KEY (idkelurahan)
+        REFERENCES public.masterkelurahan (idkelurahan);
+
+ALTER TABLE public.masterlibur
+    ADD CONSTRAINT masterlibur_idkabkota_fkey FOREIGN KEY (idkabkota)
+        REFERENCES public.masterkabkota (idkabkota);
+
+ALTER TABLE public.masternpwpd
+    ADD CONSTRAINT masternpwpd_idbadan_fkey FOREIGN KEY (idbadan)
+        REFERENCES public.masterbadan (idbadan);
+
+ALTER TABLE public.masternpwpd
+    ADD CONSTRAINT masternpwpd_idktp_fkey FOREIGN KEY (idktp)
+        REFERENCES public.masterktp (idktp);
+
+ALTER TABLE public.masterpegawai
+    ADD CONSTRAINT masterpegawai_idktp_fkey FOREIGN KEY (idktp)
+        REFERENCES public.masterktp (idktp);
+
+ALTER TABLE public.masterpegawai
+    ADD CONSTRAINT masterpegawai_idupt_fkey FOREIGN KEY (idupt)
+        REFERENCES public.masterupt (idupt);
+
+ALTER TABLE public.masterrekd
+    ADD CONSTRAINT masterrekd_kdjnspjk_fkey FOREIGN KEY (kdjnspjk)
+        REFERENCES public.jnspajak (kdjnspjk);
+
+ALTER TABLE public.masterrt
+    ADD CONSTRAINT masterrt_idrw_fkey FOREIGN KEY (idrw)
+        REFERENCES public.masterrw (idrw);
+
+ALTER TABLE public.masterrw
+    ADD CONSTRAINT masterrw_idkelurahan_fkey FOREIGN KEY (idkelurahan)
+        REFERENCES public.masterkelurahan (idkelurahan);
+
+ALTER TABLE public.mastertarif
+    ADD CONSTRAINT mastertarif_kdjnspjk_fkey FOREIGN KEY (kdjnspjk)
+        REFERENCES public.jnspajak (kdjnspjk);
+
+ALTER TABLE public.mastertarif
+    ADD CONSTRAINT mastertarif_jnskendid_fkey FOREIGN KEY (jnskendid)
+        REFERENCES public.jnskendaraan (jnskendid);
+
+ALTER TABLE public.mastertarif
+    ADD CONSTRAINT mastertarif_kdflow_fkey FOREIGN KEY (kdflow)
+        REFERENCES public.masterflow (kdflow);
+
+ALTER TABLE public.mastertarif
+    ADD CONSTRAINT mastertarif_kdplat_fkey FOREIGN KEY (kdplat)
+        REFERENCES public.jnsplat (kdplat);
+
+ALTER TABLE public.mastertarifnjop
+    ADD CONSTRAINT mastertarifnjop_iduunjop_fkey FOREIGN KEY (iduunjop)
+        REFERENCES public.masteruunjop (iduunjop);
+
+ALTER TABLE public.mastertarifnjop
+    ADD CONSTRAINT mastertarifnjop_idrekd_fkey FOREIGN KEY (idrekd)
+        REFERENCES public.masterrekd (idrekd);
+
+ALTER TABLE public.mastertarifnjop
+    ADD CONSTRAINT mastertarifnjop_kdjnstarif_fkey FOREIGN KEY (kdjnstarif)
+        REFERENCES public.jnstarif (kdjnstarif);
+
+ALTER TABLE public.mastertarifnjop
+    ADD CONSTRAINT mastertarifnjop_idmerk_fkey FOREIGN KEY (idmerk)
+        REFERENCES public.mastermerk (idmerk);
+
+ALTER TABLE public.masterupt
+    ADD CONSTRAINT masterupt_idbank_fkey FOREIGN KEY (idbank)
+        REFERENCES public.masterbank (idbank);
+
+ALTER TABLE public.masterupt
+    ADD CONSTRAINT masterupt_idkabkota_fkey FOREIGN KEY (idkabkota)
+        REFERENCES public.masterkabkota (idkabkota);
+
+ALTER TABLE public.masterwp
+    ADD CONSTRAINT masterwp_idktp_fkey FOREIGN KEY (idktp)
+        REFERENCES public.masterktp (idktp);
+
+ALTER TABLE public.masterwp
+    ADD CONSTRAINT masterwp_idkabkokta_fkey FOREIGN KEY (idkabkokta)
+        REFERENCES public.masterkabkota (idkabkota);
+
+ALTER TABLE public.masterwp
+    ADD CONSTRAINT masterwp_idkecamatan_fkey FOREIGN KEY (idkecamatan)
+        REFERENCES public.masterkecamatan (idkecamatan);
+
+ALTER TABLE public.masterwp
+    ADD CONSTRAINT masterwp_idkelurahan_fkey FOREIGN KEY (idkelurahan)
+        REFERENCES public.masterkelurahan (idkelurahan);
+
+ALTER TABLE public.masterwp
+    ADD CONSTRAINT masterwp_idrw_fkey FOREIGN KEY (idrw)
+        REFERENCES public.masterrw (idrw);
+
+ALTER TABLE public.masterwp
+    ADD CONSTRAINT masterwp_idrt_fkey FOREIGN KEY (idrt)
+        REFERENCES public.masterrt (idrt);
+
+ALTER TABLE public.masterwp
+    ADD CONSTRAINT masterwp_jnskendid_fkey FOREIGN KEY (jnskendid)
+        REFERENCES public.jnskendaraan (jnskendid);
+
+ALTER TABLE public.masterwp
+    ADD CONSTRAINT masterwp_idmerk_fkey FOREIGN KEY (idmerk)
+        REFERENCES public.mastermerk (idmerk);
+
+ALTER TABLE public.masterwp
+    ADD CONSTRAINT masterwp_kdmilik_fkey FOREIGN KEY (kdmilik)
+        REFERENCES public.jnsmilik (kdmilik);
+
+ALTER TABLE public.masterwp
+    ADD CONSTRAINT masterwp_kdguna_fkey FOREIGN KEY (kdguna)
+        REFERENCES public.jnsguna (kdguna);
+
+ALTER TABLE public.masterwp
+    ADD CONSTRAINT masterwp_kdplat_fkey FOREIGN KEY (kdplat)
+        REFERENCES public.jnsplat (kdplat);
+
+ALTER TABLE public.masterwpdata
+    ADD CONSTRAINT masterwpdata_idjnsd_fkey FOREIGN KEY (idjnsd)
+        REFERENCES public.masterjnspendapatan (idjnsd);
+
+ALTER TABLE public.masterwpdata
+    ADD CONSTRAINT masterwpdata_idwp_fkey FOREIGN KEY (idwp)
+        REFERENCES public.masterwp (idwp);
+
+ALTER TABLE public.transdatakohir
+    ADD CONSTRAINT transdatakohir_idwp_fkey FOREIGN KEY (idwp)
+        REFERENCES public.masterwp (idwp);
+
+ALTER TABLE public.transdatakohir
+    ADD CONSTRAINT transdatakohir_idupt_fkey FOREIGN KEY (idupt)
+        REFERENCES public.masterupt (idupt);
+
+ALTER TABLE public.transhistpendataan
+    ADD CONSTRAINT transhistpendataan_idwpdata_fkey FOREIGN KEY (idwpdata)
+        REFERENCES public.masterwpdata (idwpdata);
+
+ALTER TABLE public.transhistpendataandet
+    ADD CONSTRAINT transhistpendataandet_idhistpendataan_fkey FOREIGN KEY (idhistpendataan)
+        REFERENCES public.transhistpendataan (idhistpendataan);
+
+ALTER TABLE public.transhistpendataandet
+    ADD CONSTRAINT transhistpendataandet_idpenetapan_fkey FOREIGN KEY (idpenetapan)
+        REFERENCES public.transpenetapan (idpenetapan);
+
+ALTER TABLE public.transhistpenetapan
+    ADD CONSTRAINT transhistpenetapan_idkohir_fkey FOREIGN KEY (idkohir)
+        REFERENCES public.transdatakohir (idkohir);
+
+ALTER TABLE public.transhistpenetapan
+    ADD CONSTRAINT transhistpenetapan_idwpdata_fkey FOREIGN KEY (idwpdata)
+        REFERENCES public.masterwpdata (idwpdata);
+
+ALTER TABLE public.transpendataan
+    ADD CONSTRAINT transpendataan_idwpdata_fkey FOREIGN KEY (idwpdata)
+        REFERENCES public.masterwpdata (idwpdata);
+
+ALTER TABLE public.transpendataandet
+    ADD CONSTRAINT transpendataandet_idpendataan_fkey FOREIGN KEY (idpendataan)
+        REFERENCES public.transpendataan (idpendataan);
+
+ALTER TABLE public.transpendataandet
+    ADD CONSTRAINT transpendataandet_idpenetapan_fkey FOREIGN KEY (idpenetapan)
+        REFERENCES public.transpenetapan (idpenetapan);
+
+ALTER TABLE public.transpenetapan
+    ADD CONSTRAINT transpenetapan_idkohir_fkey FOREIGN KEY (idkohir)
+        REFERENCES public.transdatakohir (idkohir);
+
+ALTER TABLE public.transpenetapan
+    ADD CONSTRAINT transpenetapan_idwpdata_fkey FOREIGN KEY (idwpdata)
+        REFERENCES public.masterwpdata (idwpdata);
+
+ALTER TABLE public.transsts
+    ADD CONSTRAINT transsts_idupt_fkey FOREIGN KEY (idupt)
+        REFERENCES public.masterupt (idupt);
+
+ALTER TABLE public.transsts
+    ADD CONSTRAINT transsts_idbend_fkey FOREIGN KEY (idbend)
+        REFERENCES public.masterbendahara (idbend);
+
+ALTER TABLE public.transstsdet
+    ADD CONSTRAINT transstsdet_idsts_fkey FOREIGN KEY (idsts)
+        REFERENCES public.transsts (idsts);
+
+ALTER TABLE public.transstsdet
+    ADD CONSTRAINT transstsdet_idrekd_fkey FOREIGN KEY (idrekd)
+        REFERENCES public.masterrekd (idrekd);
+
+ALTER TABLE public.transwpdata
+    ADD CONSTRAINT transwpdata_idnpwpd_fkey FOREIGN KEY (idnpwpd)
+        REFERENCES public.masternpwpd (idnpwpd);
+
+ALTER TABLE public.transwpdataantri
+    ADD CONSTRAINT transwpdataantri_idtwpdata_fkey FOREIGN KEY (idtwpdata)
+        REFERENCES public.transwpdata (idtwpdata);
+
+ALTER TABLE public.transwpdataantri
+    ADD CONSTRAINT transwpdataantri_idktp_fkey FOREIGN KEY (idktp)
+        REFERENCES public.masterktp (idktp);
+
+ALTER TABLE public.transwpdatafile
+    ADD CONSTRAINT transwpdatafile_idtwpdata_fkey FOREIGN KEY (idtwpdata)
+        REFERENCES public.transwpdata (idtwpdata);
+
+CREATE INDEX idx_appotor_kdgroup ON public.appotor (kdgroup);
+CREATE INDEX idx_appotor_roleid ON public.appotor (roleid);
+CREATE INDEX idx_appuser_kdgroup ON public.appuser (kdgroup);
+CREATE INDEX idx_masterab_idktp ON public.masterab (idktp);
+CREATE INDEX idx_masterab_idkabkokta ON public.masterab (idkabkokta);
+CREATE INDEX idx_masterab_idkecamatan ON public.masterab (idkecamatan);
+CREATE INDEX idx_masterab_idkelurahan ON public.masterab (idkelurahan);
+CREATE INDEX idx_masterab_idrw ON public.masterab (idrw);
+CREATE INDEX idx_masterab_idrt ON public.masterab (idrt);
+CREATE INDEX idx_masterab_jnskendid ON public.masterab (jnskendid);
+CREATE INDEX idx_masterab_idmerk ON public.masterab (idmerk);
+CREATE INDEX idx_masterab_kdmilik ON public.masterab (kdmilik);
+CREATE INDEX idx_masterab_kdguna ON public.masterab (kdguna);
+CREATE INDEX idx_masterab_kdplat ON public.masterab (kdplat);
+CREATE INDEX idx_masterabdet_idab ON public.masterabdet (idab);
+CREATE INDEX idx_masterabdet_idjnsd ON public.masterabdet (idjnsd);
+CREATE INDEX idx_masterbadan_idktp ON public.masterbadan (idktp);
+CREATE INDEX idx_masterbadan_idprovinsi ON public.masterbadan (idprovinsi);
+CREATE INDEX idx_masterbadan_idkabkokta ON public.masterbadan (idkabkokta);
+CREATE INDEX idx_masterbendahara_idpegawai ON public.masterbendahara (idpegawai);
+CREATE INDEX idx_masterbendahara_idbank ON public.masterbendahara (idbank);
+CREATE INDEX idx_masterbendahara_idreknrc ON public.masterbendahara (idreknrc);
+CREATE INDEX idx_masterhistory_idwp ON public.masterhistory (idwp);
+CREATE INDEX idx_masterhistory_idktp ON public.masterhistory (idktp);
+CREATE INDEX idx_masterhistory_jnskendid ON public.masterhistory (jnskendid);
+CREATE INDEX idx_masterhistory_idmerk ON public.masterhistory (idmerk);
+CREATE INDEX idx_masterhistory_kdmilik ON public.masterhistory (kdmilik);
+CREATE INDEX idx_masterhistory_kdguna ON public.masterhistory (kdguna);
+CREATE INDEX idx_masterhistory_kdplat ON public.masterhistory (kdplat);
+CREATE INDEX idx_masterjabttd_kddok ON public.masterjabttd (kddok);
+CREATE INDEX idx_masterjnspendapatan_parentid ON public.masterjnspendapatan (parentid);
+CREATE INDEX idx_masterkabkota_idprovinsi ON public.masterkabkota (idprovinsi);
+CREATE INDEX idx_masterkabkotaall_idprovinsi ON public.masterkabkotaall (idprovinsi);
+CREATE INDEX idx_masterkaupt_idpegawai ON public.masterkaupt (idpegawai);
+CREATE INDEX idx_masterkaupt_idupt ON public.masterkaupt (idupt);
+CREATE INDEX idx_masterkb_idktp ON public.masterkb (idktp);
+CREATE INDEX idx_masterkb_idkabkokta ON public.masterkb (idkabkokta);
+CREATE INDEX idx_masterkb_idkecamatan ON public.masterkb (idkecamatan);
+CREATE INDEX idx_masterkb_idkelurahan ON public.masterkb (idkelurahan);
+CREATE INDEX idx_masterkb_idrw ON public.masterkb (idrw);
+CREATE INDEX idx_masterkb_idrt ON public.masterkb (idrt);
+CREATE INDEX idx_masterkb_jnskendid ON public.masterkb (jnskendid);
+CREATE INDEX idx_masterkb_idmerk ON public.masterkb (idmerk);
+CREATE INDEX idx_masterkb_kdmilik ON public.masterkb (kdmilik);
+CREATE INDEX idx_masterkb_kdguna ON public.masterkb (kdguna);
+CREATE INDEX idx_masterkb_kdplat ON public.masterkb (kdplat);
+CREATE INDEX idx_masterkbdet_idkb ON public.masterkbdet (idkb);
+CREATE INDEX idx_masterkbdet_idjnsd ON public.masterkbdet (idjnsd);
+CREATE INDEX idx_masterkecamatan_idkabkota ON public.masterkecamatan (idkabkota);
+CREATE INDEX idx_masterkelurahan_idkecamatan ON public.masterkelurahan (idkecamatan);
+CREATE INDEX idx_masterktp_idkabkokta ON public.masterktp (idkabkokta);
+CREATE INDEX idx_masterktp_idkecamatan ON public.masterktp (idkecamatan);
+CREATE INDEX idx_masterktp_idkelurahan ON public.masterktp (idkelurahan);
+CREATE INDEX idx_masterlibur_idkabkota ON public.masterlibur (idkabkota);
+CREATE INDEX idx_masternpwpd_idbadan ON public.masternpwpd (idbadan);
+CREATE INDEX idx_masternpwpd_idktp ON public.masternpwpd (idktp);
+CREATE INDEX idx_masterpegawai_idktp ON public.masterpegawai (idktp);
+CREATE INDEX idx_masterpegawai_idupt ON public.masterpegawai (idupt);
+CREATE INDEX idx_masterrekd_kdjnspjk ON public.masterrekd (kdjnspjk);
+CREATE INDEX idx_masterrt_idrw ON public.masterrt (idrw);
+CREATE INDEX idx_masterrw_idkelurahan ON public.masterrw (idkelurahan);
+CREATE INDEX idx_mastertarif_kdjnspjk ON public.mastertarif (kdjnspjk);
+CREATE INDEX idx_mastertarif_jnskendid ON public.mastertarif (jnskendid);
+CREATE INDEX idx_mastertarif_kdflow ON public.mastertarif (kdflow);
+CREATE INDEX idx_mastertarif_kdplat ON public.mastertarif (kdplat);
+CREATE INDEX idx_mastertarifnjop_iduunjop ON public.mastertarifnjop (iduunjop);
+CREATE INDEX idx_mastertarifnjop_idrekd ON public.mastertarifnjop (idrekd);
+CREATE INDEX idx_mastertarifnjop_kdjnstarif ON public.mastertarifnjop (kdjnstarif);
+CREATE INDEX idx_mastertarifnjop_idmerk ON public.mastertarifnjop (idmerk);
+CREATE INDEX idx_masterupt_idbank ON public.masterupt (idbank);
+CREATE INDEX idx_masterupt_idkabkota ON public.masterupt (idkabkota);
+CREATE INDEX idx_masterwp_idktp ON public.masterwp (idktp);
+CREATE INDEX idx_masterwp_idkabkokta ON public.masterwp (idkabkokta);
+CREATE INDEX idx_masterwp_idkecamatan ON public.masterwp (idkecamatan);
+CREATE INDEX idx_masterwp_idkelurahan ON public.masterwp (idkelurahan);
+CREATE INDEX idx_masterwp_idrw ON public.masterwp (idrw);
+CREATE INDEX idx_masterwp_idrt ON public.masterwp (idrt);
+CREATE INDEX idx_masterwp_jnskendid ON public.masterwp (jnskendid);
+CREATE INDEX idx_masterwp_idmerk ON public.masterwp (idmerk);
+CREATE INDEX idx_masterwp_kdmilik ON public.masterwp (kdmilik);
+CREATE INDEX idx_masterwp_kdguna ON public.masterwp (kdguna);
+CREATE INDEX idx_masterwp_kdplat ON public.masterwp (kdplat);
+CREATE INDEX idx_masterwpdata_idjnsd ON public.masterwpdata (idjnsd);
+CREATE INDEX idx_masterwpdata_idwp ON public.masterwpdata (idwp);
+CREATE INDEX idx_transdatakohir_idwp ON public.transdatakohir (idwp);
+CREATE INDEX idx_transdatakohir_idupt ON public.transdatakohir (idupt);
+CREATE INDEX idx_transhistpendataan_idwpdata ON public.transhistpendataan (idwpdata);
+CREATE INDEX idx_transhistpendataandet_idhistpendataan ON public.transhistpendataandet (idhistpendataan);
+CREATE INDEX idx_transhistpendataandet_idpenetapan ON public.transhistpendataandet (idpenetapan);
+CREATE INDEX idx_transhistpenetapan_idkohir ON public.transhistpenetapan (idkohir);
+CREATE INDEX idx_transhistpenetapan_idwpdata ON public.transhistpenetapan (idwpdata);
+CREATE INDEX idx_transpendataan_idwpdata ON public.transpendataan (idwpdata);
+CREATE INDEX idx_transpendataandet_idpendataan ON public.transpendataandet (idpendataan);
+CREATE INDEX idx_transpendataandet_idpenetapan ON public.transpendataandet (idpenetapan);
+CREATE INDEX idx_transpenetapan_idkohir ON public.transpenetapan (idkohir);
+CREATE INDEX idx_transpenetapan_idwpdata ON public.transpenetapan (idwpdata);
+CREATE INDEX idx_transsts_idupt ON public.transsts (idupt);
+CREATE INDEX idx_transsts_idbend ON public.transsts (idbend);
+CREATE INDEX idx_transstsdet_idsts ON public.transstsdet (idsts);
+CREATE INDEX idx_transstsdet_idrekd ON public.transstsdet (idrekd);
+CREATE INDEX idx_transwpdata_idnpwpd ON public.transwpdata (idnpwpd);
+CREATE INDEX idx_transwpdataantri_idtwpdata ON public.transwpdataantri (idtwpdata);
+CREATE INDEX idx_transwpdataantri_idktp ON public.transwpdataantri (idktp);
+CREATE INDEX idx_transwpdatafile_idtwpdata ON public.transwpdatafile (idtwpdata);
+
+CREATE TRIGGER set_updated_at_appgroupuser
+    BEFORE UPDATE ON public.appgroupuser
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_appotor
+    BEFORE UPDATE ON public.appotor
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_approle
+    BEFORE UPDATE ON public.approle
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_appuser
+    BEFORE UPDATE ON public.appuser
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_jnsdok
+    BEFORE UPDATE ON public.jnsdok
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_jnsgolongan
+    BEFORE UPDATE ON public.jnsgolongan
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_jnsguna
+    BEFORE UPDATE ON public.jnsguna
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_jnshist
+    BEFORE UPDATE ON public.jnshist
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_jnsjr
+    BEFORE UPDATE ON public.jnsjr
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_jnskatkendaraan
+    BEFORE UPDATE ON public.jnskatkendaraan
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_jnskendaraan
+    BEFORE UPDATE ON public.jnskendaraan
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_jnsmilik
+    BEFORE UPDATE ON public.jnsmilik
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_jnspajak
+    BEFORE UPDATE ON public.jnspajak
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_jnsplat
+    BEFORE UPDATE ON public.jnsplat
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_jnsprogresif
+    BEFORE UPDATE ON public.jnsprogresif
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_jnsranmor
+    BEFORE UPDATE ON public.jnsranmor
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_jnsstrurek
+    BEFORE UPDATE ON public.jnsstrurek
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_jnstarif
+    BEFORE UPDATE ON public.jnstarif
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_jnsumum
+    BEFORE UPDATE ON public.jnsumum
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_mapjnspendapatan
+    BEFORE UPDATE ON public.mapjnspendapatan
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterab
+    BEFORE UPDATE ON public.masterab
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterabdet
+    BEFORE UPDATE ON public.masterabdet
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterbadan
+    BEFORE UPDATE ON public.masterbadan
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterbank
+    BEFORE UPDATE ON public.masterbank
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterbbm
+    BEFORE UPDATE ON public.masterbbm
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterbendahara
+    BEFORE UPDATE ON public.masterbendahara
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterflow
+    BEFORE UPDATE ON public.masterflow
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterhapusdenda
+    BEFORE UPDATE ON public.masterhapusdenda
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterhistory
+    BEFORE UPDATE ON public.masterhistory
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterjabttd
+    BEFORE UPDATE ON public.masterjabttd
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterjnspendapatan
+    BEFORE UPDATE ON public.masterjnspendapatan
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterkabkota
+    BEFORE UPDATE ON public.masterkabkota
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterkabkotaall
+    BEFORE UPDATE ON public.masterkabkotaall
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterkaupt
+    BEFORE UPDATE ON public.masterkaupt
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterkb
+    BEFORE UPDATE ON public.masterkb
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterkbdet
+    BEFORE UPDATE ON public.masterkbdet
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterkecamatan
+    BEFORE UPDATE ON public.masterkecamatan
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterkelurahan
+    BEFORE UPDATE ON public.masterkelurahan
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterkiosk
+    BEFORE UPDATE ON public.masterkiosk
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterktp
+    BEFORE UPDATE ON public.masterktp
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterlibur
+    BEFORE UPDATE ON public.masterlibur
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_mastermerk
+    BEFORE UPDATE ON public.mastermerk
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masternpwpd
+    BEFORE UPDATE ON public.masternpwpd
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterpegawai
+    BEFORE UPDATE ON public.masterpegawai
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterprovinsi
+    BEFORE UPDATE ON public.masterprovinsi
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterrekd
+    BEFORE UPDATE ON public.masterrekd
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterreknrc
+    BEFORE UPDATE ON public.masterreknrc
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterrt
+    BEFORE UPDATE ON public.masterrt
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterrw
+    BEFORE UPDATE ON public.masterrw
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_mastertarif
+    BEFORE UPDATE ON public.mastertarif
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_mastertarifnjop
+    BEFORE UPDATE ON public.mastertarifnjop
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterteks
+    BEFORE UPDATE ON public.masterteks
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterupt
+    BEFORE UPDATE ON public.masterupt
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masteruunjop
+    BEFORE UPDATE ON public.masteruunjop
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterwp
+    BEFORE UPDATE ON public.masterwp
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_masterwpdata
+    BEFORE UPDATE ON public.masterwpdata
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_transdatakohir
+    BEFORE UPDATE ON public.transdatakohir
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_transhistpendataan
+    BEFORE UPDATE ON public.transhistpendataan
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_transhistpendataandet
+    BEFORE UPDATE ON public.transhistpendataandet
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_transhistpenetapan
+    BEFORE UPDATE ON public.transhistpenetapan
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_transpendataan
+    BEFORE UPDATE ON public.transpendataan
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_transpendataandet
+    BEFORE UPDATE ON public.transpendataandet
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_transpenetapan
+    BEFORE UPDATE ON public.transpenetapan
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_transsts
+    BEFORE UPDATE ON public.transsts
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_transstsdet
+    BEFORE UPDATE ON public.transstsdet
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_transwpdata
+    BEFORE UPDATE ON public.transwpdata
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_transwpdataantri
+    BEFORE UPDATE ON public.transwpdataantri
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+CREATE TRIGGER set_updated_at_transwpdatafile
+    BEFORE UPDATE ON public.transwpdatafile
+    FOR EACH ROW EXECUTE FUNCTION public.set_updated_at();
+
+COMMENT ON TABLE public.masterwp IS 'Data wajib pajak utama.';
+COMMENT ON TABLE public.masterhistory IS 'Riwayat perubahan data wajib pajak.';
+COMMENT ON TABLE public.mastertarifnjop IS 'Tarif NJOP kendaraan.';
+COMMENT ON TABLE public.masterwpdata IS 'Data pendataan wajib pajak.';
+COMMENT ON TABLE public.ref_flag IS 'Referensi nilai flag status 0/1.';
+COMMENT ON COLUMN public.masterwp.status IS 'Status aktif/nonaktif (0/1).';
+COMMENT ON COLUMN public.masterhistory.status IS 'Status aktif/nonaktif (0/1).';
+COMMENT ON COLUMN public.transpenetapan.statbayar IS 'Status pembayaran (0/1).';
+COMMENT ON COLUMN public.transhistpenetapan.statbayar IS 'Status pembayaran (0/1).';
+COMMENT ON COLUMN public.transdatakohir.validjr IS 'Validasi JR (0/1).';
+COMMENT ON COLUMN public.transdatakohir.validpol IS 'Validasi polisi (0/1).';
 
 
 --
@@ -2521,7 +3864,7 @@ COPY public.appotor (kdgroup, roleid, ket, created_at, created_by, updated_at, u
 -- Data for Name: approle; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.approle (roleid, idapp, role, type, menuid, parentid, bantuan, link, icon, kdlevel, show, created_at, created_by, updated_at, updated_by) FROM stdin;
+COPY public.approle (roleid, idapp, role, role_type, menuid, parentid, bantuan, link, icon, kdlevel, is_show, created_at, created_by, updated_at, updated_by) FROM stdin;
 \.
 
 
@@ -2951,7 +4294,7 @@ COPY public.masterprovinsi (idprovinsi, kdprovinsi, nmprovinsi, status, created_
 -- Data for Name: masterrekd; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.masterrekd (idrekd, idparent, mtglevel, kdrek, nmrek, kdjnspjk, type, status, created_at, created_by, updated_at, updated_by) FROM stdin;
+COPY public.masterrekd (idrekd, idparent, mtglevel, kdrek, nmrek, kdjnspjk, rek_type, status, created_at, created_by, updated_at, updated_by) FROM stdin;
 \.
 
 
@@ -2961,7 +4304,7 @@ COPY public.masterrekd (idrekd, idparent, mtglevel, kdrek, nmrek, kdjnspjk, type
 -- Data for Name: masterreknrc; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.masterreknrc (idreknrc, mtglevel, kdrek, nmrek, type, created_at, created_by, updated_at, updated_by) FROM stdin;
+COPY public.masterreknrc (idreknrc, mtglevel, kdrek, nmrek, rek_type, created_at, created_by, updated_at, updated_by) FROM stdin;
 \.
 
 
@@ -3021,7 +4364,7 @@ COPY public.masterteks (idteks, datateks, status, created_at, created_by, update
 -- Data for Name: masterupt; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.masterupt (idupt, idparent, kdupt, nmupt, kdlevel, type, akroupt, alamat, telepon, idbank, idkabkota, kepala, koordinator, bendahara, norekb, status, created_at, created_by, updated_at, updated_by) FROM stdin;
+COPY public.masterupt (idupt, idparent, kdupt, nmupt, kdlevel, upt_type, akroupt, alamat, telepon, idbank, idkabkota, kepala, koordinator, bendahara, norekb, status, created_at, created_by, updated_at, updated_by) FROM stdin;
 \.
 
 
@@ -3051,7 +4394,7 @@ COPY public.masterwp (idwp, objekbadanno, namabadan, idgroupusaha, kodepolisi, k
 -- Data for Name: masterwpdata; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-COPY public.masterwpdata (idwpdata, idjnsd, tglpendataan, idwp, createdate, createby, updatedate, updateby, created_at, created_by, updated_at, updated_by) FROM stdin;
+COPY public.masterwpdata (idwpdata, idjnsd, tglpendataan, idwp, created_at, created_by, updated_at, updated_by) FROM stdin;
 \.
 
 
@@ -4217,4 +5560,3 @@ ALTER TABLE ONLY public.transwpdatafile
 --
 
 \unrestrict LlbYeqUyb5PJzWHLpVTCvgjHKizzku4y7deDfAa4J7OGZDgW8lcE8HZXIh0CXGb
-
