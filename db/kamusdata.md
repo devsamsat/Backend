@@ -4,1358 +4,1358 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 
 ## Tabel `appgroupuser`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| kdgroup | character varying(30) | NOT NULL |  |
-| nmgroup | character varying(50) | NOT NULL |  |
-| ket | character varying(100) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| kdgroup | character varying(30) | NOT NULL |  | Kode grup. |
+| nmgroup | character varying(50) | NOT NULL |  | Nama grup. |
+| ket | character varying(100) | NULL |  | Keterangan tambahan. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `appotor`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| kdgroup | character varying(30) | NOT NULL |  |
-| roleid | character varying(50) | NOT NULL |  |
-| ket | character varying(100) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| kdgroup | character varying(30) | NOT NULL |  | Kode grup. |
+| roleid | character varying(50) | NOT NULL |  | ID role. |
+| ket | character varying(100) | NULL |  | Keterangan tambahan. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `approle`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| roleid | character varying(50) | NOT NULL |  |
-| idapp | bigint | NULL |  |
-| role | character varying(254) | NULL |  |
-| type | character(2) | NULL |  |
-| menuid | character varying(50) | NULL |  |
-| parentid | character varying(50) | NULL |  |
-| bantuan | character varying(254) | NULL |  |
-| link | character varying(254) | NULL |  |
-| icon | character varying(254) | NULL |  |
-| kdlevel | integer | NULL |  |
-| show | integer | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| roleid | character varying(50) | NOT NULL |  | ID role. |
+| idapp | bigint | NULL |  | ID aplikasi. |
+| role | character varying(254) | NULL |  | Nama peran/role. |
+| type | character(2) | NULL |  | Tipe/kategori data. |
+| menuid | character varying(50) | NULL |  | ID menu terkait. |
+| parentid | character varying(50) | NULL |  | ID parent/hirarki. |
+| bantuan | character varying(254) | NULL |  | Teks bantuan/keterangan menu. |
+| link | character varying(254) | NULL |  | Tautan/URL menu. |
+| icon | character varying(254) | NULL |  | Ikon menu. |
+| kdlevel | integer | NULL |  | Kode level. |
+| show | integer | NULL |  | Penanda tampil/tidak tampil. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `appuser`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| userid | character varying(50) | NOT NULL |  |
-| idupt | bigint | NULL |  |
-| kdtahap | character(5) | NOT NULL |  |
-| pwd | character varying(200) | NULL |  |
-| idpeg | bigint | NULL |  |
-| kdgroup | character varying(30) | NOT NULL |  |
-| nik | character varying(50) | NULL |  |
-| nama | character varying(100) | NULL |  |
-| email | character varying(50) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| userid | character varying(50) | NOT NULL |  | ID pengguna. |
+| idupt | bigint | NULL |  | ID UPT. |
+| kdtahap | character(5) | NOT NULL |  | Kode tahap. |
+| pwd | character varying(200) | NULL |  | Password pengguna (terenkripsi). |
+| idpeg | bigint | NULL |  | ID pegawai. |
+| kdgroup | character varying(30) | NOT NULL |  | Kode grup. |
+| nik | character varying(50) | NULL |  | Nomor Induk Kependudukan. |
+| nama | character varying(100) | NULL |  | Nama lengkap. |
+| email | character varying(50) | NULL |  | Alamat email. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnsdok`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| kddok | character varying(10) | NOT NULL |  |
-| namadok | character varying(30) | NOT NULL |  |
-| keterangan | character varying(200) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| kddok | character varying(10) | NOT NULL |  | Kode dokumen. |
+| namadok | character varying(30) | NOT NULL |  | Nama dokumen. |
+| keterangan | character varying(200) | NULL |  | Keterangan tambahan. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnsgolongan`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| jnsgolid | character(2) | NOT NULL |  |
-| golongan | character varying(30) | NOT NULL |  |
-| katid | character(1) | NULL |  |
-| jnskendid | character(3) | NULL |  |
-| viewall | character(1) | NULL |  |
-| status | character(1) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| jnsgolid | character(2) | NOT NULL |  | Kode jenis golongan. |
+| golongan | character varying(30) | NOT NULL |  | Golongan. |
+| katid | character(1) | NULL |  | ID kategori. |
+| jnskendid | character(3) | NULL |  | Kode jenis kendaraan. |
+| viewall | character(1) | NULL |  | Penanda akses lihat semua. |
+| status | character(1) | NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnsguna`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| kdguna | character varying(2) | NOT NULL |  |
-| guna | character varying(30) | NOT NULL |  |
-| gunaplat | character varying(2) | NULL |  |
-| progresif | numeric(18,2) | NULL |  |
-| groupbpkb | character varying(20) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| kdguna | character varying(2) | NOT NULL |  | Kode jenis guna. |
+| guna | character varying(30) | NOT NULL |  | Nama guna. |
+| gunaplat | character varying(2) | NULL |  | Kode plat guna. |
+| progresif | numeric(18,2) | NULL |  | Nilai progresif. |
+| groupbpkb | character varying(20) | NOT NULL |  | Kelompok BPKB. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnshist`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| kdhist | character(3) | NOT NULL |  |
-| nmhist | character varying(50) | NOT NULL |  |
-| kdflow | character(2) | NULL |  |
-| status | character(1) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| kdhist | character(3) | NOT NULL |  | Kode histori. |
+| nmhist | character varying(50) | NOT NULL |  | Nama histori. |
+| kdflow | character(2) | NULL |  | Kode alur/proses. |
+| status | character(1) | NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnsjr`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| jnsjrid | character(2) | NOT NULL |  |
-| kodejr | character varying(2) | NOT NULL |  |
-| goljns | character varying(2) | NOT NULL |  |
-| pu | character varying(2) | NOT NULL |  |
-| roda | integer | NOT NULL |  |
-| keterangan | character varying(200) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| jnsjrid | character(2) | NOT NULL |  | Kode jenis JR. |
+| kodejr | character varying(2) | NOT NULL |  | Kode JR. |
+| goljns | character varying(2) | NOT NULL |  | Golongan jenis. |
+| pu | character varying(2) | NOT NULL |  | Penanda P/U. |
+| roda | integer | NOT NULL |  | Jumlah roda. |
+| keterangan | character varying(200) | NULL |  | Keterangan tambahan. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnskatkendaraan`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| katid | character(1) | NOT NULL |  |
-| kendaraan | character varying(30) | NOT NULL |  |
-| jenisbpkb | character varying(20) | NOT NULL |  |
-| status | character(1) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| katid | character(1) | NOT NULL |  | ID kategori. |
+| kendaraan | character varying(30) | NOT NULL |  | Nama kendaraan. |
+| jenisbpkb | character varying(20) | NOT NULL |  | Jenis BPKB. |
+| status | character(1) | NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnskendaraan`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| jnskendid | character(3) | NOT NULL |  |
-| jnskend | character varying(30) | NOT NULL |  |
-| katid | character(1) | NOT NULL |  |
-| jnsjrid | character(2) | NULL |  |
-| golpjr | integer | NULL |  |
-| golujr | integer | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| jnskendid | character(3) | NOT NULL |  | Kode jenis kendaraan. |
+| jnskend | character varying(30) | NOT NULL |  | Nama jenis kendaraan. |
+| katid | character(1) | NOT NULL |  | ID kategori. |
+| jnsjrid | character(2) | NULL |  | Kode jenis JR. |
+| golpjr | integer | NULL |  | Golongan PJR. |
+| golujr | integer | NULL |  | Golongan UJR. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnsmilik`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| kdmilik | character varying(2) | NOT NULL |  |
-| milik | character varying(30) | NOT NULL |  |
-| bpkpid | character varying(2) | NOT NULL |  |
-| status | character(1) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| kdmilik | character varying(2) | NOT NULL |  | Kode jenis kepemilikan. |
+| milik | character varying(30) | NOT NULL |  | Informasi milik. |
+| bpkpid | character varying(2) | NOT NULL |  | ID jenis BPKB. |
+| status | character(1) | NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnspajak`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| kdjnspjk | character varying(2) | NOT NULL |  |
-| nmjnspjk | character varying(50) | NOT NULL |  |
-| keterangan | character varying(200) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| kdjnspjk | character varying(2) | NOT NULL |  | Kode jenis pajak. |
+| nmjnspjk | character varying(50) | NOT NULL |  | Nama jenis pajak. |
+| keterangan | character varying(200) | NULL |  | Keterangan tambahan. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnsplat`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| kdplat | character varying(2) | NOT NULL |  |
-| plat | character varying(10) | NOT NULL |  |
-| pu | character varying(1) | NOT NULL |  |
-| platjr | integer | NOT NULL |  |
-| numpkb | numeric(18,4) | NOT NULL |  |
-| numbbn1 | numeric(18,4) | NOT NULL |  |
-| numbbn2 | numeric(18,4) | NOT NULL |  |
-| umorg | numeric(18,4) | NOT NULL |  |
-| umbrg | numeric(18,4) | NOT NULL |  |
-| dnumpkb | numeric(18,4) | NOT NULL |  |
-| dnumbbn | numeric(18,4) | NOT NULL |  |
-| dumorg | numeric(18,4) | NOT NULL |  |
-| dumbrg | numeric(18,4) | NOT NULL |  |
-| abpkb | numeric(18,4) | NOT NULL |  |
-| abbbn1 | numeric(18,4) | NOT NULL |  |
-| abbbn2 | numeric(18,4) | NOT NULL |  |
-| numfiskal | numeric(18,4) | NOT NULL |  |
-| snid | character varying(1) | NOT NULL |  |
-| opspkb | numeric(18,4) | NOT NULL |  |
-| opsbbn | numeric(18,4) | NOT NULL |  |
-| opsnumpkb | numeric(18,4) | NOT NULL |  |
-| opsnumbbn1 | numeric(18,4) | NOT NULL |  |
-| opsnumbbn2 | numeric(18,4) | NOT NULL |  |
-| opsdnumpkb | numeric(18,4) | NOT NULL |  |
-| opsdnumbbn | numeric(18,4) | NOT NULL |  |
-| minnumpkb | numeric(18,4) | NOT NULL |  |
-| minnumbbn1 | numeric(18,4) | NOT NULL |  |
-| minnumbbn2 | numeric(18,4) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| kdplat | character varying(2) | NOT NULL |  | Kode plat. |
+| plat | character varying(10) | NOT NULL |  | Kode/jenis plat. |
+| pu | character varying(1) | NOT NULL |  | Penanda P/U. |
+| platjr | integer | NOT NULL |  | Nilai plat JR. |
+| numpkb | numeric(18,4) | NOT NULL |  | Nilai PKB. |
+| numbbn1 | numeric(18,4) | NOT NULL |  | Nilai BBNKB 1. |
+| numbbn2 | numeric(18,4) | NOT NULL |  | Nilai BBNKB 2. |
+| umorg | numeric(18,4) | NOT NULL |  | Nilai UMORG. |
+| umbrg | numeric(18,4) | NOT NULL |  | Nilai UMBRG. |
+| dnumpkb | numeric(18,4) | NOT NULL |  | Nilai denda PKB. |
+| dnumbbn | numeric(18,4) | NOT NULL |  | Nilai denda BBNKB. |
+| dumorg | numeric(18,4) | NOT NULL |  | Nilai denda UMORG. |
+| dumbrg | numeric(18,4) | NOT NULL |  | Nilai denda UMBRG. |
+| abpkb | numeric(18,4) | NOT NULL |  | Nilai AB PKB. |
+| abbbn1 | numeric(18,4) | NOT NULL |  | Nilai AB BBNKB 1. |
+| abbbn2 | numeric(18,4) | NOT NULL |  | Nilai AB BBNKB 2. |
+| numfiskal | numeric(18,4) | NOT NULL |  | Nilai fiskal. |
+| snid | character varying(1) | NOT NULL |  | Penanda/ID SN. |
+| opspkb | numeric(18,4) | NOT NULL |  | Opsen PKB. |
+| opsbbn | numeric(18,4) | NOT NULL |  | Opsen BBNKB. |
+| opsnumpkb | numeric(18,4) | NOT NULL |  | Nilai opsen PKB. |
+| opsnumbbn1 | numeric(18,4) | NOT NULL |  | Nilai opsen BBNKB 1. |
+| opsnumbbn2 | numeric(18,4) | NOT NULL |  | Nilai opsen BBNKB 2. |
+| opsdnumpkb | numeric(18,4) | NOT NULL |  | Nilai denda opsen PKB. |
+| opsdnumbbn | numeric(18,4) | NOT NULL |  | Nilai denda opsen BBNKB. |
+| minnumpkb | numeric(18,4) | NOT NULL |  | Nilai minimum PKB. |
+| minnumbbn1 | numeric(18,4) | NOT NULL |  | Nilai minimum BBNKB 1. |
+| minnumbbn2 | numeric(18,4) | NOT NULL |  | Nilai minimum BBNKB 2. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnsprogresif`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| kdprogresif | integer | NOT NULL |  |
-| progresifr2 | numeric(18,2) | NOT NULL |  |
-| progresifr4 | numeric(18,2) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| kdprogresif | integer | NOT NULL |  | Kode progresif. |
+| progresifr2 | numeric(18,2) | NOT NULL |  | Nilai progresif R2. |
+| progresifr4 | numeric(18,2) | NOT NULL |  | Nilai progresif R4. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnsranmor`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| kdranmor | character(1) | NOT NULL |  |
-| nmranmor | character varying(30) | NOT NULL |  |
-| snid | character(1) | NOT NULL |  |
-| status | character(1) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| kdranmor | character(1) | NOT NULL |  | Kode ranmor. |
+| nmranmor | character varying(30) | NOT NULL |  | Nama ranmor. |
+| snid | character(1) | NOT NULL |  | Penanda/ID SN. |
+| status | character(1) | NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnsstrurek`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| mtglevel | character(2) | NOT NULL |  |
-| nmlevel | character varying(50) | NOT NULL |  |
-| keterangan | character varying(100) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| mtglevel | character(2) | NOT NULL |  | Level/tingkatan. |
+| nmlevel | character varying(50) | NOT NULL |  | Nama level. |
+| keterangan | character varying(100) | NOT NULL |  | Keterangan tambahan. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnstarif`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| kdjnstarif | character(3) | NOT NULL |  |
-| nmjnstarif | character varying(100) | NOT NULL |  |
-| idupt | bigint | NOT NULL |  |
-| jnskendid | character(3) | NULL |  |
-| idrekd | integer | NULL |  |
-| status | character(1) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| kdjnstarif | character(3) | NOT NULL |  | Kode jenis tarif. |
+| nmjnstarif | character varying(100) | NOT NULL |  | Nama jenis tarif. |
+| idupt | bigint | NOT NULL |  | ID UPT. |
+| jnskendid | character(3) | NULL |  | Kode jenis kendaraan. |
+| idrekd | integer | NULL |  | ID rekening daerah. |
+| status | character(1) | NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnsumum`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| kdumum | character(2) | NOT NULL |  |
-| nmumum | character varying(30) | NOT NULL |  |
-| keterangan | character varying(100) | NOT NULL |  |
-| status | character(1) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| kdumum | character(2) | NOT NULL |  | Kode umum. |
+| nmumum | character varying(30) | NOT NULL |  | Nama umum. |
+| keterangan | character varying(100) | NOT NULL |  | Keterangan tambahan. |
+| status | character(1) | NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `mapjnspendapatan`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idmapjnsd | integer | NOT NULL |  |
-| nmjnspendapatan | character varying(200) | NOT NULL |  |
-| idrekpkb | integer | NULL |  |
-| idrekbbnkb | integer | NULL |  |
-| idrekopsenpkb | integer | NULL |  |
-| idrekopsenbbnkb | integer | NULL |  |
-| idrekpnbp | integer | NULL |  |
-| keterangan | character varying(200) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idmapjnsd | integer | NOT NULL |  | ID pemetaan jenis pendapatan. |
+| nmjnspendapatan | character varying(200) | NOT NULL |  | Nama jenis pendapatan. |
+| idrekpkb | integer | NULL |  | ID rekening PKB. |
+| idrekbbnkb | integer | NULL |  | ID rekening BBNKB. |
+| idrekopsenpkb | integer | NULL |  | ID rekening opsen PKB. |
+| idrekopsenbbnkb | integer | NULL |  | ID rekening opsen BBNKB. |
+| idrekpnbp | integer | NULL |  | ID rekening PNBP. |
+| keterangan | character varying(200) | NULL |  | Keterangan tambahan. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterab`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idab | bigint | NOT NULL |  |
-| nomorab | character varying(30) | NOT NULL |  |
-| namabadan | character varying(100) | NOT NULL |  |
-| alamat | character varying(255) | NULL |  |
-| idkabkokta | bigint | NULL |  |
-| idkecamatan | bigint | NULL |  |
-| idkelurahan | bigint | NULL |  |
-| idrw | integer | NULL |  |
-| idrt | integer | NULL |  |
-| telepon | character varying(30) | NULL |  |
-| fax | character varying(30) | NULL |  |
-| idktp | bigint | NULL |  |
-| noktp | character varying(30) | NULL |  |
-| pekerjaan | character varying(50) | NULL |  |
-| tgldaftar | date | NULL | CURRENT_DATE |
-| tglfaktur | date | NULL | CURRENT_DATE |
-| insidentil | character(1) | NOT NULL |  |
-| jnskendid | character(3) | NULL |  |
-| idmerk | integer | NULL |  |
-| merk | character varying(30) | NULL |  |
-| tipe | character varying(50) | NULL |  |
-| tahunbuat | integer | NULL |  |
-| kodebbm | character varying(10) | NULL |  |
-| bbm | character varying(30) | NULL |  |
-| cylinder | integer | NULL |  |
-| norangka | character varying(50) | NULL |  |
-| nomesin | character varying(50) | NULL |  |
-| nobpkb | character varying(50) | NULL |  |
-| kdmilik | character varying(2) | NULL |  |
-| kdguna | character varying(2) | NULL |  |
-| kendke | integer | NULL |  |
-| warna | character varying(50) | NULL |  |
-| kdplat | character varying(2) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idab | bigint | NOT NULL |  | ID agen/badan. |
+| nomorab | character varying(30) | NOT NULL |  | Nomor agen/badan. |
+| namabadan | character varying(100) | NOT NULL |  | Nama badan/usaha. |
+| alamat | character varying(255) | NULL |  | Alamat lengkap. |
+| idkabkokta | bigint | NULL |  | ID kabupaten/kota. |
+| idkecamatan | bigint | NULL |  | ID kecamatan. |
+| idkelurahan | bigint | NULL |  | ID kelurahan. |
+| idrw | integer | NULL |  | ID RW. |
+| idrt | integer | NULL |  | ID RT. |
+| telepon | character varying(30) | NULL |  | Nomor telepon. |
+| fax | character varying(30) | NULL |  | Nomor fax. |
+| idktp | bigint | NULL |  | ID KTP. |
+| noktp | character varying(30) | NULL |  | Nomor KTP. |
+| pekerjaan | character varying(50) | NULL |  | Pekerjaan. |
+| tgldaftar | date | NULL | CURRENT_DATE | Tanggal pendaftaran. |
+| tglfaktur | date | NULL | CURRENT_DATE | Tanggal faktur. |
+| insidentil | character(1) | NOT NULL |  | Penanda insidentil. |
+| jnskendid | character(3) | NULL |  | Kode jenis kendaraan. |
+| idmerk | integer | NULL |  | ID merk. |
+| merk | character varying(30) | NULL |  | Merek. |
+| tipe | character varying(50) | NULL |  | Tipe/model. |
+| tahunbuat | integer | NULL |  | Tahun pembuatan. |
+| kodebbm | character varying(10) | NULL |  | Kode BBM. |
+| bbm | character varying(30) | NULL |  | Informasi bbm. |
+| cylinder | integer | NULL |  | Kapasitas silinder. |
+| norangka | character varying(50) | NULL |  | Nomor rangka. |
+| nomesin | character varying(50) | NULL |  | Nomor mesin. |
+| nobpkb | character varying(50) | NULL |  | Nomor BPKB. |
+| kdmilik | character varying(2) | NULL |  | Kode jenis kepemilikan. |
+| kdguna | character varying(2) | NULL |  | Kode jenis guna. |
+| kendke | integer | NULL |  | Urutan kendaraan ke-berapa. |
+| warna | character varying(50) | NULL |  | Warna kendaraan. |
+| kdplat | character varying(2) | NOT NULL |  | Kode plat. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterabdet`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idabdet | bigint | NOT NULL |  |
-| idab | bigint | NOT NULL |  |
-| idjnsd | integer | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idabdet | bigint | NOT NULL |  | ID detail agen/badan. |
+| idab | bigint | NOT NULL |  | ID agen/badan. |
+| idjnsd | integer | NOT NULL |  | ID jenis data. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterbadan`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idbadan | bigint | NOT NULL |  |
-| nib | character varying(50) | NULL |  |
-| idktp | bigint | NULL |  |
-| namabadan | character varying(100) | NOT NULL |  |
-| nohp | character varying(30) | NOT NULL |  |
-| alamat | character varying(255) | NOT NULL |  |
-| tgldaftar | date | NULL | CURRENT_DATE |
-| idprovinsi | bigint | NULL |  |
-| idkabkokta | bigint | NULL |  |
-| ket | character varying(512) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idbadan | bigint | NOT NULL |  | ID badan/usaha. |
+| nib | character varying(50) | NULL |  | Nomor Induk Berusaha. |
+| idktp | bigint | NULL |  | ID KTP. |
+| namabadan | character varying(100) | NOT NULL |  | Nama badan/usaha. |
+| nohp | character varying(30) | NOT NULL |  | Nomor HP. |
+| alamat | character varying(255) | NOT NULL |  | Alamat lengkap. |
+| tgldaftar | date | NULL | CURRENT_DATE | Tanggal pendaftaran. |
+| idprovinsi | bigint | NULL |  | ID provinsi. |
+| idkabkokta | bigint | NULL |  | ID kabupaten/kota. |
+| ket | character varying(512) | NULL |  | Keterangan tambahan. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterbank`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idbank | integer | NOT NULL |  |
-| kodebank | character varying(10) | NOT NULL |  |
-| namabank | character varying(100) | NOT NULL |  |
-| akronimbank | character varying(50) | NULL |  |
-| cabangbank | character varying(50) | NULL |  |
-| alamatbank | character varying(100) | NULL |  |
-| status | character(1) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idbank | integer | NOT NULL |  | ID bank. |
+| kodebank | character varying(10) | NOT NULL |  | Kode bank. |
+| namabank | character varying(100) | NOT NULL |  | Nama bank. |
+| akronimbank | character varying(50) | NULL |  | Akronim bank. |
+| cabangbank | character varying(50) | NULL |  | Nama cabang bank. |
+| alamatbank | character varying(100) | NULL |  | Alamat bank. |
+| status | character(1) | NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterbbm`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| kodebbm | character varying(10) | NOT NULL |  |
-| namabbm | character varying(50) | NOT NULL |  |
-| keterangan | character varying(100) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| kodebbm | character varying(10) | NOT NULL |  | Kode BBM. |
+| namabbm | character varying(50) | NOT NULL |  | Nama BBM. |
+| keterangan | character varying(100) | NULL |  | Keterangan tambahan. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterbendahara`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idbend | bigint | NOT NULL |  |
-| idpegawai | bigint | NOT NULL |  |
-| idbank | integer | NOT NULL |  |
-| norek | character varying(50) | NOT NULL |  |
-| namarek | character varying(100) | NOT NULL |  |
-| jnsbend | character varying(2) | NOT NULL |  |
-| status | character(1) | NOT NULL |  |
-| jabatan | character varying(100) | NULL |  |
-| pangkat | character varying(50) | NULL |  |
-| uid | character varying(15) | NULL |  |
-| koordinator | bigint | NULL |  |
-| idreknrc | integer | NULL |  |
-| telepon | character varying(30) | NULL |  |
-| ket | character varying(200) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idbend | bigint | NOT NULL |  | ID bendahara. |
+| idpegawai | bigint | NOT NULL |  | ID pegawai. |
+| idbank | integer | NOT NULL |  | ID bank. |
+| norek | character varying(50) | NOT NULL |  | Nomor rekening bank. |
+| namarek | character varying(100) | NOT NULL |  | Nama pemilik rekening. |
+| jnsbend | character varying(2) | NOT NULL |  | Informasi jnsbend. |
+| status | character(1) | NOT NULL |  | Status data/record. |
+| jabatan | character varying(100) | NULL |  | Jabatan/posisi. |
+| pangkat | character varying(50) | NULL |  | Pangkat/golongan. |
+| uid | character varying(15) | NULL |  | Identitas pengguna (UID). |
+| koordinator | bigint | NULL |  | ID koordinator. |
+| idreknrc | integer | NULL |  | ID rekening neraca. |
+| telepon | character varying(30) | NULL |  | Nomor telepon. |
+| ket | character varying(200) | NULL |  | Keterangan tambahan. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterflow`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| kdflow | character varying(10) | NOT NULL |  |
-| nmflow | character varying(100) | NOT NULL |  |
-| pkb | character varying(2) | NULL |  |
-| bbn1 | character varying(2) | NULL |  |
-| bbn2 | character varying(2) | NULL |  |
-| swd | character varying(2) | NULL |  |
-| atbkend | character varying(1) | NULL |  |
-| flowjr | character varying(1) | NULL |  |
-| stnkbaru | character varying(2) | NULL |  |
-| tnkb | character varying(2) | NULL |  |
-| sahstnk | character varying(2) | NULL |  |
-| perpanjangstnk | character varying(2) | NULL |  |
-| potongan | character varying(2) | NULL |  |
-| bataslayanan | integer | NULL |  |
-| satuan | character varying(50) | NULL |  |
-| status | character(1) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| kdflow | character varying(10) | NOT NULL |  | Kode alur/proses. |
+| nmflow | character varying(100) | NOT NULL |  | Nama alur/proses. |
+| pkb | character varying(2) | NULL |  | Informasi pkb. |
+| bbn1 | character varying(2) | NULL |  | Informasi bbn1. |
+| bbn2 | character varying(2) | NULL |  | Informasi bbn2. |
+| swd | character varying(2) | NULL |  | Informasi swd. |
+| atbkend | character varying(1) | NULL |  | Informasi atbkend. |
+| flowjr | character varying(1) | NULL |  | Informasi flowjr. |
+| stnkbaru | character varying(2) | NULL |  | Penanda STNK baru. |
+| tnkb | character varying(2) | NULL |  | Penanda TNKB. |
+| sahstnk | character varying(2) | NULL |  | Penanda sah STNK. |
+| perpanjangstnk | character varying(2) | NULL |  | Penanda perpanjangan STNK. |
+| potongan | character varying(2) | NULL |  | Penanda potongan. |
+| bataslayanan | integer | NULL |  | Batas layanan. |
+| satuan | character varying(50) | NULL |  | Satuan nilai/ukuran. |
+| status | character(1) | NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterhapusdenda`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idhapusdenda | integer | NOT NULL |  |
-| jenis | character(1) | NOT NULL |  |
-| uraian | character varying(100) | NOT NULL |  |
-| awal | date | NULL | CURRENT_DATE |
-| akhir | date | NULL | CURRENT_DATE |
-| nilai | numeric(18,2) | NULL |  |
-| satuan | character varying(30) | NULL |  |
-| ket | character varying(256) | NULL |  |
-| status | character(1) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idhapusdenda | integer | NOT NULL |  | ID hapusdenda. |
+| jenis | character(1) | NOT NULL |  | Jenis/kategori. |
+| uraian | character varying(100) | NOT NULL |  | Informasi uraian. |
+| awal | date | NULL | CURRENT_DATE | Nilai/tanggal awal. |
+| akhir | date | NULL | CURRENT_DATE | Nilai/tanggal akhir. |
+| nilai | numeric(18,2) | NULL |  | Nilai nominal. |
+| satuan | character varying(30) | NULL |  | Satuan nilai/ukuran. |
+| ket | character varying(256) | NULL |  | Keterangan tambahan. |
+| status | character(1) | NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterhistory`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idhistory | bigint | NOT NULL |  |
-| idwp | bigint | NOT NULL |  |
-| objekbadanno | character varying(30) | NOT NULL |  |
-| namabadan | character varying(100) | NOT NULL |  |
-| idgroupusaha | character varying(2) | NULL |  |
-| kodepolisi | character varying(10) | NULL |  |
-| kodelokasi | character varying(30) | NULL |  |
-| idbadan | bigint | NULL |  |
-| idklasifikasi | character varying(2) | NULL |  |
-| idlokasi | character varying(2) | NULL |  |
-| alamat | character varying(255) | NULL |  |
-| idkabkokta | bigint | NULL |  |
-| idkecamatan | bigint | NULL |  |
-| idkelurahan | bigint | NULL |  |
-| idrw | integer | NULL |  |
-| idrt | integer | NULL |  |
-| telepon | character varying(30) | NULL |  |
-| fax | character varying(30) | NULL |  |
-| namapemilik | character varying(50) | NULL |  |
-| idktp | bigint | NULL |  |
-| pekerjaan | character varying(100) | NULL |  |
-| tgldaftar | date | NULL |  |
-| tglsah | date | NULL |  |
-| keteblokir | character varying(255) | NULL |  |
-| tglhapus | date | NULL |  |
-| groupblokir | character varying(10) | NULL |  |
-| insidentil | character(1) | NOT NULL |  |
-| nopollama | character varying(30) | NOT NULL |  |
-| lastskp | character varying(50) | NULL |  |
-| jnskendid | character(3) | NULL |  |
-| idmerk | integer | NULL |  |
-| merk | character varying(30) | NULL |  |
-| tipe | character varying(50) | NULL |  |
-| tahunbuat | integer | NULL |  |
-| kodebbm | character varying(10) | NULL |  |
-| bbm | character varying(30) | NULL |  |
-| cylinder | integer | NULL |  |
-| norangka | character varying(50) | NULL |  |
-| nomesin | character varying(50) | NULL |  |
-| nobpkb | character varying(50) | NULL |  |
-| kdmilik | character varying(2) | NULL |  |
-| kdguna | character varying(2) | NULL |  |
-| kendke | integer | NULL |  |
-| warna | character varying(50) | NULL |  |
-| kdplat | character varying(2) | NOT NULL |  |
-| nostnkb | character varying(50) | NULL |  |
-| daftarstnk | character varying(50) | NULL |  |
-| tglcetakstnk | date | NULL | CURRENT_DATE |
-| tglstnk | date | NULL | CURRENT_DATE |
-| sdstnk | date | NULL | CURRENT_DATE |
-| tglskp | date | NULL | CURRENT_DATE |
-| awalskp | date | NULL | CURRENT_DATE |
-| akhirskp | date | NULL | CURRENT_DATE |
-| tglmutasi | date | NULL |  |
-| tgljualbeli | date | NULL |  |
-| nodaftar | character varying(30) | NULL |  |
-| nosah1 | character varying(20) | NULL |  |
-| tglsah1 | date | NULL |  |
-| nosah2 | character varying(20) | NULL |  |
-| tglsah2 | date | NULL |  |
-| nosah3 | character varying(20) | NULL |  |
-| tglsah3 | date | NULL |  |
-| nosah4 | character varying(20) | NULL |  |
-| tglsah4 | date | NULL |  |
-| laporjual | date | NULL |  |
-| nikpemilik | character varying(30) | NULL |  |
-| notelppemilik | character varying(30) | NULL |  |
-| putih | character varying(1) | NULL |  |
-| status | character(1) | NULL |  |
-| statint | character(1) | NULL |  |
-| histid | character varying(3) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idhistory | bigint | NOT NULL |  | ID history. |
+| idwp | bigint | NOT NULL |  | ID wajib pajak. |
+| objekbadanno | character varying(30) | NOT NULL |  | Nomor objek badan. |
+| namabadan | character varying(100) | NOT NULL |  | Nama badan/usaha. |
+| idgroupusaha | character varying(2) | NULL |  | ID grup usaha. |
+| kodepolisi | character varying(10) | NULL |  | Kode polisi. |
+| kodelokasi | character varying(30) | NULL |  | Kode lokasi. |
+| idbadan | bigint | NULL |  | ID badan/usaha. |
+| idklasifikasi | character varying(2) | NULL |  | ID klasifikasi. |
+| idlokasi | character varying(2) | NULL |  | ID lokasi. |
+| alamat | character varying(255) | NULL |  | Alamat lengkap. |
+| idkabkokta | bigint | NULL |  | ID kabupaten/kota. |
+| idkecamatan | bigint | NULL |  | ID kecamatan. |
+| idkelurahan | bigint | NULL |  | ID kelurahan. |
+| idrw | integer | NULL |  | ID RW. |
+| idrt | integer | NULL |  | ID RT. |
+| telepon | character varying(30) | NULL |  | Nomor telepon. |
+| fax | character varying(30) | NULL |  | Nomor fax. |
+| namapemilik | character varying(50) | NULL |  | Nama pemilik. |
+| idktp | bigint | NULL |  | ID KTP. |
+| pekerjaan | character varying(100) | NULL |  | Pekerjaan. |
+| tgldaftar | date | NULL |  | Tanggal pendaftaran. |
+| tglsah | date | NULL |  | Tanggal sah. |
+| keteblokir | character varying(255) | NULL |  | Keterangan blokir. |
+| tglhapus | date | NULL |  | Tanggal hapus. |
+| groupblokir | character varying(10) | NULL |  | Kelompok blokir. |
+| insidentil | character(1) | NOT NULL |  | Penanda insidentil. |
+| nopollama | character varying(30) | NOT NULL |  | Nomor polisi lama. |
+| lastskp | character varying(50) | NULL |  | Nomor SKP terakhir. |
+| jnskendid | character(3) | NULL |  | Kode jenis kendaraan. |
+| idmerk | integer | NULL |  | ID merk. |
+| merk | character varying(30) | NULL |  | Merek. |
+| tipe | character varying(50) | NULL |  | Tipe/model. |
+| tahunbuat | integer | NULL |  | Tahun pembuatan. |
+| kodebbm | character varying(10) | NULL |  | Kode BBM. |
+| bbm | character varying(30) | NULL |  | Informasi bbm. |
+| cylinder | integer | NULL |  | Kapasitas silinder. |
+| norangka | character varying(50) | NULL |  | Nomor rangka. |
+| nomesin | character varying(50) | NULL |  | Nomor mesin. |
+| nobpkb | character varying(50) | NULL |  | Nomor BPKB. |
+| kdmilik | character varying(2) | NULL |  | Kode jenis kepemilikan. |
+| kdguna | character varying(2) | NULL |  | Kode jenis guna. |
+| kendke | integer | NULL |  | Urutan kendaraan ke-berapa. |
+| warna | character varying(50) | NULL |  | Warna kendaraan. |
+| kdplat | character varying(2) | NOT NULL |  | Kode plat. |
+| nostnkb | character varying(50) | NULL |  | Nomor STNK. |
+| daftarstnk | character varying(50) | NULL |  | Nomor daftar STNK. |
+| tglcetakstnk | date | NULL | CURRENT_DATE | Tanggal cetak STNK. |
+| tglstnk | date | NULL | CURRENT_DATE | Tanggal STNK. |
+| sdstnk | date | NULL | CURRENT_DATE | Tanggal berlaku STNK sampai. |
+| tglskp | date | NULL | CURRENT_DATE | Tanggal SKP. |
+| awalskp | date | NULL | CURRENT_DATE | Tanggal awal SKP. |
+| akhirskp | date | NULL | CURRENT_DATE | Tanggal akhir SKP. |
+| tglmutasi | date | NULL |  | Tanggal mutasi. |
+| tgljualbeli | date | NULL |  | Tanggal jual beli. |
+| nodaftar | character varying(30) | NULL |  | Nomor daftar. |
+| nosah1 | character varying(20) | NULL |  | Nomor sah 1. |
+| tglsah1 | date | NULL |  | Tanggal sah 1. |
+| nosah2 | character varying(20) | NULL |  | Nomor sah 2. |
+| tglsah2 | date | NULL |  | Tanggal sah 2. |
+| nosah3 | character varying(20) | NULL |  | Nomor sah 3. |
+| tglsah3 | date | NULL |  | Tanggal sah 3. |
+| nosah4 | character varying(20) | NULL |  | Nomor sah 4. |
+| tglsah4 | date | NULL |  | Tanggal sah 4. |
+| laporjual | date | NULL |  | Informasi laporjual. |
+| nikpemilik | character varying(30) | NULL |  | NIK pemilik. |
+| notelppemilik | character varying(30) | NULL |  | Nomor telepon pemilik. |
+| putih | character varying(1) | NULL |  | Penanda plat putih. |
+| status | character(1) | NULL |  | Status data/record. |
+| statint | character(1) | NULL |  | Status internal. |
+| histid | character varying(3) | NOT NULL |  | ID histori. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterjabttd`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idjabttd | bigint | NOT NULL |  |
-| idpegawai | bigint | NOT NULL |  |
-| kddok | character varying(10) | NOT NULL |  |
-| jabatan | character varying(50) | NULL |  |
-| ket | character varying(256) | NULL |  |
-| status | character(1) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idjabttd | bigint | NOT NULL |  | ID jabttd. |
+| idpegawai | bigint | NOT NULL |  | ID pegawai. |
+| kddok | character varying(10) | NOT NULL |  | Kode dokumen. |
+| jabatan | character varying(50) | NULL |  | Jabatan/posisi. |
+| ket | character varying(256) | NULL |  | Keterangan tambahan. |
+| status | character(1) | NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterjnspendapatan`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idjnsd | integer | NOT NULL |  |
-| nmjnspendapatan | character varying(200) | NOT NULL |  |
-| parentid | integer | NULL |  |
-| kdrek | character varying(30) | NULL |  |
-| jatuhtempo | integer | NULL |  |
-| status | character(1) | NULL |  |
-| selfassessment | character(1) | NULL |  |
-| katid | character(1) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idjnsd | integer | NOT NULL |  | ID jenis data. |
+| nmjnspendapatan | character varying(200) | NOT NULL |  | Nama jenis pendapatan. |
+| parentid | integer | NULL |  | ID parent/hirarki. |
+| kdrek | character varying(30) | NULL |  | Kode rekening. |
+| jatuhtempo | integer | NULL |  | Informasi jatuhtempo. |
+| status | character(1) | NULL |  | Status data/record. |
+| selfassessment | character(1) | NULL |  | Informasi selfassessment. |
+| katid | character(1) | NULL |  | ID kategori. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterkabkota`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idkabkota | bigint | NOT NULL |  |
-| idprovinsi | bigint | NOT NULL |  |
-| kdkabkota | character(10) | NULL |  |
-| nmkabkota | character varying(50) | NOT NULL |  |
-| akronim | character varying(50) | NOT NULL |  |
-| ibukota | character varying(50) | NOT NULL |  |
-| status | character(1) | NOT NULL |  |
-| bpkbid | character varying(4) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idkabkota | bigint | NOT NULL |  | ID kabupaten/kota. |
+| idprovinsi | bigint | NOT NULL |  | ID provinsi. |
+| kdkabkota | character(10) | NULL |  | Kode kabupaten/kota. |
+| nmkabkota | character varying(50) | NOT NULL |  | Nama kabupaten/kota. |
+| akronim | character varying(50) | NOT NULL |  | Informasi akronim. |
+| ibukota | character varying(50) | NOT NULL |  | Informasi ibukota. |
+| status | character(1) | NOT NULL |  | Status data/record. |
+| bpkbid | character varying(4) | NOT NULL |  | Informasi bpkbid. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterkabkotaall`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idkabkotaall | bigint | NOT NULL |  |
-| idprovinsi | bigint | NOT NULL |  |
-| kdkabkota | character(8) | NULL |  |
-| nmkabkota | character varying(100) | NOT NULL |  |
-| status | character(1) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idkabkotaall | bigint | NOT NULL |  | ID kabkotaall. |
+| idprovinsi | bigint | NOT NULL |  | ID provinsi. |
+| kdkabkota | character(8) | NULL |  | Kode kabupaten/kota. |
+| nmkabkota | character varying(100) | NOT NULL |  | Nama kabupaten/kota. |
+| status | character(1) | NOT NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterkaupt`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idkaupt | bigint | NOT NULL |  |
-| idpegawai | bigint | NULL |  |
-| idupt | bigint | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idkaupt | bigint | NOT NULL |  | ID kaupt. |
+| idpegawai | bigint | NULL |  | ID pegawai. |
+| idupt | bigint | NOT NULL |  | ID UPT. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterkb`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idkb | bigint | NOT NULL |  |
-| nomorfaktur | character varying(30) | NULL |  |
-| namabadan | character varying(100) | NOT NULL |  |
-| alamat | character varying(255) | NULL |  |
-| idkabkokta | bigint | NULL |  |
-| idkecamatan | bigint | NULL |  |
-| idkelurahan | bigint | NULL |  |
-| idrw | integer | NULL |  |
-| idrt | integer | NULL |  |
-| telepon | character varying(30) | NULL |  |
-| fax | character varying(30) | NULL |  |
-| idktp | bigint | NULL |  |
-| noktp | character varying(30) | NULL |  |
-| pekerjaan | character varying(50) | NULL |  |
-| tgldaftar | date | NULL | CURRENT_DATE |
-| tglfaktur | date | NULL | CURRENT_DATE |
-| insidentil | character(1) | NOT NULL |  |
-| jnskendid | character(3) | NULL |  |
-| idmerk | integer | NULL |  |
-| merk | character varying(30) | NULL |  |
-| tipe | character varying(50) | NULL |  |
-| tahunbuat | integer | NULL |  |
-| kodebbm | character varying(10) | NULL |  |
-| bbm | character varying(30) | NULL |  |
-| cylinder | integer | NULL |  |
-| norangka | character varying(50) | NULL |  |
-| nomesin | character varying(50) | NULL |  |
-| nobpkb | character varying(50) | NULL |  |
-| kdmilik | character varying(2) | NULL |  |
-| kdguna | character varying(2) | NULL |  |
-| kendke | integer | NULL |  |
-| warna | character varying(50) | NULL |  |
-| kdplat | character varying(2) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idkb | bigint | NOT NULL |  | ID kb. |
+| nomorfaktur | character varying(30) | NULL |  | Nomor morfaktur. |
+| namabadan | character varying(100) | NOT NULL |  | Nama badan/usaha. |
+| alamat | character varying(255) | NULL |  | Alamat lengkap. |
+| idkabkokta | bigint | NULL |  | ID kabupaten/kota. |
+| idkecamatan | bigint | NULL |  | ID kecamatan. |
+| idkelurahan | bigint | NULL |  | ID kelurahan. |
+| idrw | integer | NULL |  | ID RW. |
+| idrt | integer | NULL |  | ID RT. |
+| telepon | character varying(30) | NULL |  | Nomor telepon. |
+| fax | character varying(30) | NULL |  | Nomor fax. |
+| idktp | bigint | NULL |  | ID KTP. |
+| noktp | character varying(30) | NULL |  | Nomor KTP. |
+| pekerjaan | character varying(50) | NULL |  | Pekerjaan. |
+| tgldaftar | date | NULL | CURRENT_DATE | Tanggal pendaftaran. |
+| tglfaktur | date | NULL | CURRENT_DATE | Tanggal faktur. |
+| insidentil | character(1) | NOT NULL |  | Penanda insidentil. |
+| jnskendid | character(3) | NULL |  | Kode jenis kendaraan. |
+| idmerk | integer | NULL |  | ID merk. |
+| merk | character varying(30) | NULL |  | Merek. |
+| tipe | character varying(50) | NULL |  | Tipe/model. |
+| tahunbuat | integer | NULL |  | Tahun pembuatan. |
+| kodebbm | character varying(10) | NULL |  | Kode BBM. |
+| bbm | character varying(30) | NULL |  | Informasi bbm. |
+| cylinder | integer | NULL |  | Kapasitas silinder. |
+| norangka | character varying(50) | NULL |  | Nomor rangka. |
+| nomesin | character varying(50) | NULL |  | Nomor mesin. |
+| nobpkb | character varying(50) | NULL |  | Nomor BPKB. |
+| kdmilik | character varying(2) | NULL |  | Kode jenis kepemilikan. |
+| kdguna | character varying(2) | NULL |  | Kode jenis guna. |
+| kendke | integer | NULL |  | Urutan kendaraan ke-berapa. |
+| warna | character varying(50) | NULL |  | Warna kendaraan. |
+| kdplat | character varying(2) | NOT NULL |  | Kode plat. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterkbdet`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idkbdet | bigint | NOT NULL |  |
-| idkb | bigint | NOT NULL |  |
-| idjnsd | integer | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idkbdet | bigint | NOT NULL |  | ID kbdet. |
+| idkb | bigint | NOT NULL |  | ID kb. |
+| idjnsd | integer | NOT NULL |  | ID jenis data. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterkecamatan`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idkecamatan | bigint | NOT NULL |  |
-| idkabkota | bigint | NOT NULL |  |
-| kdkecamatan | character(10) | NULL |  |
-| nmkecamatan | character varying(100) | NOT NULL |  |
-| alamat | character varying(100) | NOT NULL |  |
-| telepon | character varying(30) | NOT NULL |  |
-| fax | character varying(30) | NULL |  |
-| status | character(1) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idkecamatan | bigint | NOT NULL |  | ID kecamatan. |
+| idkabkota | bigint | NOT NULL |  | ID kabupaten/kota. |
+| kdkecamatan | character(10) | NULL |  | Kode kecamatan. |
+| nmkecamatan | character varying(100) | NOT NULL |  | Nama kecamatan. |
+| alamat | character varying(100) | NOT NULL |  | Alamat lengkap. |
+| telepon | character varying(30) | NOT NULL |  | Nomor telepon. |
+| fax | character varying(30) | NULL |  | Nomor fax. |
+| status | character(1) | NOT NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterkelurahan`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idkelurahan | bigint | NOT NULL |  |
-| idkecamatan | bigint | NOT NULL |  |
-| kdkelurahan | character(10) | NULL |  |
-| nmkelurahan | character varying(100) | NOT NULL |  |
-| alamat | character varying(100) | NOT NULL |  |
-| telepon | character varying(30) | NOT NULL |  |
-| kodepos | character varying(30) | NULL |  |
-| status | character(1) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idkelurahan | bigint | NOT NULL |  | ID kelurahan. |
+| idkecamatan | bigint | NOT NULL |  | ID kecamatan. |
+| kdkelurahan | character(10) | NULL |  | Kode kelurahan. |
+| nmkelurahan | character varying(100) | NOT NULL |  | Nama kelurahan. |
+| alamat | character varying(100) | NOT NULL |  | Alamat lengkap. |
+| telepon | character varying(30) | NOT NULL |  | Nomor telepon. |
+| kodepos | character varying(30) | NULL |  | Informasi kodepos. |
+| status | character(1) | NOT NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterkiosk`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idkios | integer | NOT NULL |  |
-| idparent | integer | NULL |  |
-| kodekiosk | character varying(20) | NOT NULL |  |
-| datakiosk | character varying(200) | NOT NULL |  |
-| level | character(1) | NOT NULL |  |
-| status | character(1) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idkios | integer | NOT NULL |  | ID kios. |
+| idparent | integer | NULL |  | ID parent/hirarki. |
+| kodekiosk | character varying(20) | NOT NULL |  | Informasi kodekiosk. |
+| datakiosk | character varying(200) | NOT NULL |  | Informasi datakiosk. |
+| level | character(1) | NOT NULL |  | Informasi level. |
+| status | character(1) | NOT NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterktp`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idktp | bigint | NOT NULL |  |
-| nik | character varying(50) | NOT NULL |  |
-| nama | character varying(100) | NOT NULL |  |
-| agama | integer | NULL |  |
-| nohp | character varying(30) | NOT NULL |  |
-| alamat | character varying(255) | NOT NULL |  |
-| tgldaftar | date | NULL | CURRENT_DATE |
-| idprovinsi | bigint | NULL |  |
-| idkabkokta | bigint | NOT NULL |  |
-| idkecamatan | bigint | NOT NULL |  |
-| idkelurahan | bigint | NOT NULL |  |
-| idrw | integer | NULL |  |
-| idrt | integer | NULL |  |
-| kdrt | character varying(20) | NULL |  |
-| nikah | integer | NULL |  |
-| tempatlahir | character varying(100) | NULL |  |
-| tgllahir | date | NULL |  |
-| tglregistrasi | date | NULL |  |
-| nokk | character varying(30) | NULL |  |
-| nobpjs | character varying(30) | NULL |  |
-| goldarah | character varying(2) | NULL |  |
-| email | character varying(50) | NULL |  |
-| pendidikan | character varying(50) | NULL |  |
-| jeniskelamin | character(1) | NULL |  |
-| dusun | character varying(50) | NULL |  |
-| pekerjaan | character varying(100) | NULL |  |
-| namaayah | character varying(100) | NULL |  |
-| namaibu | character varying(100) | NULL |  |
-| negara | character varying(50) | NULL |  |
-| statwn | character(1) | NULL |  |
-| statint | character(1) | NULL |  |
-| tglint | date | NULL |  |
-| ket | character varying(512) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idktp | bigint | NOT NULL |  | ID KTP. |
+| nik | character varying(50) | NOT NULL |  | Nomor Induk Kependudukan. |
+| nama | character varying(100) | NOT NULL |  | Nama lengkap. |
+| agama | integer | NULL |  | Informasi agama. |
+| nohp | character varying(30) | NOT NULL |  | Nomor HP. |
+| alamat | character varying(255) | NOT NULL |  | Alamat lengkap. |
+| tgldaftar | date | NULL | CURRENT_DATE | Tanggal pendaftaran. |
+| idprovinsi | bigint | NULL |  | ID provinsi. |
+| idkabkokta | bigint | NOT NULL |  | ID kabupaten/kota. |
+| idkecamatan | bigint | NOT NULL |  | ID kecamatan. |
+| idkelurahan | bigint | NOT NULL |  | ID kelurahan. |
+| idrw | integer | NULL |  | ID RW. |
+| idrt | integer | NULL |  | ID RT. |
+| kdrt | character varying(20) | NULL |  | Kode RT. |
+| nikah | integer | NULL |  | Informasi nikah. |
+| tempatlahir | character varying(100) | NULL |  | Informasi tempatlahir. |
+| tgllahir | date | NULL |  | Tanggal lahir. |
+| tglregistrasi | date | NULL |  | Tanggal registrasi. |
+| nokk | character varying(30) | NULL |  | Nomor kk. |
+| nobpjs | character varying(30) | NULL |  | Nomor bpjs. |
+| goldarah | character varying(2) | NULL |  | Informasi goldarah. |
+| email | character varying(50) | NULL |  | Alamat email. |
+| pendidikan | character varying(50) | NULL |  | Informasi pendidikan. |
+| jeniskelamin | character(1) | NULL |  | Informasi jeniskelamin. |
+| dusun | character varying(50) | NULL |  | Informasi dusun. |
+| pekerjaan | character varying(100) | NULL |  | Pekerjaan. |
+| namaayah | character varying(100) | NULL |  | Informasi namaayah. |
+| namaibu | character varying(100) | NULL |  | Informasi namaibu. |
+| negara | character varying(50) | NULL |  | Informasi negara. |
+| statwn | character(1) | NULL |  | Informasi statwn. |
+| statint | character(1) | NULL |  | Status internal. |
+| tglint | date | NULL |  | Tanggal int. |
+| ket | character varying(512) | NULL |  | Keterangan tambahan. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterlibur`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idlibur | integer | NOT NULL |  |
-| idkabkota | bigint | NOT NULL |  |
-| level | character(1) | NOT NULL |  |
-| tanggal | date | NULL | CURRENT_DATE |
-| namalibur | character varying(150) | NULL |  |
-| keterangan | character(3) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idlibur | integer | NOT NULL |  | ID libur. |
+| idkabkota | bigint | NOT NULL |  | ID kabupaten/kota. |
+| level | character(1) | NOT NULL |  | Informasi level. |
+| tanggal | date | NULL | CURRENT_DATE | Informasi tanggal. |
+| namalibur | character varying(150) | NULL |  | Informasi namalibur. |
+| keterangan | character(3) | NULL |  | Keterangan tambahan. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `mastermerk`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idmerk | integer | NOT NULL |  |
-| kdmerk | character(2) | NULL |  |
-| nmmerk | character varying(100) | NOT NULL |  |
-| keterangan | character varying(200) | NULL |  |
-| status | character(1) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idmerk | integer | NOT NULL |  | ID merk. |
+| kdmerk | character(2) | NULL |  | Kode merk. |
+| nmmerk | character varying(100) | NOT NULL |  | Nama merk. |
+| keterangan | character varying(200) | NULL |  | Keterangan tambahan. |
+| status | character(1) | NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masternpwpd`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idnpwpd | bigint | NOT NULL |  |
-| statnpwpd | character(1) | NULL |  |
-| npwpd | character varying(50) | NOT NULL |  |
-| idbadan | bigint | NULL |  |
-| idktp | bigint | NULL |  |
-| tgldaftar | date | NULL |  |
-| nib | character varying(50) | NULL |  |
-| namabadan | character varying(100) | NULL |  |
-| alamat | character varying(100) | NULL |  |
-| status | character(1) | NULL |  |
-| ket | character varying(512) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idnpwpd | bigint | NOT NULL |  | ID NPWPD. |
+| statnpwpd | character(1) | NULL |  | Informasi statnpwpd. |
+| npwpd | character varying(50) | NOT NULL |  | Nomor Pokok Wajib Pajak Daerah. |
+| idbadan | bigint | NULL |  | ID badan/usaha. |
+| idktp | bigint | NULL |  | ID KTP. |
+| tgldaftar | date | NULL |  | Tanggal pendaftaran. |
+| nib | character varying(50) | NULL |  | Nomor Induk Berusaha. |
+| namabadan | character varying(100) | NULL |  | Nama badan/usaha. |
+| alamat | character varying(100) | NULL |  | Alamat lengkap. |
+| status | character(1) | NULL |  | Status data/record. |
+| ket | character varying(512) | NULL |  | Keterangan tambahan. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterpegawai`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idpegawai | bigint | NOT NULL |  |
-| idktp | bigint | NULL |  |
-| nip | character varying(50) | NOT NULL |  |
-| nik | character varying(50) | NULL |  |
-| nama | character varying(50) | NOT NULL |  |
-| idupt | bigint | NOT NULL |  |
-| status | character(1) | NOT NULL |  |
-| jabatan | character varying(100) | NULL |  |
-| pangkat | character varying(50) | NULL |  |
-| golongan | character varying(20) | NULL |  |
-| uid | character varying(15) | NULL |  |
-| telepon | character varying(30) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idpegawai | bigint | NOT NULL |  | ID pegawai. |
+| idktp | bigint | NULL |  | ID KTP. |
+| nip | character varying(50) | NOT NULL |  | Nomor Induk Pegawai. |
+| nik | character varying(50) | NULL |  | Nomor Induk Kependudukan. |
+| nama | character varying(50) | NOT NULL |  | Nama lengkap. |
+| idupt | bigint | NOT NULL |  | ID UPT. |
+| status | character(1) | NOT NULL |  | Status data/record. |
+| jabatan | character varying(100) | NULL |  | Jabatan/posisi. |
+| pangkat | character varying(50) | NULL |  | Pangkat/golongan. |
+| golongan | character varying(20) | NULL |  | Golongan. |
+| uid | character varying(15) | NULL |  | Identitas pengguna (UID). |
+| telepon | character varying(30) | NULL |  | Nomor telepon. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterprovinsi`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idprovinsi | bigint | NOT NULL |  |
-| kdprovinsi | character varying(10) | NOT NULL |  |
-| nmprovinsi | character varying(100) | NOT NULL |  |
-| status | character(1) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idprovinsi | bigint | NOT NULL |  | ID provinsi. |
+| kdprovinsi | character varying(10) | NOT NULL |  | Kode provinsi. |
+| nmprovinsi | character varying(100) | NOT NULL |  | Nama provinsi. |
+| status | character(1) | NOT NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterrekd`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idrekd | integer | NOT NULL |  |
-| idparent | integer | NULL |  |
-| mtglevel | character(2) | NULL |  |
-| kdrek | character varying(30) | NOT NULL |  |
-| nmrek | character varying(200) | NULL |  |
-| kdjnspjk | character varying(2) | NULL |  |
-| type | character(1) | NULL |  |
-| status | character(1) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idrekd | integer | NOT NULL |  | ID rekening daerah. |
+| idparent | integer | NULL |  | ID parent/hirarki. |
+| mtglevel | character(2) | NULL |  | Level/tingkatan. |
+| kdrek | character varying(30) | NOT NULL |  | Kode rekening. |
+| nmrek | character varying(200) | NULL |  | Nama rekening. |
+| kdjnspjk | character varying(2) | NULL |  | Kode jenis pajak. |
+| type | character(1) | NULL |  | Tipe/kategori data. |
+| status | character(1) | NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterreknrc`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idreknrc | integer | NOT NULL |  |
-| mtglevel | character(2) | NULL |  |
-| kdrek | character varying(30) | NOT NULL |  |
-| nmrek | character varying(500) | NULL |  |
-| type | character(1) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idreknrc | integer | NOT NULL |  | ID rekening neraca. |
+| mtglevel | character(2) | NULL |  | Level/tingkatan. |
+| kdrek | character varying(30) | NOT NULL |  | Kode rekening. |
+| nmrek | character varying(500) | NULL |  | Nama rekening. |
+| type | character(1) | NULL |  | Tipe/kategori data. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterrt`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idrt | integer | NOT NULL |  |
-| idrw | integer | NOT NULL |  |
-| kdrt | character(10) | NULL |  |
-| status | character(1) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idrt | integer | NOT NULL |  | ID RT. |
+| idrw | integer | NOT NULL |  | ID RW. |
+| kdrt | character(10) | NULL |  | Kode RT. |
+| status | character(1) | NOT NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterrw`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idrw | integer | NOT NULL |  |
-| idkelurahan | bigint | NOT NULL |  |
-| kdrw | character(10) | NULL |  |
-| alamat | character varying(100) | NOT NULL |  |
-| status | character(1) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idrw | integer | NOT NULL |  | ID RW. |
+| idkelurahan | bigint | NOT NULL |  | ID kelurahan. |
+| kdrw | character(10) | NULL |  | Kode RW. |
+| alamat | character varying(100) | NOT NULL |  | Alamat lengkap. |
+| status | character(1) | NOT NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `mastertarif`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idtarif | bigint | NOT NULL |  |
-| kdjnspjk | character varying(2) | NOT NULL |  |
-| jnskendid | character(3) | NULL |  |
-| satuan | character varying(200) | NULL |  |
-| awal | numeric(18,2) | NULL |  |
-| akhir | numeric(18,2) | NULL |  |
-| keterangan | character varying(200) | NULL |  |
-| kdflow | character varying(10) | NULL |  |
-| kdplat | character varying(2) | NULL |  |
-| statumum | character(1) | NULL |  |
-| tarif | numeric(18,2) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idtarif | bigint | NOT NULL |  | ID tarif. |
+| kdjnspjk | character varying(2) | NOT NULL |  | Kode jenis pajak. |
+| jnskendid | character(3) | NULL |  | Kode jenis kendaraan. |
+| satuan | character varying(200) | NULL |  | Satuan nilai/ukuran. |
+| awal | numeric(18,2) | NULL |  | Nilai/tanggal awal. |
+| akhir | numeric(18,2) | NULL |  | Nilai/tanggal akhir. |
+| keterangan | character varying(200) | NULL |  | Keterangan tambahan. |
+| kdflow | character varying(10) | NULL |  | Kode alur/proses. |
+| kdplat | character varying(2) | NULL |  | Kode plat. |
+| statumum | character(1) | NULL |  | Status umum. |
+| tarif | numeric(18,2) | NULL |  | Nilai tarif. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `mastertarifnjop`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idtarifnjop | bigint | NOT NULL |  |
-| iduunjop | bigint | NOT NULL |  |
-| idrekd | integer | NULL |  |
-| kdjnstarif | character(3) | NULL |  |
-| namatarif | character varying(200) | NULL |  |
-| idmerk | integer | NULL |  |
-| tipe | character varying(10) | NULL |  |
-| silinder | character varying(50) | NULL |  |
-| tahun | character(4) | NULL |  |
-| kodebbm | character varying(10) | NULL |  |
-| njop | money | NULL |  |
-| status | character(1) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idtarifnjop | bigint | NOT NULL |  | ID tarif NJOP. |
+| iduunjop | bigint | NOT NULL |  | ID UU NJOP. |
+| idrekd | integer | NULL |  | ID rekening daerah. |
+| kdjnstarif | character(3) | NULL |  | Kode jenis tarif. |
+| namatarif | character varying(200) | NULL |  | Nama tarif. |
+| idmerk | integer | NULL |  | ID merk. |
+| tipe | character varying(10) | NULL |  | Tipe/model. |
+| silinder | character varying(50) | NULL |  | Kapasitas silinder. |
+| tahun | character(4) | NULL |  | Informasi tahun. |
+| kodebbm | character varying(10) | NULL |  | Kode BBM. |
+| njop | money | NULL |  | Nilai NJOP. |
+| status | character(1) | NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterteks`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idteks | integer | NOT NULL |  |
-| datateks | character varying(1024) | NOT NULL |  |
-| status | character(1) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idteks | integer | NOT NULL |  | ID teks. |
+| datateks | character varying(1024) | NOT NULL |  | Isi/teks yang disimpan. |
+| status | character(1) | NOT NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterupt`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idupt | bigint | NOT NULL |  |
-| idparent | bigint | NULL |  |
-| kdupt | character varying(50) | NOT NULL |  |
-| nmupt | character varying(500) | NOT NULL |  |
-| kdlevel | character(1) | NULL |  |
-| type | character(5) | NOT NULL |  |
-| akroupt | character varying(200) | NULL |  |
-| alamat | character varying(200) | NULL |  |
-| telepon | character varying(200) | NULL |  |
-| idbank | integer | NULL |  |
-| idkabkota | bigint | NULL |  |
-| kepala | bigint | NULL |  |
-| koordinator | bigint | NULL |  |
-| bendahara | bigint | NULL |  |
-| norekb | character varying(20) | NULL |  |
-| status | character(1) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idupt | bigint | NOT NULL |  | ID UPT. |
+| idparent | bigint | NULL |  | ID parent/hirarki. |
+| kdupt | character varying(50) | NOT NULL |  | Kode UPT. |
+| nmupt | character varying(500) | NOT NULL |  | Nama UPT. |
+| kdlevel | character(1) | NULL |  | Kode level. |
+| type | character(5) | NOT NULL |  | Tipe/kategori data. |
+| akroupt | character varying(200) | NULL |  | Akronim UPT. |
+| alamat | character varying(200) | NULL |  | Alamat lengkap. |
+| telepon | character varying(200) | NULL |  | Nomor telepon. |
+| idbank | integer | NULL |  | ID bank. |
+| idkabkota | bigint | NULL |  | ID kabupaten/kota. |
+| kepala | bigint | NULL |  | ID kepala UPT. |
+| koordinator | bigint | NULL |  | ID koordinator. |
+| bendahara | bigint | NULL |  | ID bendahara. |
+| norekb | character varying(20) | NULL |  | Nomor rekening bank. |
+| status | character(1) | NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masteruunjop`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| iduunjop | bigint | NOT NULL |  |
-| noperkada | character varying(50) | NULL |  |
-| isiperkada | character varying(200) | NULL |  |
-| tahun | character(4) | NULL |  |
-| status | character(1) | NULL |  |
-| keterangan | character varying(200) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| iduunjop | bigint | NOT NULL |  | ID UU NJOP. |
+| noperkada | character varying(50) | NULL |  | Nomor perkada. |
+| isiperkada | character varying(200) | NULL |  | Isi perkada. |
+| tahun | character(4) | NULL |  | Informasi tahun. |
+| status | character(1) | NULL |  | Status data/record. |
+| keterangan | character varying(200) | NULL |  | Keterangan tambahan. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterwp`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idwp | bigint | NOT NULL |  |
-| objekbadanno | character varying(30) | NOT NULL |  |
-| namabadan | character varying(100) | NOT NULL |  |
-| idgroupusaha | character varying(2) | NULL |  |
-| kodepolisi | character varying(10) | NULL |  |
-| kodelokasi | character varying(10) | NULL |  |
-| idbadan | bigint | NULL |  |
-| idklasifikasi | character varying(2) | NULL |  |
-| idlokasi | character varying(2) | NULL |  |
-| alamat | character varying(255) | NULL |  |
-| idkabkokta | bigint | NULL |  |
-| idkecamatan | bigint | NULL |  |
-| idkelurahan | bigint | NULL |  |
-| idrw | integer | NULL |  |
-| idrt | integer | NULL |  |
-| telepon | character varying(30) | NULL |  |
-| fax | character varying(30) | NULL |  |
-| namapemilik | character varying(50) | NULL |  |
-| idktp | bigint | NULL |  |
-| pekerjaan | character varying(100) | NULL |  |
-| tgldaftar | date | NULL | CURRENT_DATE |
-| tglsah | date | NULL |  |
-| keteblokir | character varying(255) | NULL |  |
-| tglhapus | date | NULL |  |
-| groupblokir | character varying(10) | NULL |  |
-| insidentil | character(1) | NOT NULL |  |
-| nopollama | character varying(30) | NOT NULL |  |
-| lastskp | character varying(50) | NULL |  |
-| jnskendid | character(3) | NULL |  |
-| idmerk | integer | NULL |  |
-| merk | character varying(30) | NULL |  |
-| tipe | character varying(50) | NULL |  |
-| tahunbuat | integer | NULL |  |
-| kodebbm | character varying(10) | NULL |  |
-| bbm | character varying(30) | NULL |  |
-| cylinder | integer | NULL |  |
-| norangka | character varying(50) | NULL |  |
-| nomesin | character varying(50) | NULL |  |
-| nobpkb | character varying(50) | NULL |  |
-| kdmilik | character varying(2) | NULL |  |
-| kdguna | character varying(2) | NULL |  |
-| kendke | integer | NULL |  |
-| warna | character varying(50) | NULL |  |
-| kdplat | character varying(2) | NOT NULL |  |
-| nostnkb | character varying(50) | NULL |  |
-| daftarstnk | character varying(50) | NULL |  |
-| tglcetakstnk | date | NULL | CURRENT_DATE |
-| tglstnk | date | NULL | CURRENT_DATE |
-| sdstnk | date | NULL |  |
-| tglskp | date | NULL |  |
-| awalskp | date | NULL |  |
-| akhirskp | date | NULL |  |
-| tglmutasi | date | NULL |  |
-| tgljualbeli | date | NULL |  |
-| nodaftar | character varying(30) | NULL |  |
-| nosah1 | character varying(20) | NULL |  |
-| tglsah1 | date | NULL |  |
-| nosah2 | character varying(20) | NULL |  |
-| tglsah2 | date | NULL |  |
-| nosah3 | character varying(20) | NULL |  |
-| tglsah3 | date | NULL |  |
-| nosah4 | character varying(20) | NULL |  |
-| tglsah4 | date | NULL |  |
-| laporjual | date | NULL |  |
-| nikpemilik | character varying(30) | NULL |  |
-| notelppemilik | character varying(30) | NULL |  |
-| putih | character varying(1) | NULL |  |
-| status | character(1) | NULL |  |
-| statint | character(1) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idwp | bigint | NOT NULL |  | ID wajib pajak. |
+| objekbadanno | character varying(30) | NOT NULL |  | Nomor objek badan. |
+| namabadan | character varying(100) | NOT NULL |  | Nama badan/usaha. |
+| idgroupusaha | character varying(2) | NULL |  | ID grup usaha. |
+| kodepolisi | character varying(10) | NULL |  | Kode polisi. |
+| kodelokasi | character varying(10) | NULL |  | Kode lokasi. |
+| idbadan | bigint | NULL |  | ID badan/usaha. |
+| idklasifikasi | character varying(2) | NULL |  | ID klasifikasi. |
+| idlokasi | character varying(2) | NULL |  | ID lokasi. |
+| alamat | character varying(255) | NULL |  | Alamat lengkap. |
+| idkabkokta | bigint | NULL |  | ID kabupaten/kota. |
+| idkecamatan | bigint | NULL |  | ID kecamatan. |
+| idkelurahan | bigint | NULL |  | ID kelurahan. |
+| idrw | integer | NULL |  | ID RW. |
+| idrt | integer | NULL |  | ID RT. |
+| telepon | character varying(30) | NULL |  | Nomor telepon. |
+| fax | character varying(30) | NULL |  | Nomor fax. |
+| namapemilik | character varying(50) | NULL |  | Nama pemilik. |
+| idktp | bigint | NULL |  | ID KTP. |
+| pekerjaan | character varying(100) | NULL |  | Pekerjaan. |
+| tgldaftar | date | NULL | CURRENT_DATE | Tanggal pendaftaran. |
+| tglsah | date | NULL |  | Tanggal sah. |
+| keteblokir | character varying(255) | NULL |  | Keterangan blokir. |
+| tglhapus | date | NULL |  | Tanggal hapus. |
+| groupblokir | character varying(10) | NULL |  | Kelompok blokir. |
+| insidentil | character(1) | NOT NULL |  | Penanda insidentil. |
+| nopollama | character varying(30) | NOT NULL |  | Nomor polisi lama. |
+| lastskp | character varying(50) | NULL |  | Nomor SKP terakhir. |
+| jnskendid | character(3) | NULL |  | Kode jenis kendaraan. |
+| idmerk | integer | NULL |  | ID merk. |
+| merk | character varying(30) | NULL |  | Merek. |
+| tipe | character varying(50) | NULL |  | Tipe/model. |
+| tahunbuat | integer | NULL |  | Tahun pembuatan. |
+| kodebbm | character varying(10) | NULL |  | Kode BBM. |
+| bbm | character varying(30) | NULL |  | Informasi bbm. |
+| cylinder | integer | NULL |  | Kapasitas silinder. |
+| norangka | character varying(50) | NULL |  | Nomor rangka. |
+| nomesin | character varying(50) | NULL |  | Nomor mesin. |
+| nobpkb | character varying(50) | NULL |  | Nomor BPKB. |
+| kdmilik | character varying(2) | NULL |  | Kode jenis kepemilikan. |
+| kdguna | character varying(2) | NULL |  | Kode jenis guna. |
+| kendke | integer | NULL |  | Urutan kendaraan ke-berapa. |
+| warna | character varying(50) | NULL |  | Warna kendaraan. |
+| kdplat | character varying(2) | NOT NULL |  | Kode plat. |
+| nostnkb | character varying(50) | NULL |  | Nomor STNK. |
+| daftarstnk | character varying(50) | NULL |  | Nomor daftar STNK. |
+| tglcetakstnk | date | NULL | CURRENT_DATE | Tanggal cetak STNK. |
+| tglstnk | date | NULL | CURRENT_DATE | Tanggal STNK. |
+| sdstnk | date | NULL |  | Tanggal berlaku STNK sampai. |
+| tglskp | date | NULL |  | Tanggal SKP. |
+| awalskp | date | NULL |  | Tanggal awal SKP. |
+| akhirskp | date | NULL |  | Tanggal akhir SKP. |
+| tglmutasi | date | NULL |  | Tanggal mutasi. |
+| tgljualbeli | date | NULL |  | Tanggal jual beli. |
+| nodaftar | character varying(30) | NULL |  | Nomor daftar. |
+| nosah1 | character varying(20) | NULL |  | Nomor sah 1. |
+| tglsah1 | date | NULL |  | Tanggal sah 1. |
+| nosah2 | character varying(20) | NULL |  | Nomor sah 2. |
+| tglsah2 | date | NULL |  | Tanggal sah 2. |
+| nosah3 | character varying(20) | NULL |  | Nomor sah 3. |
+| tglsah3 | date | NULL |  | Tanggal sah 3. |
+| nosah4 | character varying(20) | NULL |  | Nomor sah 4. |
+| tglsah4 | date | NULL |  | Tanggal sah 4. |
+| laporjual | date | NULL |  | Informasi laporjual. |
+| nikpemilik | character varying(30) | NULL |  | NIK pemilik. |
+| notelppemilik | character varying(30) | NULL |  | Nomor telepon pemilik. |
+| putih | character varying(1) | NULL |  | Penanda plat putih. |
+| status | character(1) | NULL |  | Status data/record. |
+| statint | character(1) | NULL |  | Status internal. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterwpdata`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idwpdata | bigint | NOT NULL |  |
-| idjnsd | integer | NOT NULL |  |
-| tglpendataan | date | NULL | CURRENT_DATE |
-| idwp | bigint | NOT NULL |  |
-| createdate | date | NULL | CURRENT_DATE |
-| createby | character varying(50) | NULL |  |
-| updatedate | date | NULL | CURRENT_DATE |
-| updateby | character varying(50) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idwpdata | bigint | NOT NULL |  | ID data wajib pajak. |
+| idjnsd | integer | NOT NULL |  | ID jenis data. |
+| tglpendataan | date | NULL | CURRENT_DATE | Tanggal pendataan. |
+| idwp | bigint | NOT NULL |  | ID wajib pajak. |
+| createdate | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| createby | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updatedate | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updateby | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transdatakohir`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idkohir | bigint | NOT NULL |  |
-| masaawal | date | NULL | CURRENT_DATE |
-| masaakhir | date | NULL | CURRENT_DATE |
-| tglpenetapan | date | NULL | CURRENT_DATE |
-| penagih | character varying(2) | NOT NULL |  |
-| idwp | bigint | NOT NULL |  |
-| tglkurangbayar | date | NULL |  |
-| keterangan | character varying(256) | NULL |  |
-| idupt | bigint | NULL |  |
-| skrupt | character varying(20) | NULL |  |
-| validjr | character(1) | NULL |  |
-| validjrby | character varying(50) | NULL |  |
-| validpol | character(1) | NULL |  |
-| validpolby | character varying(50) | NULL |  |
-| ntpd | character varying(50) | NULL |  |
-| tglntpd | date | NULL |  |
-| idbank | character varying(3) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idkohir | bigint | NOT NULL |  | ID kohir. |
+| masaawal | date | NULL | CURRENT_DATE | Masa awal. |
+| masaakhir | date | NULL | CURRENT_DATE | Masa akhir. |
+| tglpenetapan | date | NULL | CURRENT_DATE | Tanggal penetapan. |
+| penagih | character varying(2) | NOT NULL |  | Kode penagih. |
+| idwp | bigint | NOT NULL |  | ID wajib pajak. |
+| tglkurangbayar | date | NULL |  | Tanggal kurang bayar. |
+| keterangan | character varying(256) | NULL |  | Keterangan tambahan. |
+| idupt | bigint | NULL |  | ID UPT. |
+| skrupt | character varying(20) | NULL |  | Nomor SKR UPT. |
+| validjr | character(1) | NULL |  | Status validasi JR. |
+| validjrby | character varying(50) | NULL |  | Pengguna validasi JR. |
+| validpol | character(1) | NULL |  | Status validasi polisi. |
+| validpolby | character varying(50) | NULL |  | Pengguna validasi polisi. |
+| ntpd | character varying(50) | NULL |  | Nomor transaksi (NTPD). |
+| tglntpd | date | NULL |  | Tanggal NTPD. |
+| idbank | character varying(3) | NULL |  | ID bank. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transhistpendataan`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idhistpendataan | bigint | NOT NULL |  |
-| idpendataan | bigint | NOT NULL |  |
-| spt | character varying(8) | NOT NULL |  |
-| idwpdata | bigint | NOT NULL |  |
-| tglpendataan | date | NULL | CURRENT_DATE |
-| masaawal | date | NULL | CURRENT_DATE |
-| masaakhir | date | NULL | CURRENT_DATE |
-| uruttgl | integer | NOT NULL |  |
-| jmlomzetawal | numeric(18,2) | NULL |  |
-| tarifpjk | numeric(18,2) | NOT NULL |  |
-| idupt | bigint | NOT NULL |  |
-| kdflow | character varying(10) | NULL |  |
-| histid | character varying(3) | NOT NULL |  |
-| status | character(1) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idhistpendataan | bigint | NOT NULL |  | ID histori pendataan. |
+| idpendataan | bigint | NOT NULL |  | ID pendataan. |
+| spt | character varying(8) | NOT NULL |  | Nomor SPT. |
+| idwpdata | bigint | NOT NULL |  | ID data wajib pajak. |
+| tglpendataan | date | NULL | CURRENT_DATE | Tanggal pendataan. |
+| masaawal | date | NULL | CURRENT_DATE | Masa awal. |
+| masaakhir | date | NULL | CURRENT_DATE | Masa akhir. |
+| uruttgl | integer | NOT NULL |  | Urutan tanggal. |
+| jmlomzetawal | numeric(18,2) | NULL |  | Jumlah omzet awal. |
+| tarifpjk | numeric(18,2) | NOT NULL |  | Tarif pajak. |
+| idupt | bigint | NOT NULL |  | ID UPT. |
+| kdflow | character varying(10) | NULL |  | Kode alur/proses. |
+| histid | character varying(3) | NOT NULL |  | ID histori. |
+| status | character(1) | NOT NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transhistpendataandet`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idhistpendataandet | bigint | NOT NULL |  |
-| idhistpendataan | bigint | NOT NULL |  |
-| idpenetapan | bigint | NOT NULL |  |
-| nourut | integer | NOT NULL |  |
-| lokasi | character varying(255) | NULL |  |
-| transid | character varying(2) | NOT NULL |  |
-| ket1 | character varying(50) | NOT NULL |  |
-| usahaid | integer | NOT NULL |  |
-| tarifpajak | numeric(18,2) | NOT NULL |  |
-| histid | character varying(3) | NOT NULL |  |
-| status | character(1) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idhistpendataandet | bigint | NOT NULL |  | ID detail histori pendataan. |
+| idhistpendataan | bigint | NOT NULL |  | ID histori pendataan. |
+| idpenetapan | bigint | NOT NULL |  | ID penetapan. |
+| nourut | integer | NOT NULL |  | Nomor urut. |
+| lokasi | character varying(255) | NULL |  | Lokasi. |
+| transid | character varying(2) | NOT NULL |  | ID transaksi. |
+| ket1 | character varying(50) | NOT NULL |  | Keterangan tambahan. |
+| usahaid | integer | NOT NULL |  | ID usaha. |
+| tarifpajak | numeric(18,2) | NOT NULL |  | Tarif pajak. |
+| histid | character varying(3) | NOT NULL |  | ID histori. |
+| status | character(1) | NOT NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transhistpenetapan`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idhistpenetapan | bigint | NOT NULL |  |
-| idpenetapan | bigint | NOT NULL |  |
-| idkohir | bigint | NOT NULL |  |
-| nokohir | character varying(30) | NULL |  |
-| idwpdata | bigint | NOT NULL |  |
-| tglpenetapan | date | NULL | CURRENT_DATE |
-| tgljatuhtempo | date | NULL | CURRENT_DATE |
-| masaawal | date | NULL | CURRENT_DATE |
-| masaakhir | date | NULL | CURRENT_DATE |
-| uruttgl | integer | NOT NULL |  |
-| jmlomzetawal | numeric(18,2) | NULL |  |
-| tarifpajak | numeric(18,2) | NOT NULL |  |
-| denda | numeric(18,2) | NULL |  |
-| kenaikan | numeric(18,2) | NULL |  |
-| statbayar | character(1) | NOT NULL |  |
-| tglbayar | date | NULL |  |
-| jmlbayar | numeric(18,2) | NULL |  |
-| tglkurangbayar | date | NULL |  |
-| jmlkurangbayar | numeric(18,2) | NULL |  |
-| jmlperingatan | integer | NULL |  |
-| kdflow | character varying(10) | NULL |  |
-| status | character(1) | NOT NULL |  |
-| opsid | character varying(5) | NULL |  |
-| opsprov | numeric(18,2) | NULL |  |
-| opskota | numeric(18,2) | NULL |  |
-| dendaopsprov | numeric(18,2) | NULL |  |
-| dendaopskota | numeric(18,2) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idhistpenetapan | bigint | NOT NULL |  | ID histori penetapan. |
+| idpenetapan | bigint | NOT NULL |  | ID penetapan. |
+| idkohir | bigint | NOT NULL |  | ID kohir. |
+| nokohir | character varying(30) | NULL |  | Nomor kohir. |
+| idwpdata | bigint | NOT NULL |  | ID data wajib pajak. |
+| tglpenetapan | date | NULL | CURRENT_DATE | Tanggal penetapan. |
+| tgljatuhtempo | date | NULL | CURRENT_DATE | Tanggal jatuh tempo. |
+| masaawal | date | NULL | CURRENT_DATE | Masa awal. |
+| masaakhir | date | NULL | CURRENT_DATE | Masa akhir. |
+| uruttgl | integer | NOT NULL |  | Urutan tanggal. |
+| jmlomzetawal | numeric(18,2) | NULL |  | Jumlah omzet awal. |
+| tarifpajak | numeric(18,2) | NOT NULL |  | Tarif pajak. |
+| denda | numeric(18,2) | NULL |  | Nilai denda. |
+| kenaikan | numeric(18,2) | NULL |  | Nilai kenaikan. |
+| statbayar | character(1) | NOT NULL |  | Status pembayaran. |
+| tglbayar | date | NULL |  | Tanggal pembayaran. |
+| jmlbayar | numeric(18,2) | NULL |  | Jumlah pembayaran. |
+| tglkurangbayar | date | NULL |  | Tanggal kurang bayar. |
+| jmlkurangbayar | numeric(18,2) | NULL |  | Jumlah kurang bayar. |
+| jmlperingatan | integer | NULL |  | Jumlah peringatan. |
+| kdflow | character varying(10) | NULL |  | Kode alur/proses. |
+| status | character(1) | NOT NULL |  | Status data/record. |
+| opsid | character varying(5) | NULL |  | ID opsen. |
+| opsprov | numeric(18,2) | NULL |  | Nilai opsen provinsi. |
+| opskota | numeric(18,2) | NULL |  | Nilai opsen kota. |
+| dendaopsprov | numeric(18,2) | NULL |  | Denda opsen provinsi. |
+| dendaopskota | numeric(18,2) | NULL |  | Denda opsen kota. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transpendataan`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idpendataan | bigint | NOT NULL |  |
-| spt | character varying(8) | NOT NULL |  |
-| idwpdata | bigint | NOT NULL |  |
-| tglpendataan | date | NULL | CURRENT_DATE |
-| masaawal | date | NULL | CURRENT_DATE |
-| masaakhir | date | NULL | CURRENT_DATE |
-| uruttgl | integer | NOT NULL |  |
-| jmlomzetawal | numeric(18,2) | NULL |  |
-| tarifpjk | numeric(18,2) | NOT NULL |  |
-| idupt | bigint | NOT NULL |  |
-| kdflow | character varying(10) | NULL |  |
-| status | character(1) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idpendataan | bigint | NOT NULL |  | ID pendataan. |
+| spt | character varying(8) | NOT NULL |  | Nomor SPT. |
+| idwpdata | bigint | NOT NULL |  | ID data wajib pajak. |
+| tglpendataan | date | NULL | CURRENT_DATE | Tanggal pendataan. |
+| masaawal | date | NULL | CURRENT_DATE | Masa awal. |
+| masaakhir | date | NULL | CURRENT_DATE | Masa akhir. |
+| uruttgl | integer | NOT NULL |  | Urutan tanggal. |
+| jmlomzetawal | numeric(18,2) | NULL |  | Jumlah omzet awal. |
+| tarifpjk | numeric(18,2) | NOT NULL |  | Tarif pajak. |
+| idupt | bigint | NOT NULL |  | ID UPT. |
+| kdflow | character varying(10) | NULL |  | Kode alur/proses. |
+| status | character(1) | NOT NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transpendataandet`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idpendataandet | bigint | NOT NULL |  |
-| idpendataan | bigint | NOT NULL |  |
-| idpenetapan | bigint | NOT NULL |  |
-| nourut | integer | NOT NULL |  |
-| lokasi | character varying(255) | NULL |  |
-| transid | character varying(2) | NOT NULL |  |
-| ket1 | character varying(50) | NOT NULL |  |
-| usahaid | integer | NOT NULL |  |
-| tarifpajak | numeric(18,2) | NOT NULL |  |
-| status | character(1) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idpendataandet | bigint | NOT NULL |  | ID pendataandet. |
+| idpendataan | bigint | NOT NULL |  | ID pendataan. |
+| idpenetapan | bigint | NOT NULL |  | ID penetapan. |
+| nourut | integer | NOT NULL |  | Nomor urut. |
+| lokasi | character varying(255) | NULL |  | Lokasi. |
+| transid | character varying(2) | NOT NULL |  | ID transaksi. |
+| ket1 | character varying(50) | NOT NULL |  | Keterangan tambahan. |
+| usahaid | integer | NOT NULL |  | ID usaha. |
+| tarifpajak | numeric(18,2) | NOT NULL |  | Tarif pajak. |
+| status | character(1) | NOT NULL |  | Status data/record. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transpenetapan`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idpenetapan | bigint | NOT NULL |  |
-| idkohir | bigint | NOT NULL |  |
-| nokohir | character varying(30) | NULL |  |
-| idwpdata | bigint | NOT NULL |  |
-| tglpenetapan | date | NULL | CURRENT_DATE |
-| tgljatuhtempo | date | NULL | CURRENT_DATE |
-| masaawal | date | NULL | CURRENT_DATE |
-| masaakhir | date | NULL | CURRENT_DATE |
-| uruttgl | integer | NOT NULL |  |
-| jmlomzetawal | numeric(18,2) | NULL |  |
-| tarifpajak | numeric(18,2) | NOT NULL |  |
-| denda | numeric(18,2) | NULL |  |
-| kenaikan | numeric(18,2) | NULL |  |
-| statbayar | character(1) | NOT NULL |  |
-| tglbayar | date | NULL |  |
-| jmlbayar | numeric(18,2) | NULL |  |
-| tglkurangbayar | date | NULL |  |
-| jmlkurangbayar | numeric(18,2) | NULL |  |
-| jmlperingatan | integer | NULL |  |
-| kdflow | character varying(10) | NULL |  |
-| status | character(1) | NOT NULL |  |
-| opsid | character varying(5) | NULL |  |
-| opsprov | numeric(18,2) | NULL |  |
-| opskota | numeric(18,2) | NULL |  |
-| dendaopsprov | numeric(18,2) | NULL |  |
-| dendaopskota | numeric(18,2) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idpenetapan | bigint | NOT NULL |  | ID penetapan. |
+| idkohir | bigint | NOT NULL |  | ID kohir. |
+| nokohir | character varying(30) | NULL |  | Nomor kohir. |
+| idwpdata | bigint | NOT NULL |  | ID data wajib pajak. |
+| tglpenetapan | date | NULL | CURRENT_DATE | Tanggal penetapan. |
+| tgljatuhtempo | date | NULL | CURRENT_DATE | Tanggal jatuh tempo. |
+| masaawal | date | NULL | CURRENT_DATE | Masa awal. |
+| masaakhir | date | NULL | CURRENT_DATE | Masa akhir. |
+| uruttgl | integer | NOT NULL |  | Urutan tanggal. |
+| jmlomzetawal | numeric(18,2) | NULL |  | Jumlah omzet awal. |
+| tarifpajak | numeric(18,2) | NOT NULL |  | Tarif pajak. |
+| denda | numeric(18,2) | NULL |  | Nilai denda. |
+| kenaikan | numeric(18,2) | NULL |  | Nilai kenaikan. |
+| statbayar | character(1) | NOT NULL |  | Status pembayaran. |
+| tglbayar | date | NULL |  | Tanggal pembayaran. |
+| jmlbayar | numeric(18,2) | NULL |  | Jumlah pembayaran. |
+| tglkurangbayar | date | NULL |  | Tanggal kurang bayar. |
+| jmlkurangbayar | numeric(18,2) | NULL |  | Jumlah kurang bayar. |
+| jmlperingatan | integer | NULL |  | Jumlah peringatan. |
+| kdflow | character varying(10) | NULL |  | Kode alur/proses. |
+| status | character(1) | NOT NULL |  | Status data/record. |
+| opsid | character varying(5) | NULL |  | ID opsen. |
+| opsprov | numeric(18,2) | NULL |  | Nilai opsen provinsi. |
+| opskota | numeric(18,2) | NULL |  | Nilai opsen kota. |
+| dendaopsprov | numeric(18,2) | NULL |  | Denda opsen provinsi. |
+| dendaopskota | numeric(18,2) | NULL |  | Denda opsen kota. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transsts`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idsts | bigint | NOT NULL |  |
-| idupt | bigint | NOT NULL |  |
-| setorandari | character varying(5) | NULL |  |
-| idbend | bigint | NOT NULL |  |
-| nosts | character varying(50) | NOT NULL |  |
-| tglsts | date | NULL | CURRENT_DATE |
-| keterangan | character varying(100) | NOT NULL |  |
-| statbayar | character(1) | NOT NULL |  |
-| ntpd | character varying(50) | NULL |  |
-| tglntpd | date | NULL |  |
-| statsts | integer | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idsts | bigint | NOT NULL |  | ID STS. |
+| idupt | bigint | NOT NULL |  | ID UPT. |
+| setorandari | character varying(5) | NULL |  | Setoran dari. |
+| idbend | bigint | NOT NULL |  | ID bendahara. |
+| nosts | character varying(50) | NOT NULL |  | Nomor STS. |
+| tglsts | date | NULL | CURRENT_DATE | Tanggal STS. |
+| keterangan | character varying(100) | NOT NULL |  | Keterangan tambahan. |
+| statbayar | character(1) | NOT NULL |  | Status pembayaran. |
+| ntpd | character varying(50) | NULL |  | Nomor transaksi (NTPD). |
+| tglntpd | date | NULL |  | Tanggal NTPD. |
+| statsts | integer | NULL |  | Status STS. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transstsdet`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idstsdet | bigint | NOT NULL |  |
-| idsts | bigint | NOT NULL |  |
-| idrekd | integer | NOT NULL |  |
-| nilaists | numeric(18,2) | NOT NULL |  |
-| jenis | character(1) | NOT NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idstsdet | bigint | NOT NULL |  | ID detail STS. |
+| idsts | bigint | NOT NULL |  | ID STS. |
+| idrekd | integer | NOT NULL |  | ID rekening daerah. |
+| nilaists | numeric(18,2) | NOT NULL |  | Nilai STS. |
+| jenis | character(1) | NOT NULL |  | Jenis/kategori. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transwpdata`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idtwpdata | bigint | NOT NULL |  |
-| idnpwpd | bigint | NOT NULL |  |
-| kdflow | character varying(10) | NULL |  |
-| tgldaftar | date | NULL | CURRENT_DATE |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idtwpdata | bigint | NOT NULL |  | ID transaksi data wajib pajak. |
+| idnpwpd | bigint | NOT NULL |  | ID NPWPD. |
+| kdflow | character varying(10) | NULL |  | Kode alur/proses. |
+| tgldaftar | date | NULL | CURRENT_DATE | Tanggal pendaftaran. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transwpdataantri`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idantri | integer | NOT NULL |  |
-| idtwpdata | bigint | NOT NULL |  |
-| noantri | character varying(30) | NOT NULL |  |
-| idktp | bigint | NULL |  |
-| statantri | character(1) | NULL |  |
-| ket | character varying(100) | NULL |  |
-| tglantri | character varying(30) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idantri | integer | NOT NULL |  | ID antrian. |
+| idtwpdata | bigint | NOT NULL |  | ID transaksi data wajib pajak. |
+| noantri | character varying(30) | NOT NULL |  | Nomor antrian. |
+| idktp | bigint | NULL |  | ID KTP. |
+| statantri | character(1) | NULL |  | Status antrian. |
+| ket | character varying(100) | NULL |  | Keterangan tambahan. |
+| tglantri | character varying(30) | NULL |  | Tanggal antrian. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transwpdatafile`
 
-| Kolom | Tipe | Null | Default |
-| --- | --- | --- | --- |
-| idfile | bigint | NOT NULL |  |
-| idtwpdata | bigint | NOT NULL |  |
-| namafile | character varying(512) | NULL |  |
-| direktory | character varying(200) | NULL |  |
-| extension | character varying(50) | NULL |  |
-| size | bigint | NULL |  |
-| url | character varying(200) | NULL |  |
-| created_at | date | NULL | CURRENT_DATE |
-| created_by | character varying(50) | NULL |  |
-| updated_at | date | NULL | CURRENT_DATE |
-| updated_by | character varying(50) | NULL |  |
+| Kolom | Tipe | Null | Default | Keterangan |
+| --- | --- | --- | --- | --- |
+| idfile | bigint | NOT NULL |  | ID file. |
+| idtwpdata | bigint | NOT NULL |  | ID transaksi data wajib pajak. |
+| namafile | character varying(512) | NULL |  | Nama file. |
+| direktory | character varying(200) | NULL |  | Direktori penyimpanan. |
+| extension | character varying(50) | NULL |  | Ekstensi file. |
+| size | bigint | NULL |  | Ukuran file. |
+| url | character varying(200) | NULL |  | URL file. |
+| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
+| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
