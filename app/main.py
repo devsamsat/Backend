@@ -12,3 +12,4 @@ app = FastAPI(
 
 app.include_router(users.router)
 app.include_router(dynamic_records.router)
+app.include_router(users.router, prefix="/api/v1")
