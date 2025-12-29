@@ -8,6 +8,7 @@ from app.interfaces.api import (
     approle,
     appuser,
     dynamic_records,
+    jnsdok,
     users,
 )
 
@@ -26,6 +27,7 @@ app.include_router(appgroupuser.router)
 app.include_router(appotor.router)
 app.include_router(approle.router)
 app.include_router(appuser.router)
+app.include_router(jnsdok.router)
 
 custom_table_routes = {
     "users",
@@ -34,6 +36,7 @@ custom_table_routes = {
     "appotor",
     "approle",
     "appuser",
+    "jnsdok",
 }
 
 for table_name in TABLE_NAMES:

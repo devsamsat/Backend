@@ -92,3 +92,15 @@ class AppUser(Base):
     created_by = Column(String(50))
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_by = Column(String(50))
+
+
+class JnsDok(Base):
+    __tablename__ = "jnsdok"
+
+    kddok = Column(String(10), primary_key=True)
+    namadok = Column(String(30), nullable=False)
+    keterangan = Column(String(200))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
