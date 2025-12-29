@@ -1,7 +1,6 @@
 from fastapi import FastAPI
 from app.core.database import Base, engine
-from app.infrastructure.orm.table_registry import TABLE_NAMES, create_tables
-from app.interfaces.api.table_router import create_table_router
+from app.infrastructure.orm.table_registry import create_tables
 from app.interfaces.api import (
     appgroupuser,
     appotor,
@@ -11,6 +10,7 @@ from app.interfaces.api import (
     jnsdok,
     users,
 )
+from app.interfaces.api.generated_tables import generate_table_routers
 
 Base.metadata.create_all(bind=engine)
 create_tables()
@@ -29,17 +29,5 @@ app.include_router(approle.router)
 app.include_router(appuser.router)
 app.include_router(jnsdok.router)
 
-custom_table_routes = {
-    "users",
-    "dynamic_records",
-    "appgroupuser",
-    "appotor",
-    "approle",
-    "appuser",
-    "jnsdok",
-}
-
-for table_name in TABLE_NAMES:
-    if table_name in custom_table_routes:
-        continue
-    app.include_router(create_table_router(table_name))
+for router in generate_table_routers():
+    app.include_router(router)
