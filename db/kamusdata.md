@@ -477,9 +477,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | kdgroup | character varying(30) | NOT NULL |  | Kode grup. |
 | nmgroup | character varying(50) | NOT NULL |  | Nama grup. |
 | ket | character varying(100) | NULL |  | Keterangan tambahan. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `appotor`
@@ -489,9 +489,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | kdgroup | character varying(30) | NOT NULL |  | Kode grup. |
 | roleid | character varying(50) | NOT NULL |  | ID role. |
 | ket | character varying(100) | NULL |  | Keterangan tambahan. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `approle`
@@ -501,17 +501,17 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | roleid | character varying(50) | NOT NULL |  | ID role. |
 | idapp | bigint | NULL |  | ID aplikasi. |
 | role | character varying(254) | NULL |  | Nama peran/role. |
-| type | character(2) | NULL |  | Tipe/kategori data. |
+| role_type | character(2) | NULL |  | Tipe/kategori data. |
 | menuid | character varying(50) | NULL |  | ID menu terkait. |
 | parentid | character varying(50) | NULL |  | ID parent/hirarki. |
 | bantuan | character varying(254) | NULL |  | Teks bantuan/keterangan menu. |
 | link | character varying(254) | NULL |  | Tautan/URL menu. |
 | icon | character varying(254) | NULL |  | Ikon menu. |
 | kdlevel | integer | NULL |  | Kode level. |
-| show | integer | NULL |  | Penanda tampil/tidak tampil. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| is_show | integer | NULL |  | Penanda tampil/tidak tampil. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `appuser`
@@ -527,9 +527,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | nik | character varying(50) | NULL |  | Nomor Induk Kependudukan. |
 | nama | character varying(100) | NULL |  | Nama lengkap. |
 | email | character varying(50) | NULL |  | Alamat email. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnsdok`
@@ -539,9 +539,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | kddok | character varying(10) | NOT NULL |  | Kode dokumen. |
 | namadok | character varying(30) | NOT NULL |  | Nama dokumen. |
 | keterangan | character varying(200) | NULL |  | Keterangan tambahan. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnsgolongan`
@@ -554,9 +554,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | jnskendid | character(3) | NULL |  | Kode jenis kendaraan. |
 | viewall | character(1) | NULL |  | Penanda akses lihat semua. |
 | status | character(1) | NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnsguna`
@@ -568,9 +568,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | gunaplat | character varying(2) | NULL |  | Kode plat guna. |
 | progresif | numeric(18,2) | NULL |  | Nilai progresif. |
 | groupbpkb | character varying(20) | NOT NULL |  | Kelompok BPKB. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnshist`
@@ -581,9 +581,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | nmhist | character varying(50) | NOT NULL |  | Nama histori. |
 | kdflow | character(2) | NULL |  | Kode alur/proses. |
 | status | character(1) | NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnsjr`
@@ -596,9 +596,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | pu | character varying(2) | NOT NULL |  | Penanda P/U. |
 | roda | integer | NOT NULL |  | Jumlah roda. |
 | keterangan | character varying(200) | NULL |  | Keterangan tambahan. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnskatkendaraan`
@@ -609,9 +609,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | kendaraan | character varying(30) | NOT NULL |  | Nama kendaraan. |
 | jenisbpkb | character varying(20) | NOT NULL |  | Jenis BPKB. |
 | status | character(1) | NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnskendaraan`
@@ -624,9 +624,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | jnsjrid | character(2) | NULL |  | Kode jenis JR. |
 | golpjr | integer | NULL |  | Golongan PJR. |
 | golujr | integer | NULL |  | Golongan UJR. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnsmilik`
@@ -637,9 +637,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | milik | character varying(30) | NOT NULL |  | Informasi milik. |
 | bpkpid | character varying(2) | NOT NULL |  | ID jenis BPKB. |
 | status | character(1) | NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnspajak`
@@ -649,9 +649,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | kdjnspjk | character varying(2) | NOT NULL |  | Kode jenis pajak. |
 | nmjnspjk | character varying(50) | NOT NULL |  | Nama jenis pajak. |
 | keterangan | character varying(200) | NULL |  | Keterangan tambahan. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnsplat`
@@ -686,9 +686,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | minnumpkb | numeric(18,4) | NOT NULL |  | Nilai minimum PKB. |
 | minnumbbn1 | numeric(18,4) | NOT NULL |  | Nilai minimum BBNKB 1. |
 | minnumbbn2 | numeric(18,4) | NOT NULL |  | Nilai minimum BBNKB 2. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnsprogresif`
@@ -698,9 +698,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | kdprogresif | integer | NOT NULL |  | Kode progresif. |
 | progresifr2 | numeric(18,2) | NOT NULL |  | Nilai progresif R2. |
 | progresifr4 | numeric(18,2) | NOT NULL |  | Nilai progresif R4. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnsranmor`
@@ -711,9 +711,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | nmranmor | character varying(30) | NOT NULL |  | Nama ranmor. |
 | snid | character(1) | NOT NULL |  | Penanda/ID SN. |
 | status | character(1) | NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnsstrurek`
@@ -723,9 +723,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | mtglevel | character(2) | NOT NULL |  | Level/tingkatan. |
 | nmlevel | character varying(50) | NOT NULL |  | Nama level. |
 | keterangan | character varying(100) | NOT NULL |  | Keterangan tambahan. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnstarif`
@@ -738,9 +738,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | jnskendid | character(3) | NULL |  | Kode jenis kendaraan. |
 | idrekd | integer | NULL |  | ID rekening daerah. |
 | status | character(1) | NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `jnsumum`
@@ -751,9 +751,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | nmumum | character varying(30) | NOT NULL |  | Nama umum. |
 | keterangan | character varying(100) | NOT NULL |  | Keterangan tambahan. |
 | status | character(1) | NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `mapjnspendapatan`
@@ -768,9 +768,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | idrekopsenbbnkb | integer | NULL |  | ID rekening opsen BBNKB. |
 | idrekpnbp | integer | NULL |  | ID rekening PNBP. |
 | keterangan | character varying(200) | NULL |  | Keterangan tambahan. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterab`
@@ -810,9 +810,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | kendke | integer | NULL |  | Urutan kendaraan ke-berapa. |
 | warna | character varying(50) | NULL |  | Warna kendaraan. |
 | kdplat | character varying(2) | NOT NULL |  | Kode plat. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterabdet`
@@ -822,9 +822,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | idabdet | bigint | NOT NULL |  | ID detail agen/badan. |
 | idab | bigint | NOT NULL |  | ID agen/badan. |
 | idjnsd | integer | NOT NULL |  | ID jenis data. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterbadan`
@@ -841,9 +841,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | idprovinsi | bigint | NULL |  | ID provinsi. |
 | idkabkokta | bigint | NULL |  | ID kabupaten/kota. |
 | ket | character varying(512) | NULL |  | Keterangan tambahan. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterbank`
@@ -857,9 +857,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | cabangbank | character varying(50) | NULL |  | Nama cabang bank. |
 | alamatbank | character varying(100) | NULL |  | Alamat bank. |
 | status | character(1) | NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterbbm`
@@ -869,9 +869,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | kodebbm | character varying(10) | NOT NULL |  | Kode BBM. |
 | namabbm | character varying(50) | NOT NULL |  | Nama BBM. |
 | keterangan | character varying(100) | NULL |  | Keterangan tambahan. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterbendahara`
@@ -892,9 +892,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | idreknrc | integer | NULL |  | ID rekening neraca. |
 | telepon | character varying(30) | NULL |  | Nomor telepon. |
 | ket | character varying(200) | NULL |  | Keterangan tambahan. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterflow`
@@ -917,9 +917,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | bataslayanan | integer | NULL |  | Batas layanan. |
 | satuan | character varying(50) | NULL |  | Satuan nilai/ukuran. |
 | status | character(1) | NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterhapusdenda`
@@ -935,9 +935,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | satuan | character varying(30) | NULL |  | Satuan nilai/ukuran. |
 | ket | character varying(256) | NULL |  | Keterangan tambahan. |
 | status | character(1) | NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterhistory`
@@ -1015,9 +1015,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | status | character(1) | NULL |  | Status data/record. |
 | statint | character(1) | NULL |  | Status internal. |
 | histid | character varying(3) | NOT NULL |  | ID histori. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterjabttd`
@@ -1030,9 +1030,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | jabatan | character varying(50) | NULL |  | Jabatan/posisi. |
 | ket | character varying(256) | NULL |  | Keterangan tambahan. |
 | status | character(1) | NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterjnspendapatan`
@@ -1047,9 +1047,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | status | character(1) | NULL |  | Status data/record. |
 | selfassessment | character(1) | NULL |  | Informasi selfassessment. |
 | katid | character(1) | NULL |  | ID kategori. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterkabkota`
@@ -1064,9 +1064,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | ibukota | character varying(50) | NOT NULL |  | Informasi ibukota. |
 | status | character(1) | NOT NULL |  | Status data/record. |
 | bpkbid | character varying(4) | NOT NULL |  | Informasi bpkbid. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterkabkotaall`
@@ -1078,9 +1078,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | kdkabkota | character(8) | NULL |  | Kode kabupaten/kota. |
 | nmkabkota | character varying(100) | NOT NULL |  | Nama kabupaten/kota. |
 | status | character(1) | NOT NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterkaupt`
@@ -1090,9 +1090,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | idkaupt | bigint | NOT NULL |  | ID kaupt. |
 | idpegawai | bigint | NULL |  | ID pegawai. |
 | idupt | bigint | NOT NULL |  | ID UPT. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterkb`
@@ -1132,9 +1132,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | kendke | integer | NULL |  | Urutan kendaraan ke-berapa. |
 | warna | character varying(50) | NULL |  | Warna kendaraan. |
 | kdplat | character varying(2) | NOT NULL |  | Kode plat. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterkbdet`
@@ -1144,9 +1144,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | idkbdet | bigint | NOT NULL |  | ID kbdet. |
 | idkb | bigint | NOT NULL |  | ID kb. |
 | idjnsd | integer | NOT NULL |  | ID jenis data. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterkecamatan`
@@ -1161,9 +1161,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | telepon | character varying(30) | NOT NULL |  | Nomor telepon. |
 | fax | character varying(30) | NULL |  | Nomor fax. |
 | status | character(1) | NOT NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterkelurahan`
@@ -1178,9 +1178,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | telepon | character varying(30) | NOT NULL |  | Nomor telepon. |
 | kodepos | character varying(30) | NULL |  | Informasi kodepos. |
 | status | character(1) | NOT NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterkiosk`
@@ -1193,9 +1193,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | datakiosk | character varying(200) | NOT NULL |  | Informasi datakiosk. |
 | level | character(1) | NOT NULL |  | Informasi level. |
 | status | character(1) | NOT NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterktp`
@@ -1235,9 +1235,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | statint | character(1) | NULL |  | Status internal. |
 | tglint | date | NULL |  | Tanggal int. |
 | ket | character varying(512) | NULL |  | Keterangan tambahan. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterlibur`
@@ -1250,9 +1250,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | tanggal | date | NULL | CURRENT_DATE | Informasi tanggal. |
 | namalibur | character varying(150) | NULL |  | Informasi namalibur. |
 | keterangan | character(3) | NULL |  | Keterangan tambahan. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `mastermerk`
@@ -1264,9 +1264,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | nmmerk | character varying(100) | NOT NULL |  | Nama merk. |
 | keterangan | character varying(200) | NULL |  | Keterangan tambahan. |
 | status | character(1) | NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masternpwpd`
@@ -1284,9 +1284,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | alamat | character varying(100) | NULL |  | Alamat lengkap. |
 | status | character(1) | NULL |  | Status data/record. |
 | ket | character varying(512) | NULL |  | Keterangan tambahan. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterpegawai`
@@ -1305,9 +1305,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | golongan | character varying(20) | NULL |  | Golongan. |
 | uid | character varying(15) | NULL |  | Identitas pengguna (UID). |
 | telepon | character varying(30) | NULL |  | Nomor telepon. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterprovinsi`
@@ -1318,9 +1318,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | kdprovinsi | character varying(10) | NOT NULL |  | Kode provinsi. |
 | nmprovinsi | character varying(100) | NOT NULL |  | Nama provinsi. |
 | status | character(1) | NOT NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterrekd`
@@ -1335,9 +1335,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | kdjnspjk | character varying(2) | NULL |  | Kode jenis pajak. |
 | type | character(1) | NULL |  | Tipe/kategori data. |
 | status | character(1) | NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterreknrc`
@@ -1349,9 +1349,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | kdrek | character varying(30) | NOT NULL |  | Kode rekening. |
 | nmrek | character varying(500) | NULL |  | Nama rekening. |
 | type | character(1) | NULL |  | Tipe/kategori data. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterrt`
@@ -1362,9 +1362,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | idrw | integer | NOT NULL |  | ID RW. |
 | kdrt | character(10) | NULL |  | Kode RT. |
 | status | character(1) | NOT NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterrw`
@@ -1376,9 +1376,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | kdrw | character(10) | NULL |  | Kode RW. |
 | alamat | character varying(100) | NOT NULL |  | Alamat lengkap. |
 | status | character(1) | NOT NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `mastertarif`
@@ -1396,9 +1396,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | kdplat | character varying(2) | NULL |  | Kode plat. |
 | statumum | character(1) | NULL |  | Status umum. |
 | tarif | numeric(18,2) | NULL |  | Nilai tarif. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `mastertarifnjop`
@@ -1417,9 +1417,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | kodebbm | character varying(10) | NULL |  | Kode BBM. |
 | njop | money | NULL |  | Nilai NJOP. |
 | status | character(1) | NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterteks`
@@ -1429,9 +1429,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | idteks | integer | NOT NULL |  | ID teks. |
 | datateks | character varying(1024) | NOT NULL |  | Isi/teks yang disimpan. |
 | status | character(1) | NOT NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterupt`
@@ -1454,9 +1454,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | bendahara | bigint | NULL |  | ID bendahara. |
 | norekb | character varying(20) | NULL |  | Nomor rekening bank. |
 | status | character(1) | NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masteruunjop`
@@ -1469,9 +1469,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | tahun | character(4) | NULL |  | Informasi tahun. |
 | status | character(1) | NULL |  | Status data/record. |
 | keterangan | character varying(200) | NULL |  | Keterangan tambahan. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterwp`
@@ -1547,9 +1547,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | putih | character varying(1) | NULL |  | Penanda plat putih. |
 | status | character(1) | NULL |  | Status data/record. |
 | statint | character(1) | NULL |  | Status internal. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `masterwpdata`
@@ -1564,9 +1564,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | createby | character varying(50) | NULL |  | Pengguna yang membuat data. |
 | updatedate | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
 | updateby | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transdatakohir`
@@ -1590,9 +1590,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | ntpd | character varying(50) | NULL |  | Nomor transaksi (NTPD). |
 | tglntpd | date | NULL |  | Tanggal NTPD. |
 | idbank | character varying(3) | NULL |  | ID bank. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transhistpendataan`
@@ -1613,9 +1613,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | kdflow | character varying(10) | NULL |  | Kode alur/proses. |
 | histid | character varying(3) | NOT NULL |  | ID histori. |
 | status | character(1) | NOT NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transhistpendataandet`
@@ -1633,9 +1633,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | tarifpajak | numeric(18,2) | NOT NULL |  | Tarif pajak. |
 | histid | character varying(3) | NOT NULL |  | ID histori. |
 | status | character(1) | NOT NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transhistpenetapan`
@@ -1669,9 +1669,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | opskota | numeric(18,2) | NULL |  | Nilai opsen kota. |
 | dendaopsprov | numeric(18,2) | NULL |  | Denda opsen provinsi. |
 | dendaopskota | numeric(18,2) | NULL |  | Denda opsen kota. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transpendataan`
@@ -1690,9 +1690,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | idupt | bigint | NOT NULL |  | ID UPT. |
 | kdflow | character varying(10) | NULL |  | Kode alur/proses. |
 | status | character(1) | NOT NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transpendataandet`
@@ -1709,9 +1709,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | usahaid | integer | NOT NULL |  | ID usaha. |
 | tarifpajak | numeric(18,2) | NOT NULL |  | Tarif pajak. |
 | status | character(1) | NOT NULL |  | Status data/record. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transpenetapan`
@@ -1744,9 +1744,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | opskota | numeric(18,2) | NULL |  | Nilai opsen kota. |
 | dendaopsprov | numeric(18,2) | NULL |  | Denda opsen provinsi. |
 | dendaopskota | numeric(18,2) | NULL |  | Denda opsen kota. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transsts`
@@ -1764,9 +1764,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | ntpd | character varying(50) | NULL |  | Nomor transaksi (NTPD). |
 | tglntpd | date | NULL |  | Tanggal NTPD. |
 | statsts | integer | NULL |  | Status STS. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transstsdet`
@@ -1778,9 +1778,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | idrekd | integer | NOT NULL |  | ID rekening daerah. |
 | nilaists | numeric(18,2) | NOT NULL |  | Nilai STS. |
 | jenis | character(1) | NOT NULL |  | Jenis/kategori. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transwpdata`
@@ -1791,9 +1791,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | idnpwpd | bigint | NOT NULL |  | ID NPWPD. |
 | kdflow | character varying(10) | NULL |  | Kode alur/proses. |
 | tgldaftar | date | NULL | CURRENT_DATE | Tanggal pendaftaran. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transwpdataantri`
@@ -1807,9 +1807,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | statantri | character(1) | NULL |  | Status antrian. |
 | ket | character varying(100) | NULL |  | Keterangan tambahan. |
 | tglantri | character varying(30) | NULL |  | Tanggal antrian. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `transwpdatafile`
@@ -1823,9 +1823,9 @@ Dokumen ini berisi daftar tabel dan kolom berdasarkan `db/V@LIDSAMSAT.sql`.
 | extension | character varying(50) | NULL |  | Ekstensi file. |
 | size | bigint | NULL |  | Ukuran file. |
 | url | character varying(200) | NULL |  | URL file. |
-| created_at | date | NULL | CURRENT_DATE | Tanggal pembuatan data. |
+| created_at | timestamptz | NOT NULL | now() | Tanggal pembuatan data. |
 | created_by | character varying(50) | NULL |  | Pengguna yang membuat data. |
-| updated_at | date | NULL | CURRENT_DATE | Tanggal pembaruan data. |
+| updated_at | timestamptz | NOT NULL | now() | Tanggal pembaruan data. |
 | updated_by | character varying(50) | NULL |  | Pengguna yang memperbarui data. |
 
 ## Tabel `ref_flag`
