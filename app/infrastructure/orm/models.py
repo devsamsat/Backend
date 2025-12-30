@@ -1,4 +1,14 @@
-from sqlalchemy import Column, Integer, String, Boolean, Text, DateTime, UniqueConstraint
+from sqlalchemy import (
+    Column,
+    Integer,
+    String,
+    Boolean,
+    Text,
+    DateTime,
+    UniqueConstraint,
+    Numeric,
+    BigInteger,
+)
 from sqlalchemy.sql import func
 from app.core.database import Base
 
@@ -30,3 +40,147 @@ class DynamicRecord(Base):
         onupdate=func.now(),
         nullable=False,
     )
+
+
+class AppGroupUserModel(Base):
+    __tablename__ = "appgroupuser"
+
+    kdgroup = Column(String(30), primary_key=True)
+    nmgroup = Column(String(50), nullable=False)
+    ket = Column(String(100))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class AppOtorModel(Base):
+    __tablename__ = "appotor"
+
+    kdgroup = Column(String(30), primary_key=True)
+    roleid = Column(String(50), primary_key=True)
+    ket = Column(String(100))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class AppRoleModel(Base):
+    __tablename__ = "approle"
+
+    roleid = Column(String(50), primary_key=True)
+    idapp = Column(BigInteger)
+    role = Column(String(254))
+    role_type = Column(String(2))
+    menuid = Column(String(50))
+    parentid = Column(String(50))
+    bantuan = Column(String(254))
+    link = Column(String(254))
+    icon = Column(String(254))
+    kdlevel = Column(Integer)
+    is_show = Column(Integer)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class AppUserModel(Base):
+    __tablename__ = "appuser"
+
+    userid = Column(String(50), primary_key=True)
+    idupt = Column(BigInteger)
+    kdtahap = Column(String(5), nullable=False)
+    pwd = Column(String(200))
+    idpeg = Column(BigInteger)
+    kdgroup = Column(String(30), nullable=False)
+    nik = Column(String(50))
+    nama = Column(String(100))
+    email = Column(String(50))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class JnsDokModel(Base):
+    __tablename__ = "jnsdok"
+
+    kddok = Column(String(10), primary_key=True)
+    namadok = Column(String(30), nullable=False)
+    keterangan = Column(String(200))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class JnsGolonganModel(Base):
+    __tablename__ = "jnsgolongan"
+
+    jnsgolid = Column(String(2), primary_key=True)
+    golongan = Column(String(30), nullable=False)
+    katid = Column(String(1))
+    jnskendid = Column(String(3))
+    viewall = Column(String(1))
+    status = Column(String(1))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class JnsGunaModel(Base):
+    __tablename__ = "jnsguna"
+
+    kdguna = Column(String(2), primary_key=True)
+    guna = Column(String(30), nullable=False)
+    gunaplat = Column(String(2))
+    progresif = Column(Numeric(18, 2))
+    groupbpkb = Column(String(20), nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class JnsHistModel(Base):
+    __tablename__ = "jnshist"
+
+    kdhist = Column(String(3), primary_key=True)
+    nmhist = Column(String(50), nullable=False)
+    kdflow = Column(String(2))
+    status = Column(String(1))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class JnsJrModel(Base):
+    __tablename__ = "jnsjr"
+
+    jnsjrid = Column(String(2), primary_key=True)
+    kodejr = Column(String(2), nullable=False)
+    goljns = Column(String(2), nullable=False)
+    pu = Column(String(2), nullable=False)
+    roda = Column(Integer, nullable=False)
+    keterangan = Column(String(200))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class JnsKatKendaraanModel(Base):
+    __tablename__ = "jnskatkendaraan"
+
+    katid = Column(String(1), primary_key=True)
+    kendaraan = Column(String(30), nullable=False)
+    jenisbpkb = Column(String(20), nullable=False)
+    status = Column(String(1))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
