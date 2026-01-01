@@ -1,0 +1,210 @@
+from fastapi import APIRouter, Depends, HTTPException, status
+from sqlalchemy.orm import Session
+from app.core.database import SessionLocal
+from app.infrastructure.repositories.masterwp_repository_impl import MasterWpRepositoryImpl
+from app.usecases.masterwp_usecase import MasterWpUseCase
+from app.schemas.masterwp_schema import MasterWpCreate, MasterWpResponse, MasterWpUpdate
+
+router = APIRouter(prefix="/api/v1/masterwp", tags=["MasterWp"])
+
+
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()
+
+
+def get_usecase(db: Session = Depends(get_db)):
+    repo = MasterWpRepositoryImpl(db)
+    return MasterWpUseCase(repo)
+
+
+@router.post("/", response_model=MasterWpResponse)
+def create_masterwp(
+    payload: MasterWpCreate,
+    uc: MasterWpUseCase = Depends(get_usecase),
+):
+    return uc.create(
+        payload.objekbadanno,
+        payload.namabadan,
+        payload.insidentil,
+        payload.nopollama,
+        payload.kdplat,
+        payload.idgroupusaha,
+        payload.kodepolisi,
+        payload.kodelokasi,
+        payload.idbadan,
+        payload.idklasifikasi,
+        payload.idlokasi,
+        payload.alamat,
+        payload.idkabkokta,
+        payload.idkecamatan,
+        payload.idkelurahan,
+        payload.idrw,
+        payload.idrt,
+        payload.telepon,
+        payload.fax,
+        payload.namapemilik,
+        payload.idktp,
+        payload.pekerjaan,
+        payload.tgldaftar,
+        payload.tglsah,
+        payload.keteblokir,
+        payload.tglhapus,
+        payload.groupblokir,
+        payload.lastskp,
+        payload.jnskendid,
+        payload.idmerk,
+        payload.merk,
+        payload.tipe,
+        payload.tahunbuat,
+        payload.kodebbm,
+        payload.bbm,
+        payload.cylinder,
+        payload.norangka,
+        payload.nomesin,
+        payload.nobpkb,
+        payload.kdmilik,
+        payload.kdguna,
+        payload.kendke,
+        payload.warna,
+        payload.nostnkb,
+        payload.daftarstnk,
+        payload.tglcetakstnk,
+        payload.tglstnk,
+        payload.sdstnk,
+        payload.tglskp,
+        payload.awalskp,
+        payload.akhirskp,
+        payload.tglmutasi,
+        payload.tgljualbeli,
+        payload.nodaftar,
+        payload.nosah1,
+        payload.tglsah1,
+        payload.nosah2,
+        payload.tglsah2,
+        payload.nosah3,
+        payload.tglsah3,
+        payload.nosah4,
+        payload.tglsah4,
+        payload.laporjual,
+        payload.nikpemilik,
+        payload.notelppemilik,
+        payload.putih,
+        payload.status,
+        payload.statint,
+        payload.created_by,
+        payload.updated_by,
+    )
+
+
+@router.get("/", response_model=list[MasterWpResponse])
+def get_masterwps(uc: MasterWpUseCase = Depends(get_usecase)):
+    return uc.get_all()
+
+
+@router.get("/{idwp}", response_model=MasterWpResponse)
+def get_masterwp(
+    idwp: int,
+    uc: MasterWpUseCase = Depends(get_usecase),
+):
+    record = uc.get_by_id(idwp)
+    if not record:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="MasterWp not found")
+    return record
+
+
+@router.put("/{idwp}", response_model=MasterWpResponse)
+def update_masterwp(
+    idwp: int,
+    payload: MasterWpUpdate,
+    uc: MasterWpUseCase = Depends(get_usecase),
+):
+    record = uc.update(
+        idwp,
+        payload.objekbadanno,
+        payload.namabadan,
+        payload.insidentil,
+        payload.nopollama,
+        payload.kdplat,
+        payload.idgroupusaha,
+        payload.kodepolisi,
+        payload.kodelokasi,
+        payload.idbadan,
+        payload.idklasifikasi,
+        payload.idlokasi,
+        payload.alamat,
+        payload.idkabkokta,
+        payload.idkecamatan,
+        payload.idkelurahan,
+        payload.idrw,
+        payload.idrt,
+        payload.telepon,
+        payload.fax,
+        payload.namapemilik,
+        payload.idktp,
+        payload.pekerjaan,
+        payload.tgldaftar,
+        payload.tglsah,
+        payload.keteblokir,
+        payload.tglhapus,
+        payload.groupblokir,
+        payload.lastskp,
+        payload.jnskendid,
+        payload.idmerk,
+        payload.merk,
+        payload.tipe,
+        payload.tahunbuat,
+        payload.kodebbm,
+        payload.bbm,
+        payload.cylinder,
+        payload.norangka,
+        payload.nomesin,
+        payload.nobpkb,
+        payload.kdmilik,
+        payload.kdguna,
+        payload.kendke,
+        payload.warna,
+        payload.nostnkb,
+        payload.daftarstnk,
+        payload.tglcetakstnk,
+        payload.tglstnk,
+        payload.sdstnk,
+        payload.tglskp,
+        payload.awalskp,
+        payload.akhirskp,
+        payload.tglmutasi,
+        payload.tgljualbeli,
+        payload.nodaftar,
+        payload.nosah1,
+        payload.tglsah1,
+        payload.nosah2,
+        payload.tglsah2,
+        payload.nosah3,
+        payload.tglsah3,
+        payload.nosah4,
+        payload.tglsah4,
+        payload.laporjual,
+        payload.nikpemilik,
+        payload.notelppemilik,
+        payload.putih,
+        payload.status,
+        payload.statint,
+        payload.updated_by,
+    )
+    if not record:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="MasterWp not found")
+    return record
+
+
+@router.delete("/{idwp}")
+def delete_masterwp(
+    idwp: int,
+    uc: MasterWpUseCase = Depends(get_usecase),
+):
+    deleted = uc.delete(idwp)
+    if not deleted:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="MasterWp not found")
+    return {"message": "Deleted"}
