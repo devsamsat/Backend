@@ -13,10 +13,14 @@ from app.interfaces.api import (
     jnskatkendaraan,
     jnskendaraan,
     jnsmilik,
+    jnsstrurek,
     jnspajak,
     jnsplat,
     jnsprogresif,
     jnsranmor,
+    jnstarif,
+    jnsumum,
+    mapjnspendapatan,
     masterab,
     masterabdet,
     masterbadan,
@@ -27,6 +31,10 @@ from app.interfaces.api import (
     masterhapusdenda,
     masterhistory,
     masterjabttd,
+    masterlibur,
+    mastermerk,
+    masternpwpd,
+    masterpegawai,
     users,
 )
 
@@ -50,10 +58,14 @@ app.include_router(jnsjr.router)
 app.include_router(jnskatkendaraan.router)
 app.include_router(jnskendaraan.router)
 app.include_router(jnsmilik.router)
+app.include_router(jnsstrurek.router)
 app.include_router(jnspajak.router)
 app.include_router(jnsplat.router)
 app.include_router(jnsprogresif.router)
 app.include_router(jnsranmor.router)
+app.include_router(jnstarif.router)
+app.include_router(jnsumum.router)
+app.include_router(mapjnspendapatan.router)
 app.include_router(masterab.router)
 app.include_router(masterabdet.router)
 app.include_router(masterbadan.router)
@@ -64,6 +76,10 @@ app.include_router(masterflow.router)
 app.include_router(masterhapusdenda.router)
 app.include_router(masterhistory.router)
 app.include_router(masterjabttd.router)
+app.include_router(masterlibur.router)
+app.include_router(mastermerk.router)
+app.include_router(masternpwpd.router)
+app.include_router(masterpegawai.router)
 
 custom_table_routes = {
     "users",
@@ -77,10 +93,14 @@ custom_table_routes = {
     "jnskatkendaraan",
     "jnskendaraan",
     "jnsmilik",
+    "jnsstrurek",
     "jnspajak",
     "jnsplat",
     "jnsprogresif",
     "jnsranmor",
+    "jnstarif",
+    "jnsumum",
+    "mapjnspendapatan",
     "masterab",
     "masterabdet",
     "masterbadan",
@@ -91,6 +111,10 @@ custom_table_routes = {
     "masterhapusdenda",
     "masterhistory",
     "masterjabttd",
+    "masterlibur",
+    "mastermerk",
+    "masternpwpd",
+    "masterpegawai",
 }
 
 for table_name in TABLE_NAMES:

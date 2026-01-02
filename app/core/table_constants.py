@@ -17,4 +17,12 @@ CUSTOM_TABLES = {
     "jnsranmor",
     "jnsgolongan",
     "jnsguna",
+    "jnsstrurek",
+    "jnstarif",
+    "jnsumum",
+    "mapjnspendapatan",
+    "masterlibur",
+    "mastermerk",
+    "masternpwpd",
+    "masterpegawai",
 }
