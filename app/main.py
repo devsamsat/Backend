@@ -31,10 +31,18 @@ from app.interfaces.api import (
     masterhapusdenda,
     masterhistory,
     masterjabttd,
+    masterjnspendapatan,
+    masterkabkota,
     masterlibur,
     mastermerk,
     masternpwpd,
     masterpegawai,
+    masterprovinsi,
+    masterrekd,
+    masterreknrc,
+    masterrt,
+    masterrw,
+    mastertarif,
     users,
 )
 
@@ -76,10 +84,18 @@ app.include_router(masterflow.router)
 app.include_router(masterhapusdenda.router)
 app.include_router(masterhistory.router)
 app.include_router(masterjabttd.router)
+app.include_router(masterjnspendapatan.router)
+app.include_router(masterkabkota.router)
 app.include_router(masterlibur.router)
 app.include_router(mastermerk.router)
 app.include_router(masternpwpd.router)
 app.include_router(masterpegawai.router)
+app.include_router(masterprovinsi.router)
+app.include_router(masterrekd.router)
+app.include_router(masterreknrc.router)
+app.include_router(masterrt.router)
+app.include_router(masterrw.router)
+app.include_router(mastertarif.router)
 
 custom_table_routes = {
     "users",
@@ -111,10 +127,18 @@ custom_table_routes = {
     "masterhapusdenda",
     "masterhistory",
     "masterjabttd",
+    "masterjnspendapatan",
+    "masterkabkota",
     "masterlibur",
     "mastermerk",
     "masternpwpd",
     "masterpegawai",
+    "masterprovinsi",
+    "masterrekd",
+    "masterreknrc",
+    "masterrt",
+    "masterrw",
+    "mastertarif",
 }
 
 for table_name in TABLE_NAMES:
