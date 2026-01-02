@@ -1295,3 +1295,62 @@ class TransSts(Base):
     created_by = Column(String(50))
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_by = Column(String(50))
+
+
+class TransStsDet(Base):
+    __tablename__ = "transstsdet"
+
+    idstsdet = Column(BigInteger, primary_key=True)
+    idsts = Column(BigInteger, nullable=False)
+    idrekd = Column(Integer, nullable=False)
+    nilaists = Column(Numeric(18, 2), nullable=False)
+    jenis = Column(String(1), nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class TransWpData(Base):
+    __tablename__ = "transwpdata"
+
+    idtwpdata = Column(BigInteger, primary_key=True)
+    idnpwpd = Column(BigInteger, nullable=False)
+    kdflow = Column(String(10))
+    tgldaftar = Column(Date)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class TransWpDataAntri(Base):
+    __tablename__ = "transwpdataantri"
+
+    idantri = Column(Integer, primary_key=True)
+    idtwpdata = Column(BigInteger, nullable=False)
+    noantri = Column(String(30), nullable=False)
+    idktp = Column(BigInteger)
+    statantri = Column(String(1))
+    ket = Column(String(100))
+    tglantri = Column(String(30))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class TransWpDataFile(Base):
+    __tablename__ = "transwpdatafile"
+
+    idfile = Column(BigInteger, primary_key=True)
+    idtwpdata = Column(BigInteger, nullable=False)
+    namafile = Column(String(512))
+    direktory = Column(String(200))
+    extension = Column(String(50))
+    size = Column(BigInteger)
+    url = Column(String(200))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
