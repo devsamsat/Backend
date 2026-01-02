@@ -45,6 +45,13 @@ from app.interfaces.api import (
     masterrt,
     masterrw,
     mastertarif,
+    mastertarifnjop,
+    masterteks,
+    masterupt,
+    masteruunjop,
+    masterwp,
+    masterwpdata,
+    transdatakohir,
     users,
 )
 from app.interfaces.api.generated_tables import generate_table_routers
@@ -93,6 +100,13 @@ CUSTOM_ROUTER_REGISTRY = {
     "masterrt": masterrt.router,
     "masterrw": masterrw.router,
     "mastertarif": mastertarif.router,
+    "mastertarifnjop": mastertarifnjop.router,
+    "masterteks": masterteks.router,
+    "masterupt": masterupt.router,
+    "masteruunjop": masteruunjop.router,
+    "masterwp": masterwp.router,
+    "masterwpdata": masterwpdata.router,
+    "transdatakohir": transdatakohir.router,
 }
 
 
