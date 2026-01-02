@@ -33,6 +33,14 @@ from app.interfaces.api import (
     masterjabttd,
     masterjnspendapatan,
     masterkabkota,
+    masterkabkotaall,
+    masterkaupt,
+    masterkb,
+    masterkbdet,
+    masterkecamatan,
+    masterkelurahan,
+    masterkiosk,
+    masterktp,
     masterlibur,
     mastermerk,
     masternpwpd,
@@ -86,6 +94,14 @@ app.include_router(masterhistory.router)
 app.include_router(masterjabttd.router)
 app.include_router(masterjnspendapatan.router)
 app.include_router(masterkabkota.router)
+app.include_router(masterkabkotaall.router)
+app.include_router(masterkaupt.router)
+app.include_router(masterkb.router)
+app.include_router(masterkbdet.router)
+app.include_router(masterkecamatan.router)
+app.include_router(masterkelurahan.router)
+app.include_router(masterkiosk.router)
+app.include_router(masterktp.router)
 app.include_router(masterlibur.router)
 app.include_router(mastermerk.router)
 app.include_router(masternpwpd.router)
@@ -129,6 +145,14 @@ custom_table_routes = {
     "masterjabttd",
     "masterjnspendapatan",
     "masterkabkota",
+    "masterkabkotaall",
+    "masterkaupt",
+    "masterkb",
+    "masterkbdet",
+    "masterkecamatan",
+    "masterkelurahan",
+    "masterkiosk",
+    "masterktp",
     "masterlibur",
     "mastermerk",
     "masternpwpd",
