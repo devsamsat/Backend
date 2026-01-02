@@ -41,4 +41,11 @@ CUSTOM_TABLES = {
     "masterrt",
     "masterrw",
     "mastertarif",
+    "mastertarifnjop",
+    "masterteks",
+    "masterupt",
+    "masteruunjop",
+    "masterwp",
+    "masterwpdata",
+    "transdatakohir",
 }

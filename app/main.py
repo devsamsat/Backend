@@ -51,6 +51,13 @@ from app.interfaces.api import (
     masterrt,
     masterrw,
     mastertarif,
+    mastertarifnjop,
+    masterteks,
+    masterupt,
+    masteruunjop,
+    masterwp,
+    masterwpdata,
+    transdatakohir,
     users,
 )
 
@@ -112,6 +119,13 @@ app.include_router(masterreknrc.router)
 app.include_router(masterrt.router)
 app.include_router(masterrw.router)
 app.include_router(mastertarif.router)
+app.include_router(mastertarifnjop.router)
+app.include_router(masterteks.router)
+app.include_router(masterupt.router)
+app.include_router(masteruunjop.router)
+app.include_router(masterwp.router)
+app.include_router(masterwpdata.router)
+app.include_router(transdatakohir.router)
 
 custom_table_routes = {
     "users",
@@ -163,6 +177,13 @@ custom_table_routes = {
     "masterrt",
     "masterrw",
     "mastertarif",
+    "mastertarifnjop",
+    "masterteks",
+    "masterupt",
+    "masteruunjop",
+    "masterwp",
+    "masterwpdata",
+    "transdatakohir",
 }
 
 for table_name in TABLE_NAMES:
