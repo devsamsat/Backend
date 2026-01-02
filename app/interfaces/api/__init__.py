@@ -25,10 +25,18 @@ from app.interfaces.api import (
     jnsgolongan,
     jnsguna,
     mapjnspendapatan,
+    masterjnspendapatan,
+    masterkabkota,
     masterlibur,
     mastermerk,
     masternpwpd,
     masterpegawai,
+    masterprovinsi,
+    masterrekd,
+    masterreknrc,
+    masterrt,
+    masterrw,
+    mastertarif,
     users,
 )
 from app.interfaces.api.generated_tables import generate_table_routers
@@ -57,10 +65,18 @@ CUSTOM_ROUTER_REGISTRY = {
     "jnsgolongan": jnsgolongan.router,
     "jnsguna": jnsguna.router,
     "mapjnspendapatan": mapjnspendapatan.router,
+    "masterjnspendapatan": masterjnspendapatan.router,
+    "masterkabkota": masterkabkota.router,
     "masterlibur": masterlibur.router,
     "mastermerk": mastermerk.router,
     "masternpwpd": masternpwpd.router,
     "masterpegawai": masterpegawai.router,
+    "masterprovinsi": masterprovinsi.router,
+    "masterrekd": masterrekd.router,
+    "masterreknrc": masterreknrc.router,
+    "masterrt": masterrt.router,
+    "masterrw": masterrw.router,
+    "mastertarif": mastertarif.router,
 }
 
 

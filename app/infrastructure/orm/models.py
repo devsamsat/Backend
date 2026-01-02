@@ -635,3 +635,128 @@ class MapJnsPendapatan(Base):
     created_by = Column(String(50))
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_by = Column(String(50))
+
+
+class MasterJnsPendapatan(Base):
+    __tablename__ = "masterjnspendapatan"
+
+    idjnsd = Column(Integer, primary_key=True)
+    nmjnspendapatan = Column(String(200), nullable=False)
+    parentid = Column(Integer)
+    kdrek = Column(String(30))
+    jatuhtempo = Column(Integer)
+    status = Column(String(1))
+    selfassessment = Column(String(1))
+    katid = Column(String(1))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class MasterKabKota(Base):
+    __tablename__ = "masterkabkota"
+
+    idkabkota = Column(BigInteger, primary_key=True)
+    idprovinsi = Column(BigInteger, nullable=False)
+    kdkabkota = Column(String(10))
+    nmkabkota = Column(String(50), nullable=False)
+    akronim = Column(String(50), nullable=False)
+    ibukota = Column(String(50), nullable=False)
+    status = Column(String(1), nullable=False)
+    bpkbid = Column(String(4), nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class MasterProvinsi(Base):
+    __tablename__ = "masterprovinsi"
+
+    idprovinsi = Column(BigInteger, primary_key=True)
+    kdprovinsi = Column(String(10), nullable=False)
+    nmprovinsi = Column(String(100), nullable=False)
+    status = Column(String(1), nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class MasterRekd(Base):
+    __tablename__ = "masterrekd"
+
+    idrekd = Column(Integer, primary_key=True)
+    idparent = Column(Integer)
+    mtglevel = Column(String(2))
+    kdrek = Column(String(30), nullable=False)
+    nmrek = Column(String(200))
+    kdjnspjk = Column(String(2))
+    rek_type = Column(String(1))
+    status = Column(String(1))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class MasterRekNrc(Base):
+    __tablename__ = "masterreknrc"
+
+    idreknrc = Column(Integer, primary_key=True)
+    mtglevel = Column(String(2))
+    kdrek = Column(String(30), nullable=False)
+    nmrek = Column(String(500))
+    rek_type = Column(String(1))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class MasterRt(Base):
+    __tablename__ = "masterrt"
+
+    idrt = Column(Integer, primary_key=True)
+    idrw = Column(Integer, nullable=False)
+    kdrt = Column(String(10))
+    status = Column(String(1), nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class MasterRw(Base):
+    __tablename__ = "masterrw"
+
+    idrw = Column(Integer, primary_key=True)
+    idkelurahan = Column(BigInteger, nullable=False)
+    kdrw = Column(String(10))
+    alamat = Column(String(100), nullable=False)
+    status = Column(String(1), nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class MasterTarif(Base):
+    __tablename__ = "mastertarif"
+
+    idtarif = Column(BigInteger, primary_key=True)
+    kdjnspjk = Column(String(2), nullable=False)
+    jnskendid = Column(String(3))
+    satuan = Column(String(200))
+    awal = Column(Numeric(18, 2))
+    akhir = Column(Numeric(18, 2))
+    keterangan = Column(String(200))
+    kdflow = Column(String(10))
+    kdplat = Column(String(2))
+    statumum = Column(String(1))
+    tarif = Column(Numeric(18, 2))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
