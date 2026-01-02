@@ -52,6 +52,13 @@ from app.interfaces.api import (
     masterwp,
     masterwpdata,
     transdatakohir,
+    transhistpendataan,
+    transhistpendataandet,
+    transhistpenetapan,
+    transpendataan,
+    transpendataandet,
+    transpenetapan,
+    transsts,
     users,
 )
 from app.interfaces.api.generated_tables import generate_table_routers
@@ -107,6 +114,13 @@ CUSTOM_ROUTER_REGISTRY = {
     "masterwp": masterwp.router,
     "masterwpdata": masterwpdata.router,
     "transdatakohir": transdatakohir.router,
+    "transhistpendataan": transhistpendataan.router,
+    "transhistpendataandet": transhistpendataandet.router,
+    "transhistpenetapan": transhistpenetapan.router,
+    "transpendataan": transpendataan.router,
+    "transpendataandet": transpendataandet.router,
+    "transpenetapan": transpenetapan.router,
+    "transsts": transsts.router,
 }
 
 

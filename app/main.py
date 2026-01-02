@@ -58,6 +58,13 @@ from app.interfaces.api import (
     masterwp,
     masterwpdata,
     transdatakohir,
+    transhistpendataan,
+    transhistpendataandet,
+    transhistpenetapan,
+    transpendataan,
+    transpendataandet,
+    transpenetapan,
+    transsts,
     users,
 )
 
@@ -126,6 +133,13 @@ app.include_router(masteruunjop.router)
 app.include_router(masterwp.router)
 app.include_router(masterwpdata.router)
 app.include_router(transdatakohir.router)
+app.include_router(transhistpendataan.router)
+app.include_router(transhistpendataandet.router)
+app.include_router(transhistpenetapan.router)
+app.include_router(transpendataan.router)
+app.include_router(transpendataandet.router)
+app.include_router(transpenetapan.router)
+app.include_router(transsts.router)
 
 custom_table_routes = {
     "users",
@@ -184,6 +198,13 @@ custom_table_routes = {
     "masterwp",
     "masterwpdata",
     "transdatakohir",
+    "transhistpendataan",
+    "transhistpendataandet",
+    "transhistpenetapan",
+    "transpendataan",
+    "transpendataandet",
+    "transpenetapan",
+    "transsts",
 }
 
 for table_name in TABLE_NAMES:
