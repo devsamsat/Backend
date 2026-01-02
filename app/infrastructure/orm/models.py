@@ -671,6 +671,177 @@ class MasterKabKota(Base):
     updated_by = Column(String(50))
 
 
+class MasterKabKotaAll(Base):
+    __tablename__ = "masterkabkotaall"
+
+    idkabkotaall = Column(BigInteger, primary_key=True)
+    idprovinsi = Column(BigInteger, nullable=False)
+    kdkabkota = Column(String(8))
+    nmkabkota = Column(String(100), nullable=False)
+    status = Column(String(1), nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class MasterKaupt(Base):
+    __tablename__ = "masterkaupt"
+
+    idkaupt = Column(BigInteger, primary_key=True)
+    idpegawai = Column(BigInteger)
+    idupt = Column(BigInteger, nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class MasterKb(Base):
+    __tablename__ = "masterkb"
+
+    idkb = Column(BigInteger, primary_key=True)
+    nomorfaktur = Column(String(30))
+    namabadan = Column(String(100), nullable=False)
+    alamat = Column(String(255))
+    idkabkokta = Column(BigInteger)
+    idkecamatan = Column(BigInteger)
+    idkelurahan = Column(BigInteger)
+    idrw = Column(Integer)
+    idrt = Column(Integer)
+    telepon = Column(String(30))
+    fax = Column(String(30))
+    idktp = Column(BigInteger)
+    noktp = Column(String(30))
+    pekerjaan = Column(String(50))
+    tgldaftar = Column(Date)
+    tglfaktur = Column(Date)
+    insidentil = Column(String(1), nullable=False)
+    jnskendid = Column(String(3))
+    idmerk = Column(Integer)
+    merk = Column(String(30))
+    tipe = Column(String(50))
+    tahunbuat = Column(Integer)
+    kodebbm = Column(String(10))
+    bbm = Column(String(30))
+    cylinder = Column(Integer)
+    norangka = Column(String(50))
+    nomesin = Column(String(50))
+    nobpkb = Column(String(50))
+    kdmilik = Column(String(2))
+    kdguna = Column(String(2))
+    kendke = Column(Integer)
+    warna = Column(String(50))
+    kdplat = Column(String(2), nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class MasterKbDet(Base):
+    __tablename__ = "masterkbdet"
+
+    idkbdet = Column(BigInteger, primary_key=True)
+    idkb = Column(BigInteger, nullable=False)
+    idjnsd = Column(Integer, nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class MasterKecamatan(Base):
+    __tablename__ = "masterkecamatan"
+
+    idkecamatan = Column(BigInteger, primary_key=True)
+    idkabkota = Column(BigInteger, nullable=False)
+    kdkecamatan = Column(String(10))
+    nmkecamatan = Column(String(100), nullable=False)
+    alamat = Column(String(100), nullable=False)
+    telepon = Column(String(30), nullable=False)
+    fax = Column(String(30))
+    status = Column(String(1), nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class MasterKelurahan(Base):
+    __tablename__ = "masterkelurahan"
+
+    idkelurahan = Column(BigInteger, primary_key=True)
+    idkecamatan = Column(BigInteger, nullable=False)
+    kdkelurahan = Column(String(10))
+    nmkelurahan = Column(String(100), nullable=False)
+    alamat = Column(String(100), nullable=False)
+    telepon = Column(String(30), nullable=False)
+    kodepos = Column(String(30))
+    status = Column(String(1), nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class MasterKiosk(Base):
+    __tablename__ = "masterkiosk"
+
+    idkios = Column(Integer, primary_key=True)
+    idparent = Column(Integer)
+    kodekiosk = Column(String(20), nullable=False)
+    datakiosk = Column(String(200), nullable=False)
+    level = Column(String(1), nullable=False)
+    status = Column(String(1), nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class MasterKtp(Base):
+    __tablename__ = "masterktp"
+
+    idktp = Column(BigInteger, primary_key=True)
+    nik = Column(String(50), nullable=False)
+    nama = Column(String(100), nullable=False)
+    agama = Column(Integer)
+    nohp = Column(String(30), nullable=False)
+    alamat = Column(String(255), nullable=False)
+    tgldaftar = Column(Date)
+    idprovinsi = Column(BigInteger)
+    idkabkokta = Column(BigInteger, nullable=False)
+    idkecamatan = Column(BigInteger, nullable=False)
+    idkelurahan = Column(BigInteger, nullable=False)
+    idrw = Column(Integer)
+    idrt = Column(Integer)
+    kdrt = Column(String(20))
+    nikah = Column(Integer)
+    tempatlahir = Column(String(100))
+    tgllahir = Column(Date)
+    tglregistrasi = Column(Date)
+    nokk = Column(String(30))
+    nobpjs = Column(String(30))
+    goldarah = Column(String(2))
+    email = Column(String(50))
+    pendidikan = Column(String(50))
+    jeniskelamin = Column(String(1))
+    dusun = Column(String(50))
+    pekerjaan = Column(String(100))
+    namaayah = Column(String(100))
+    namaibu = Column(String(100))
+    negara = Column(String(50))
+    statwn = Column(String(1))
+    statint = Column(String(1))
+    tglint = Column(Date)
+    ket = Column(String(512))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
 class MasterProvinsi(Base):
     __tablename__ = "masterprovinsi"
 
