@@ -8,6 +8,15 @@ from app.interfaces.api import (
     approle,
     appuser,
     dynamic_records,
+    jnshist,
+    jnsjr,
+    jnskatkendaraan,
+    jnskendaraan,
+    jnsmilik,
+    jnspajak,
+    jnsplat,
+    jnsprogresif,
+    jnsranmor,
     masterab,
     masterabdet,
     masterbadan,
@@ -36,6 +45,15 @@ app.include_router(appgroupuser.router)
 app.include_router(appotor.router)
 app.include_router(approle.router)
 app.include_router(appuser.router)
+app.include_router(jnshist.router)
+app.include_router(jnsjr.router)
+app.include_router(jnskatkendaraan.router)
+app.include_router(jnskendaraan.router)
+app.include_router(jnsmilik.router)
+app.include_router(jnspajak.router)
+app.include_router(jnsplat.router)
+app.include_router(jnsprogresif.router)
+app.include_router(jnsranmor.router)
 app.include_router(masterab.router)
 app.include_router(masterabdet.router)
 app.include_router(masterbadan.router)
@@ -54,6 +72,15 @@ custom_table_routes = {
     "appotor",
     "approle",
     "appuser",
+    "jnshist",
+    "jnsjr",
+    "jnskatkendaraan",
+    "jnskendaraan",
+    "jnsmilik",
+    "jnspajak",
+    "jnsplat",
+    "jnsprogresif",
+    "jnsranmor",
     "masterab",
     "masterabdet",
     "masterbadan",

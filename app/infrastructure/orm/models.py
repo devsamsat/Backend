@@ -365,3 +365,146 @@ class MasterJabTtd(Base):
     created_by = Column(String(50))
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_by = Column(String(50))
+
+
+class JnsHist(Base):
+    __tablename__ = "jnshist"
+
+    kdhist = Column(String(3), primary_key=True)
+    nmhist = Column(String(50), nullable=False)
+    kdflow = Column(String(2))
+    status = Column(String(1))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class JnsJr(Base):
+    __tablename__ = "jnsjr"
+
+    jnsjrid = Column(String(2), primary_key=True)
+    kodejr = Column(String(2), nullable=False)
+    goljns = Column(String(2), nullable=False)
+    pu = Column(String(2), nullable=False)
+    roda = Column(Integer, nullable=False)
+    keterangan = Column(String(200))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class JnsKatKendaraan(Base):
+    __tablename__ = "jnskatkendaraan"
+
+    katid = Column(String(1), primary_key=True)
+    kendaraan = Column(String(30), nullable=False)
+    jenisbpkb = Column(String(20), nullable=False)
+    status = Column(String(1))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class JnsKendaraan(Base):
+    __tablename__ = "jnskendaraan"
+
+    jnskendid = Column(String(3), primary_key=True)
+    jnskend = Column(String(30), nullable=False)
+    katid = Column(String(1), nullable=False)
+    jnsjrid = Column(String(2))
+    golpjr = Column(Integer)
+    golujr = Column(Integer)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class JnsMilik(Base):
+    __tablename__ = "jnsmilik"
+
+    kdmilik = Column(String(2), primary_key=True)
+    milik = Column(String(30), nullable=False)
+    bpkpid = Column(String(2), nullable=False)
+    status = Column(String(1))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class JnsPajak(Base):
+    __tablename__ = "jnspajak"
+
+    kdjnspjk = Column(String(2), primary_key=True)
+    nmjnspjk = Column(String(50), nullable=False)
+    keterangan = Column(String(200))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class JnsPlat(Base):
+    __tablename__ = "jnsplat"
+
+    kdplat = Column(String(2), primary_key=True)
+    plat = Column(String(10), nullable=False)
+    pu = Column(String(1), nullable=False)
+    platjr = Column(Integer, nullable=False)
+    numpkb = Column(Numeric(18, 4), nullable=False)
+    numbbn1 = Column(Numeric(18, 4), nullable=False)
+    numbbn2 = Column(Numeric(18, 4), nullable=False)
+    umorg = Column(Numeric(18, 4), nullable=False)
+    umbrg = Column(Numeric(18, 4), nullable=False)
+    dnumpkb = Column(Numeric(18, 4), nullable=False)
+    dnumbbn = Column(Numeric(18, 4), nullable=False)
+    dumorg = Column(Numeric(18, 4), nullable=False)
+    dumbrg = Column(Numeric(18, 4), nullable=False)
+    abpkb = Column(Numeric(18, 4), nullable=False)
+    abbbn1 = Column(Numeric(18, 4), nullable=False)
+    abbbn2 = Column(Numeric(18, 4), nullable=False)
+    numfiskal = Column(Numeric(18, 4), nullable=False)
+    snid = Column(String(1), nullable=False)
+    opspkb = Column(Numeric(18, 4), nullable=False)
+    opsbbn = Column(Numeric(18, 4), nullable=False)
+    opsnumpkb = Column(Numeric(18, 4), nullable=False)
+    opsnumbbn1 = Column(Numeric(18, 4), nullable=False)
+    opsnumbbn2 = Column(Numeric(18, 4), nullable=False)
+    opsdnumpkb = Column(Numeric(18, 4), nullable=False)
+    opsdnumbbn = Column(Numeric(18, 4), nullable=False)
+    minnumpkb = Column(Numeric(18, 4), nullable=False)
+    minnumbbn1 = Column(Numeric(18, 4), nullable=False)
+    minnumbbn2 = Column(Numeric(18, 4), nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class JnsProgresif(Base):
+    __tablename__ = "jnsprogresif"
+
+    kdprogresif = Column(Integer, primary_key=True)
+    progresifr2 = Column(Numeric(18, 2), nullable=False)
+    progresifr4 = Column(Numeric(18, 2), nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class JnsRanmor(Base):
+    __tablename__ = "jnsranmor"
+
+    kdranmor = Column(String(1), primary_key=True)
+    nmranmor = Column(String(30), nullable=False)
+    snid = Column(String(1), nullable=False)
+    status = Column(String(1))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
