@@ -59,6 +59,10 @@ from app.interfaces.api import (
     transpendataandet,
     transpenetapan,
     transsts,
+    transstsdet,
+    transwpdata,
+    transwpdataantri,
+    transwpdatafile,
     users,
 )
 from app.interfaces.api.generated_tables import generate_table_routers
@@ -121,6 +125,10 @@ CUSTOM_ROUTER_REGISTRY = {
     "transpendataandet": transpendataandet.router,
     "transpenetapan": transpenetapan.router,
     "transsts": transsts.router,
+    "transstsdet": transstsdet.router,
+    "transwpdata": transwpdata.router,
+    "transwpdataantri": transwpdataantri.router,
+    "transwpdatafile": transwpdatafile.router,
 }
 
 

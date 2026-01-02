@@ -55,4 +55,8 @@ CUSTOM_TABLES = {
     "transpendataandet",
     "transpenetapan",
     "transsts",
+    "transstsdet",
+    "transwpdata",
+    "transwpdataantri",
+    "transwpdatafile",
 }
