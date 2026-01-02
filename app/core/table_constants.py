@@ -48,4 +48,11 @@ CUSTOM_TABLES = {
     "masterwp",
     "masterwpdata",
     "transdatakohir",
+    "transhistpendataan",
+    "transhistpendataandet",
+    "transhistpenetapan",
+    "transpendataan",
+    "transpendataandet",
+    "transpenetapan",
+    "transsts",
 }

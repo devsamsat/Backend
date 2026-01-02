@@ -1121,3 +1121,177 @@ class TransDataKohir(Base):
     created_by = Column(String(50))
     updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
     updated_by = Column(String(50))
+
+
+class TransHistPendataan(Base):
+    __tablename__ = "transhistpendataan"
+
+    idhistpendataan = Column(BigInteger, primary_key=True)
+    idpendataan = Column(BigInteger, nullable=False)
+    spt = Column(String(8), nullable=False)
+    idwpdata = Column(BigInteger, nullable=False)
+    tglpendataan = Column(Date)
+    masaawal = Column(Date)
+    masaakhir = Column(Date)
+    uruttgl = Column(Integer, nullable=False)
+    jmlomzetawal = Column(Numeric(18, 2))
+    tarifpjk = Column(Numeric(18, 2), nullable=False)
+    idupt = Column(BigInteger, nullable=False)
+    kdflow = Column(String(10))
+    histid = Column(String(3), nullable=False)
+    status = Column(String(1), nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class TransHistPendataanDet(Base):
+    __tablename__ = "transhistpendataandet"
+
+    idhistpendataandet = Column(BigInteger, primary_key=True)
+    idhistpendataan = Column(BigInteger, nullable=False)
+    idpenetapan = Column(BigInteger, nullable=False)
+    nourut = Column(Integer, nullable=False)
+    lokasi = Column(String(255))
+    transid = Column(String(2), nullable=False)
+    ket1 = Column(String(50), nullable=False)
+    usahaid = Column(Integer, nullable=False)
+    tarifpajak = Column(Numeric(18, 2), nullable=False)
+    histid = Column(String(3), nullable=False)
+    status = Column(String(1), nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class TransHistPenetapan(Base):
+    __tablename__ = "transhistpenetapan"
+
+    idhistpenetapan = Column(BigInteger, primary_key=True)
+    idpenetapan = Column(BigInteger, nullable=False)
+    idkohir = Column(BigInteger, nullable=False)
+    nokohir = Column(String(30))
+    idwpdata = Column(BigInteger, nullable=False)
+    tglpenetapan = Column(Date)
+    tgljatuhtempo = Column(Date)
+    masaawal = Column(Date)
+    masaakhir = Column(Date)
+    uruttgl = Column(Integer, nullable=False)
+    jmlomzetawal = Column(Numeric(18, 2))
+    tarifpajak = Column(Numeric(18, 2), nullable=False)
+    denda = Column(Numeric(18, 2))
+    kenaikan = Column(Numeric(18, 2))
+    statbayar = Column(String(1), nullable=False)
+    tglbayar = Column(Date)
+    jmlbayar = Column(Numeric(18, 2))
+    tglkurangbayar = Column(Date)
+    jmlkurangbayar = Column(Numeric(18, 2))
+    jmlperingatan = Column(Integer)
+    kdflow = Column(String(10))
+    status = Column(String(1), nullable=False)
+    opsid = Column(String(5))
+    opsprov = Column(Numeric(18, 2))
+    opskota = Column(Numeric(18, 2))
+    dendaopsprov = Column(Numeric(18, 2))
+    dendaopskota = Column(Numeric(18, 2))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class TransPendataan(Base):
+    __tablename__ = "transpendataan"
+
+    idpendataan = Column(BigInteger, primary_key=True)
+    spt = Column(String(8), nullable=False)
+    idwpdata = Column(BigInteger, nullable=False)
+    tglpendataan = Column(Date)
+    masaawal = Column(Date)
+    masaakhir = Column(Date)
+    uruttgl = Column(Integer, nullable=False)
+    jmlomzetawal = Column(Numeric(18, 2))
+    tarifpjk = Column(Numeric(18, 2), nullable=False)
+    idupt = Column(BigInteger, nullable=False)
+    kdflow = Column(String(10))
+    status = Column(String(1), nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class TransPendataanDet(Base):
+    __tablename__ = "transpendataandet"
+
+    idpendataandet = Column(BigInteger, primary_key=True)
+    idpendataan = Column(BigInteger, nullable=False)
+    idpenetapan = Column(BigInteger, nullable=False)
+    nourut = Column(Integer, nullable=False)
+    lokasi = Column(String(255))
+    transid = Column(String(2), nullable=False)
+    ket1 = Column(String(50), nullable=False)
+    usahaid = Column(Integer, nullable=False)
+    tarifpajak = Column(Numeric(18, 2), nullable=False)
+    status = Column(String(1), nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class TransPenetapan(Base):
+    __tablename__ = "transpenetapan"
+
+    idpenetapan = Column(BigInteger, primary_key=True)
+    idkohir = Column(BigInteger, nullable=False)
+    nokohir = Column(String(30))
+    idwpdata = Column(BigInteger, nullable=False)
+    tglpenetapan = Column(Date)
+    tgljatuhtempo = Column(Date)
+    masaawal = Column(Date)
+    masaakhir = Column(Date)
+    uruttgl = Column(Integer, nullable=False)
+    jmlomzetawal = Column(Numeric(18, 2))
+    tarifpajak = Column(Numeric(18, 2), nullable=False)
+    denda = Column(Numeric(18, 2))
+    kenaikan = Column(Numeric(18, 2))
+    statbayar = Column(String(1), nullable=False)
+    tglbayar = Column(Date)
+    jmlbayar = Column(Numeric(18, 2))
+    tglkurangbayar = Column(Date)
+    jmlkurangbayar = Column(Numeric(18, 2))
+    jmlperingatan = Column(Integer)
+    kdflow = Column(String(10))
+    status = Column(String(1), nullable=False)
+    opsid = Column(String(5))
+    opsprov = Column(Numeric(18, 2))
+    opskota = Column(Numeric(18, 2))
+    dendaopsprov = Column(Numeric(18, 2))
+    dendaopskota = Column(Numeric(18, 2))
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
+
+
+class TransSts(Base):
+    __tablename__ = "transsts"
+
+    idsts = Column(BigInteger, primary_key=True)
+    idupt = Column(BigInteger, nullable=False)
+    setorandari = Column(String(5))
+    idbend = Column(BigInteger, nullable=False)
+    nosts = Column(String(50), nullable=False)
+    tglsts = Column(Date)
+    keterangan = Column(String(100), nullable=False)
+    statbayar = Column(String(1), nullable=False)
+    ntpd = Column(String(50))
+    tglntpd = Column(Date)
+    statsts = Column(Integer)
+    created_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    created_by = Column(String(50))
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), nullable=False)
+    updated_by = Column(String(50))
