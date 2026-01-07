@@ -567,6 +567,7 @@ class JnsProgresif(Base):
     updated_by = Column(String(50))
 
 
+
 class JnsRanmor(Base):
     __tablename__ = "jnsranmor"
 

@@ -6,8 +6,8 @@ from typing import Optional
 @dataclass
 class MasterNpwpd:
     idnpwpd: Optional[int]
-    statnpwpd: Optional[str] = None
     npwpd: str
+    statnpwpd: Optional[str] = None
     idbadan: Optional[int] = None
     idktp: Optional[int] = None
     tgldaftar: Optional[date] = None

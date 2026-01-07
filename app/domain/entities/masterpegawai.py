@@ -6,12 +6,12 @@ from typing import Optional
 @dataclass
 class MasterPegawai:
     idpegawai: Optional[int]
-    idktp: Optional[int] = None
     nip: str
-    nik: Optional[str] = None
     nama: str
     idupt: int
     status: str
+    idktp: Optional[int] = None
+    nik: Optional[str] = None
     jabatan: Optional[str] = None
     pangkat: Optional[str] = None
     golongan: Optional[str] = None
