@@ -6,8 +6,8 @@ from typing import Optional
 @dataclass
 class MasterMerk:
     idmerk: Optional[int]
-    kdmerk: Optional[str] = None
     nmmerk: str
+    kdmerk: Optional[str] = None
     keterangan: Optional[str] = None
     status: Optional[str] = None
     created_at: Optional[datetime] = None
