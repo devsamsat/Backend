@@ -1,4 +1,6 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from datetime import date
+
+from fastapi import APIRouter, Depends, HTTPException, Query, status
 from sqlalchemy.orm import Session
 
 from app.core.database import SessionLocal
@@ -102,8 +104,44 @@ def create_masterwp(
 
 
 @router.get("/", response_model=list[MasterWpResponse])
-def get_masterwps(uc: MasterWpUseCase = Depends(get_usecase)):
-    return uc.get_all()
+def get_masterwps(
+    nopollama: str | None = None,
+    namapemilik: str | None = None,
+    nikpemilik: str | None = None,
+    alamat: str | None = None,
+    kelurahan: str | None = None,
+    kecamatan: str | None = None,
+    kode_polisi: str | None = Query(None, alias="kode_polisi"),
+    nostnkb: str | None = None,
+    nobpkb: str | None = None,
+    tgljualbeli: date | None = None,
+    tgldaftar: date | None = None,
+    norangka: str | None = None,
+    nomesin: str | None = None,
+    warna: str | None = None,
+    is_match: bool = False,
+    page: int = Query(1, ge=1),
+    limit: int = Query(20, ge=1, le=200),
+    uc: MasterWpUseCase = Depends(get_usecase),
+):
+    filters = {
+        "nopollama": nopollama,
+        "namapemilik": namapemilik,
+        "nikpemilik": nikpemilik,
+        "alamat": alamat,
+        "kelurahan": kelurahan,
+        "kecamatan": kecamatan,
+        "kodepolisi": kode_polisi,
+        "nostnkb": nostnkb,
+        "nobpkb": nobpkb,
+        "tgljualbeli": tgljualbeli,
+        "tgldaftar": tgldaftar,
+        "norangka": norangka,
+        "nomesin": nomesin,
+        "warna": warna,
+        "is_match": is_match,
+    }
+    return uc.get_all(filters=filters, page=page, limit=limit)
 
 
 @router.get("/{idwp}", response_model=MasterWpResponse)

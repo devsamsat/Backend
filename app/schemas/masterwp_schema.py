@@ -161,8 +161,11 @@ class MasterWpResponse(BaseModel):
     idlokasi: Optional[str]
     alamat: Optional[str]
     idkabkokta: Optional[int]
+    nmkabkota: Optional[str] = None
     idkecamatan: Optional[int]
+    nmkecamatan: Optional[str] = None
     idkelurahan: Optional[int]
+    nmkelurahan: Optional[str] = None
     idrw: Optional[int]
     idrt: Optional[int]
     telepon: Optional[str]
