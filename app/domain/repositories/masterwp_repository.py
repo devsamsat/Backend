@@ -7,7 +7,12 @@ from app.domain.entities.masterwp import MasterWp
 class MasterWpRepository(ABC):
 
     @abstractmethod
-    def get_all(self) -> List[MasterWp]:
+    def get_all(
+        self,
+        filters: dict | None = None,
+        page: int | None = None,
+        limit: int | None = None,
+    ) -> List[MasterWp]:
         pass
 
     @abstractmethod

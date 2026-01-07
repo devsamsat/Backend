@@ -10,8 +10,13 @@ class MasterWpUseCase:
     def __init__(self, repository: MasterWpRepository):
         self.repository = repository
 
-    def get_all(self) -> List[MasterWp]:
-        return self.repository.get_all()
+    def get_all(
+        self,
+        filters: dict | None = None,
+        page: int | None = None,
+        limit: int | None = None,
+    ) -> List[MasterWp]:
+        return self.repository.get_all(filters=filters, page=page, limit=limit)
 
     def get_by_id(self, idwp: int) -> MasterWp | None:
         return self.repository.get_by_id(idwp)
