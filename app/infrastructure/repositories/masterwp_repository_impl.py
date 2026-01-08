@@ -57,7 +57,7 @@ class MasterWpRepositoryImpl(MasterWpRepository):
             alamat = filters.get("alamat")
             kelurahan = filters.get("kelurahan")
             kecamatan = filters.get("kecamatan")
-            kodepolisi = filters.get("kodepolisi")
+            objekbadanno = filters.get("objekbadanno")
             nostnkb = filters.get("nostnkb")
             nobpkb = filters.get("nobpkb")
             tgljualbeli = filters.get("tgljualbeli")
@@ -105,11 +105,11 @@ class MasterWpRepositoryImpl(MasterWpRepository):
                     query = query.filter(MasterKecamatan.nmkecamatan == kecamatan)
                 else:
                     query = query.filter(MasterKecamatan.nmkecamatan.ilike(f"%{kecamatan}%"))
-            if kodepolisi:
+            if objekbadanno:
                 if is_match:
-                    query = query.filter(MasterWpModel.kodepolisi == kodepolisi)
+                    query = query.filter(MasterWpModel.objekbadanno == objekbadanno)
                 else:
-                    query = query.filter(MasterWpModel.kodepolisi.ilike(f"%{kodepolisi}%"))
+                    query = query.filter(MasterWpModel.objekbadanno.ilike(f"%{objekbadanno}%"))
             if nostnkb:
                 if is_match:
                     query = query.filter(MasterWpModel.nostnkb == nostnkb)

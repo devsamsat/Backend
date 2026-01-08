@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.core.config import load_env
 from app.core.database import Base, engine
 from app.infrastructure.orm.table_registry import TABLE_NAMES, create_tables
 from app.interfaces.api.table_router import create_table_router
@@ -66,9 +67,11 @@ from app.interfaces.api import (
     transpendataandet,
     transpenetapan,
     transsts,
+    simeri,
     users,
 )
 
+load_env()
 Base.metadata.create_all(bind=engine)
 create_tables()
 
@@ -152,6 +155,7 @@ app.include_router(transpendataan.router)
 app.include_router(transpendataandet.router)
 app.include_router(transpenetapan.router)
 app.include_router(transsts.router)
+app.include_router(simeri.router)
 
 custom_table_routes = {
     "users",

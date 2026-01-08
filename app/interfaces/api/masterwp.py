@@ -111,7 +111,7 @@ def get_masterwps(
     alamat: str | None = None,
     kelurahan: str | None = None,
     kecamatan: str | None = None,
-    kode_polisi: str | None = Query(None, alias="kode_polisi"),
+    objekbadanno: str | None = Query(None, alias="objekbadanno"),
     nostnkb: str | None = None,
     nobpkb: str | None = None,
     tgljualbeli: date | None = None,
@@ -131,7 +131,7 @@ def get_masterwps(
         "alamat": alamat,
         "kelurahan": kelurahan,
         "kecamatan": kecamatan,
-        "kodepolisi": kode_polisi,
+        "objekbadanno": objekbadanno,
         "nostnkb": nostnkb,
         "nobpkb": nobpkb,
         "tgljualbeli": tgljualbeli,
@@ -139,7 +139,6 @@ def get_masterwps(
         "norangka": norangka,
         "nomesin": nomesin,
         "warna": warna,
-        "is_match": is_match,
     }
     return uc.get_all(filters=filters, page=page, limit=limit)
 
