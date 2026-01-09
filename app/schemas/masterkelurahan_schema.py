@@ -31,8 +31,8 @@ class MasterKelurahanResponse(BaseModel):
     idkelurahan: int
     idkecamatan: int
     nmkelurahan: str
-    alamat: str
-    telepon: str
+    alamat: Optional[str]
+    telepon: Optional[str]
     status: str
     kdkelurahan: Optional[str]
     kodepos: Optional[str]

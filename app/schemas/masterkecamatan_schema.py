@@ -31,8 +31,8 @@ class MasterKecamatanResponse(BaseModel):
     idkecamatan: int
     idkabkota: int
     nmkecamatan: str
-    alamat: str
-    telepon: str
+    alamat: Optional[str]
+    telepon: Optional[str]
     status: str
     kdkecamatan: Optional[str]
     fax: Optional[str]

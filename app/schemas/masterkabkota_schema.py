@@ -31,10 +31,10 @@ class MasterKabKotaResponse(BaseModel):
     idkabkota: int
     idprovinsi: int
     nmkabkota: str
-    akronim: str
-    ibukota: str
+    akronim: Optional[str]
+    ibukota: Optional[str]
     status: str
-    bpkbid: str
+    bpkbid: Optional[str]
     kdkabkota: Optional[str]
     created_at: datetime
     created_by: Optional[str]
